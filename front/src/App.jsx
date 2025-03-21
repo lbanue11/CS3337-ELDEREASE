@@ -1,0 +1,32 @@
+import { useState } from 'react';
+import './App.css';
+import Login from './Login';
+import Registration from './Registration'; 
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Link } from "react-router-dom"; // we using routers to switch pages
+
+function App() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <Router>
+      <Routes>
+        {/* Default Page for now */}
+        <Route path="/" element={
+          <div>
+            <h1>Welcome to ElderEase</h1>
+            <Link to="/login">Go to Login</Link><br />
+          </div>
+        } />
+
+        {/* Login router */}
+        <Route path="/login" element={<Login />} />
+
+        {/* Reigistration */}
+        <Route path="/register" element={<Registration />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;

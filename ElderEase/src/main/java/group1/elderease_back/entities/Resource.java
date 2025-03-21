@@ -47,7 +47,7 @@ public class Resource {
     private String status;
 
     // emopty constructor required by JPA
-    Resource() {}
+    public Resource() {}
 
     // creates Resource with required feilds
     Resource(User resourceUser, String name, String status) {
