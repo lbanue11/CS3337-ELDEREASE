@@ -4,10 +4,11 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: 3001, // fixed port for consistent local URL
+    port: 3001,
+    strictPort: true,
     proxy: {
       '/api': {
-        target: process.env.VITE_API_URL || 'http://localhost:3001', // uses env variable or fallback value
+        target: process.env.VITE_API_URL || 'http://localhost:3001',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
       },

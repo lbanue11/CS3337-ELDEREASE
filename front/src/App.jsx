@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import Login from './Login';
-import Registration from './Registration'; 
+import Registration from './Registration';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Link } from "react-router-dom"; // we using routers to switch pages
 
