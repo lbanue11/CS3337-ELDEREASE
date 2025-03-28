@@ -5,6 +5,7 @@ import Registration from "./Registration";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Link } from "react-router-dom"; // we using routers to switch pages
 import LogoSymbol from "./assets/LogoSymbol.png";
+import MapComponent from "./MapComponent.jsx";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -30,6 +31,9 @@ function App() {
 
         {/* Reigistration */}
         <Route path="/register" element={<Registration />} />
+
+          {/* Map */}
+          <Route path="/map" element={<MapComponent />} />
       </Routes>
     </Router>
   );
