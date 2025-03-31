@@ -1,28 +1,31 @@
 import React from "react";
-import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
+import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 
 const containerStyle = {
-    width: "100%",
-    height: "400px",
+    width: "100vw",
+    height: "100vh"
 };
 
 const center = {
-    lat: 34.0522, // We can replace with our desired lat
-    lng: -118.2437, // We can replace with our desired lng
+    lat: 34.0522,  // pointing at Los Angeles
+    lng: -118.2437
 };
 
-function MapComponent() {
+export default function MapComponent() {
+    const { isLoaded, loadError } = useLoadScript({
+        googleMapsApiKey: "AIzaSyB52D9GjkLcAkdQ9iXxro6ptMsD7Nv6Lts"
+    });
+
+    if (loadError) return <div>Error loading map</div>;
+    if (!isLoaded) return <div>Loading...</div>;
+
     return (
-        <LoadScript googleMapsApiKey="AIzaSyB52D9GjkLcAkdQ9iXxro6ptMsD7Nv6Lts" libraries={['places']}>
-            <GoogleMap
-                mapContainerStyle={containerStyle}
-                center={center}
-                zoom={13}
-            >
-                <Marker position={center} />
-            </GoogleMap>
-        </LoadScript>
+        <GoogleMap
+            mapContainerStyle={containerStyle}
+            center={center}
+            zoom={10}
+        >
+            <Marker position={center} />
+        </GoogleMap>
     );
 }
-
-export default MapComponent;

@@ -12,10 +12,10 @@
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em #e0c8ac);
 }
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 2em #dfd0bf);
 }
 
 @keyframes logo-spin {
@@ -39,4 +39,43 @@
 
 .read-the-docs {
   color: #888;
+}
+.app-text-style {
+  color: #526977;
+  font-family: "Playfair Display", "Georgia", serif;
+  font-size: 50px;
+}
+.box-container {
+  background: white;
+  border:2px solid #d5d4d7;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #526977;
+  padding-inline: 50px;
+  padding-block:130px ;
+}
+.title-text-style{
+  text-align: center;
+  font-size:35px ;
+  font-family:"Playfair Display", "Georgia", serif;  ;
+  font-weight:bold;
+  margin-top: -50px;
+}
+.input{
+  padding-bottom: 15px;
+  padding-top: 15px;
+  padding-left: 10px;
+  background-color: #f5f7f7;
+  margin-bottom: 15px;
+  text-align: left;
+
+}
+.textbox{
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #000;
+  padding-top: 10px;
 }

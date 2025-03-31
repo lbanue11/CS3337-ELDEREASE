@@ -1,0 +1,58 @@
+[33mcommit 3058c735c42bd0a7c98100bd35205cacdc8c395e[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mtest[m[33m)[m
+Author: Haurse <mocmatthew5@gmail.com>
+Date:   Tue Mar 25 17:21:43 2025 -0700
+
+    Set up Eldercare API + Google Map integration
+
+[33mcommit 7709ea3fef7874f7f214296a6a44e6826076154b[m
+Author: Haurse <mocmatthew5@gmail.com>
+Date:   Tue Mar 25 17:19:47 2025 -0700
+
+    Set up Eldercare API + Google Map integration
+
+[33mcommit a8bbb2b1c5f19fa72061714a391e87f9f67660c5[m[33m ([m[1;31morigin/test[m[33m)[m
+Merge: f40f6ee d92cd48
+Author: ariver254 <ariver254@calstatela.edu>
+Date:   Fri Mar 21 13:12:06 2025 -0700
+
+    Added front end with login/register, added loginController, and made Resource constructor public
+
+[33mcommit f40f6ee1a4e4970b80ae1f0f630951a3c1b52457[m
+Author: ariver254 <ariver254@calstatela.edu>
+Date:   Fri Mar 21 13:08:51 2025 -0700
+
+    Added frontend login/register, added loginController, and made Resource contrusctor public
+
+[33mcommit d92cd4882db7b2b4d5525b3575a067287dfd3cc7[m
+Author: Leo Banuelos <lbanue11@calstatela.edu>
+Date:   Fri Mar 21 02:03:07 2025 -0700
+
+    fix: specify Java 21 in pom.xml to prevent build issues
+
+[33mcommit 917e91252c5c2d01b18777cd30d076ca77427f9a[m
+Author: Leo Banuelos <lbanue11@calstatela.edu>
+Date:   Thu Mar 20 23:31:08 2025 -0700
+
+    Add User, Resource, SavedLocation entities with constraints
+    
+    - Entities create the tables, manage the relationships in the database, and provide fields for data access and manipulation
+    - Created Repository for added entities to allow for C.R.U.D. functionality and develop custom queries for future development.
+
+[33mcommit eef08b15b07806f582d3a3a1dffa952f09447569[m
+Author: Leo Banuelos <lbanue11@calstatela.edu>
+Date:   Thu Mar 20 06:47:41 2025 -0700
+
+    added datatbase connection (should add environment variable later for db login credentials)
+    updated pom.xml with new dependencies
+
+[33mcommit b9c9b39cdec24507d8d07cdbf1d9b02a082bb538[m
+Author: ariver254 <ariver254@calstatela.edu>
+Date:   Tue Mar 18 22:16:01 2025 -0700
+
+    created backend skeleton
+
+[33mcommit d152efdbbaa6a1dfa19af3f556cb56faa34433fd[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: mabalos2 <116625102+mabalos2@users.noreply.github.com>
+Date:   Sat Feb 22 14:22:51 2025 -0800
+
+    Initial commit
