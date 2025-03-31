@@ -1,26 +1,27 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import email_icon from "./assets/email_icon.png";
+import password_icon from "./assets/password_icon.png";
+import person_icon from "./assets/person_icon.png";
+
 
 const Registration = () => {
-  const [firstName, setFirstName] = useState(''); // First name state
-  const [lastName, setLastName] = useState('');   // Last name state
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [role, setRole] = useState(''); // Role will be "elderly", "caregiver", or "provider"
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Sending the registration data to the backend with the selected role
+      // Sending the registration data to the backend
       const response = await axios.post('http://localhost:8080/api/auth/register', {
-        firstName,
-        lastName,
+        name,
         email,
         password,
-        role: role || 'elderly', // default to "elderly" if no role is selected
+        role: 'USER', // Gonna hardcode role as USER
       });
       console.log(response.data);
       navigate('/login'); // Redirect to login after successful registration
@@ -31,69 +32,41 @@ const Registration = () => {
   };
 
   return (
-    <div>
-      <h1>Register</h1>
+    <div className='box-container'>
+      <h1 className='title-text-style'>Register</h1>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label>First Name:</label>
-          <input
-            type="text"
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
+        <div className='input'>
+          <img src={person_icon} />
+          <label> Name</label>
+          <input 
+            type="text" 
+            className='textbox'
+            value={name} 
+            onChange={(e) => setName(e.target.value)} 
             required
           />
         </div>
-        <div>
-          <label>Last Name:</label>
-          <input
-            type="text"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
+        <div className='input'>
+          <img src={email_icon} />
+          <label> Email</label>
+          <input 
+            className='textbox'
+            type="email" 
+            value={email} 
+            onChange={(e) => setEmail(e.target.value)} 
             required
           />
         </div>
-        <div>
-          <label>Email:</label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+        <div className='input'>
+          <img src={password_icon} />
+          <label> Password</label>
+          <input 
+            className='textbox'
+            type="password" 
+            value={password} 
+            onChange={(e) => setPassword(e.target.value)} 
             required
           />
-        </div>
-        <div>
-          <label>Password:</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        {/* Role selection buttons */}
-        <div style={{ margin: '1em 0' }}>
-          <p>Sign Up As:</p>
-          <button
-            type="button"
-            onClick={() => setRole('elderly')}
-            style={{ backgroundColor: role === 'elderly' ? '#ccc' : '' }}
-          >
-            Elderly
-          </button>
-          <button
-            type="button"
-            onClick={() => setRole('caregiver')}
-            style={{ margin: '0 0.5em', backgroundColor: role === 'caregiver' ? '#ccc' : '' }}
-          >
-            Caregiver/Family
-          </button>
-          <button
-            type="button"
-            onClick={() => setRole('provider')}
-            style={{ backgroundColor: role === 'provider' ? '#ccc' : '' }}
-          >
-            Resource Provider
-          </button>
         </div>
         <button type="submit">Register</button>
         {error && <p style={{ color: 'red' }}>{error}</p>}
