@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Link } from "react-router-dom"; // we using routers to switch pages
 import LogoSymbol from "./assets/LogoSymbol.png";
 import MapComponent from "./MapComponent.jsx";
+import Home from "./Home";
 
 function App() {
   const [count, setCount] = useState(0); // Keeping count state as requested
@@ -17,12 +18,22 @@ function App() {
         <Route
           path="/"
           element={
-            <div style={{ textAlign: 'center', paddingTop: '2rem', paddingBottom: '2rem' }}>
+            <div
+              style={{
+                textAlign: "center",
+                paddingTop: "2rem",
+                paddingBottom: "2rem",
+              }}
+            >
               <img className="logo" src={LogoSymbol} alt="Logo" />
               <h1 className="app-text-style">Welcome to ElderEase</h1>
               {/* Tagline using Title Case */}
-              <p className="tagline-style">Your Guide to Nearby Senior Care Centers</p>
-              <Link to="/login" className="button-primary">Go to Login</Link>
+              <p className="tagline-style">
+                Your Guide to Nearby Senior Care Centers
+              </p>
+              <Link to="/login" className="button-primary">
+                Go to Login
+              </Link>
               <br />
             </div>
           }
@@ -37,6 +48,8 @@ function App() {
         {/* Map Route */}
         <Route path="/map" element={<MapComponent />} />
 
+        {/* Home */}
+        <Route path="/home" element={<Home />} />
       </Routes>
     </Router>
   );
