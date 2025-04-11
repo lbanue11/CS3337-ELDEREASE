@@ -8,32 +8,35 @@ import LogoSymbol from "./assets/LogoSymbol.png";
 import MapComponent from "./MapComponent.jsx";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0); // Keeping count state as requested
 
   return (
     <Router>
       <Routes>
-        {/* Default Page for now */}
-        <Route 
+        {/* Root Route ("/") */}
+        <Route
           path="/"
           element={
-            <div>
-              <img className="logo" src={LogoSymbol} alr="Logo" />
+            <div style={{ textAlign: 'center', paddingTop: '2rem', paddingBottom: '2rem' }}>
+              <img className="logo" src={LogoSymbol} alt="Logo" />
               <h1 className="app-text-style">Welcome to ElderEase</h1>
-              <Link to="/login">Go to Login</Link>
+              {/* Tagline using Title Case */}
+              <p className="tagline-style">Your Guide to Nearby Senior Care Centers</p>
+              <Link to="/login" className="button-primary">Go to Login</Link>
               <br />
             </div>
           }
         />
 
-        {/* Login router */}
+        {/* Login Route */}
         <Route path="/login" element={<Login />} />
 
-        {/* Reigistration */}
+        {/* Registration Route */}
         <Route path="/register" element={<Registration />} />
 
-          {/* Map */}
-          <Route path="/map" element={<MapComponent />} />
+        {/* Map Route */}
+        <Route path="/map" element={<MapComponent />} />
+
       </Routes>
     </Router>
   );

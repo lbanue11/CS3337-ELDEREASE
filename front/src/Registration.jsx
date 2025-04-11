@@ -1,76 +1,116 @@
 import { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import email_icon from "./assets/email_icon.png";
 import password_icon from "./assets/password_icon.png";
 import person_icon from "./assets/person_icon.png";
-
 
 const Registration = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      // Sending the registration data to the backend
+    setError("");
+     try {
       const response = await axios.post('http://localhost:8080/api/auth/register', {
-        name,
-        email,
-        password,
-        role: 'USER', // Gonna hardcode role as USER
+        name, email, password, role: 'USER', // Gonna hardcode role as USER
       });
-      console.log(response.data);
+      console.log('Registration successful:', response.data);
       navigate('/login'); // Redirect to login after successful registration
     } catch (err) {
-      setError('Failed to register. Please try again.');
-      console.error(err);
+       if (err.response && err.response.data && err.response.data.message) {
+        setError(err.response.data.message);
+      } else {
+        setError('Registration failed. Please try again.');
+      }
+      console.error('Registration error:', err);
     }
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
   };
 
   return (
     <div className='box-container'>
       <h1 className='title-text-style'>Register</h1>
       <form onSubmit={handleSubmit}>
-        <div className='input'>
-          <img src={person_icon} />
-          <label> Name</label>
-          <input 
-            type="text" 
+
+        <div className='input-group'>
+           <div className='input-label-line'>
+            <img src={person_icon} alt="Name icon"/>
+            <label htmlFor="name"> Name *</label>
+           </div>
+          <input
+            type="text"
+            id="name"
             className='textbox'
-            value={name} 
-            onChange={(e) => setName(e.target.value)} 
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             required
+            aria-required="true"
           />
         </div>
-        <div className='input'>
-          <img src={email_icon} />
-          <label> Email</label>
-          <input 
+
+        <div className='input-group'>
+          <div className='input-label-line'>
+            <img src={email_icon} alt="Email icon"/>
+            <label htmlFor="email"> Email *</label>
+          </div>
+          <input
+            type="email"
+            id="email"
             className='textbox'
-            type="email" 
-            value={email} 
-            onChange={(e) => setEmail(e.target.value)} 
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             required
+            aria-required="true"
           />
         </div>
-        <div className='input'>
-          <img src={password_icon} />
-          <label> Password</label>
-          <input 
+
+        <div className='input-group'>
+           <div className='input-label-line'>
+            <img src={password_icon} alt="Password icon"/>
+            <label htmlFor="password"> Password *</label>
+           </div>
+          <input
+            type={showPassword ? "text" : "password"}
+            id="password"
             className='textbox'
-            type="password" 
-            value={password} 
-            onChange={(e) => setPassword(e.target.value)} 
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             required
+            aria-required="true"
           />
         </div>
-        <button type="submit">Register</button>
-        {error && <p style={{ color: 'red' }}>{error}</p>}
+
+        <div className="show-password-option" style={{ justifyContent: 'flex-end', marginBottom: '1.5rem', marginTop: '0.5rem' }}>
+             <input
+               type="checkbox"
+               id="showPasswordCheckbox"
+               checked={showPassword}
+               onChange={togglePasswordVisibility}
+             />
+             <label htmlFor="showPasswordCheckbox">Show Password</label>
+        </div>
+
+        <button type="submit" className="button-primary">Register</button>
+
+        {error && <p className="form-error">{error}</p>}
       </form>
+
+      <div style={{ marginTop: "1.5em", textAlign: 'center' }}>
+        <p>
+          Already have an account?{' '}
+          <Link to="/login" className="form-link">Login here</Link>
+        </p>
+      </div>
+
     </div>
   );
 };

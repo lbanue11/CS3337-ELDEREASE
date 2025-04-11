@@ -1,3 +1,11 @@
+/* --- Global & Root Elements --- */
+body {
+  background-color: #fdfcf9;
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  color: #444;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -5,77 +13,175 @@
   text-align: center;
 }
 
+/* --- Logo Styles (Homepage) --- */
 .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
+  margin-bottom: 1em;
 }
 .logo:hover {
   filter: drop-shadow(0 0 2em #e0c8ac);
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #dfd0bf);
+/* Vite Template - Keep */
+.logo.react:hover { filter: drop-shadow(0 0 2em #dfd0bf); }
+/* logo-spin animation - Keep */
+@keyframes logo-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+/* logo-spin animation usage - Keep */
+@media (prefers-reduced-motion: no-preference) { a:nth-of-type(2) .logo { animation: logo-spin infinite 20s linear; } }
+/* Vite Template - Keep */
+.card { padding: 2em; }
+.read-the-docs { color: #888; }
+
+/* --- Homepage Specific Styles --- */
+.app-text-style { /* Homepage H1 */
+  color: #5a5a5a;
+  font-family: "Nunito", sans-serif;
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 0.5em;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.tagline-style { /* Homepage Tagline */
+  font-size: 1.1em;
+  color: #667;
+  margin-top: 0.5em;
+  margin-bottom: 1.5em;
+  font-family: "Nunito", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* --- General Primary Button Styles (Homepage) --- */
+.button-primary {
+  display: inline-block;
+  width: auto;
+  padding: 12px 24px;
+  background-color: #778899; /* SlateGray */
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+.button-primary:hover {
+  background-color: #667788; /* Darker SlateGray */
+  transform: translateY(-1px);
+}
+.button-primary:active {
+  transform: translateY(0px);
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-.app-text-style {
-  color: #526977;
-  font-family: "Playfair Display", "Georgia", serif;
-  font-size: 50px;
-}
+/* --- Form Container (Login/Register) --- */
 .box-container {
   background: white;
-  border:2px solid #d5d4d7;
-  border-radius: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  color: #526977;
-  padding-inline: 50px;
-  padding-block:130px ;
-}
-.title-text-style{
-  text-align: center;
-  font-size:35px ;
-  font-family:"Playfair Display", "Georgia", serif;  ;
-  font-weight:bold;
-  margin-top: -50px;
-}
-.input{
-  padding-bottom: 15px;
-  padding-top: 15px;
-  padding-left: 10px;
-  background-color: #f5f7f7;
-  margin-bottom: 15px;
+  color: #5a5a5a;
+  padding: 2.5rem 2rem;
+  margin: 2rem auto;
+  max-width: 400px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   text-align: left;
-
 }
-.textbox{
-  background: transparent;
-  border: none;
-  outline: none;
-  color: #000;
-  padding-top: 10px;
+
+/* --- Form Inner Styles --- */
+
+/* Form Title (Login/Register H1) */
+.title-text-style {
+  text-align: left;
+  font-size: 1.8em;
+  font-family: "Nunito", sans-serif;
+  color: #333;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+/* Input Group (Label line + Textbox wrapper) */
+.input-group {
+  margin-bottom: 1.2rem;
+  position: relative;
+}
+
+/* Label Line (Icon + Label text) */
+.input-label-line {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.input-label-line img {
+  height: 1em;
+  margin-right: 8px;
+  opacity: 0.7;
+}
+.input-label-line label {
+  font-weight: bold;
+  color: #5a5a5a;
+  font-size: 0.9em;
+}
+
+/* Text Input field */
+.textbox {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  background-color: #fff;
+  font-size: 1em;
+  color: #333;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.textbox:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Password Options Area (Forgot/Show) */
+.password-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.9em;
+}
+.forgot-password-link { /* Forgot Password? Link */
+  color: #007bff;
+  text-decoration: none;
+}
+.forgot-password-link:hover { text-decoration: underline; }
+.show-password-option { display: flex; align-items: center; cursor: pointer; }
+.show-password-option label { margin-left: 0.5em; margin-bottom: 0; font-weight: normal; color: #5a5a5a; cursor: pointer; }
+.show-password-option input[type="checkbox"] { margin: 0; cursor: pointer; }
+
+/* Form Button Style Override */
+.box-container .button-primary {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background-color: #778899; /* Using SlateGray consistently */
+  border-radius: 6px; /* Consistent radius maybe? */
+}
+.box-container .button-primary:hover {
+  background-color: #667788; /* Darker SlateGray */
+}
+
+/* --- Other Link & Error Styles --- */
+.form-link { /* For Register here / Forgot Password */
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+.form-link:hover { text-decoration: underline; }
+.form-error {
+  color: #dc3545; background-color: #f8d7da; border: 1px solid #f5c6cb;
+  padding: 0.75rem 1.25rem; margin-top: 1rem; border-radius: 0.25rem;
+  font-size: 0.9em; text-align: left;
 }
