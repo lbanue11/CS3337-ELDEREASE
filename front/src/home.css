@@ -15,16 +15,10 @@
   font-family: "Nunito", sans-serif;
 }
 /* Logo */
-.logo {
+.home-logo {
   display: flex;
   align-items: center;
   height: 75px;
-}
-
-.logo img {
-  height: 42px;
-  display: block;
-  margin: auto 0;
 }
 
 /* Navigation Links */

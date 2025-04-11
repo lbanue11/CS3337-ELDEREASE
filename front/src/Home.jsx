@@ -13,8 +13,8 @@ const Home = () => {
 
   return (
     <header className="header">
-      <div className="logo">
-        <img className="logo" src={LogoSymbol} alr="Logo" />
+      <div className="home-logo">
+        <img className="home-logo" src={LogoSymbol} alr="Logo" />
       </div>
 
       <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
