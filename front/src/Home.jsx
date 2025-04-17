@@ -49,8 +49,7 @@ const Home = () => {
         <p className="tagline-style">
           Helping you connect, navigate, and explore with ease.
         </p>
-
-        {/* Helpful Resources */}
+        
         <section className="resources-section">
           <h2 id="helpful-resources">Helpful Resources</h2>
           <div className="resources-grid">
@@ -64,13 +63,17 @@ const Home = () => {
 
             <div className="resource-card">
               <h3>🚗 Transportation Support</h3>
-              <p>Learn about senior ride services and mobility aid programs.</p>
+              <p>
+                Learn about senior ride services and mobility aid programs.
+              </p>
               <Link to="/home">Get Rides</Link>
             </div>
 
             <div className="resource-card">
               <h3>☎️ Hotlines & Safety</h3>
-              <p>Contact elder abuse hotlines or mental health support.</p>
+              <p>
+                Contact elder abuse hotlines or mental health support.
+              </p>
               <Link to="/home">See Hotlines</Link>
             </div>
           </div>
