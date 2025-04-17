@@ -14,11 +14,15 @@
   height: 60px;
   font-family: "Nunito", sans-serif;
 }
+
 /* Logo */
 .home-logo {
   display: flex;
   align-items: center;
   height: 75px;
+}
+.home-intro-container {
+  padding-top: 120px; /* Adjust this value based on your header height */
 }
 
 /* Navigation Links */
@@ -64,7 +68,63 @@
   color: #5a5a5a;
 }
 
-/* Responsive Styles */
+/* Helpful Resources (Apply on all screen sizes) */
+.resources-section {
+  margin: 3rem auto;
+  padding: 1rem;
+  max-width: 1100px;
+  width: 90%;
+}
+
+.resources-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.resource-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.resource-card:hover {
+  transform: translateY(-4px);
+}
+
+.resource-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.resource-card p {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+.resource-card a {
+  color: #4a63e7;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.resource-card a:hover {
+  text-decoration: underline;
+}
+#helpful-resources {
+  scroll-margin-top: 100px; /* adjust this based on your header height */
+}
+/* Responsive Navigation */
 @media (max-width: 768px) {
   .nav {
     display: none;

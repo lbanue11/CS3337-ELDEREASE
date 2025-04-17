@@ -26,6 +26,13 @@ const Home = () => {
           <Link to="/map" onClick={() => setMenuOpen(false)}>
             Map
           </Link>
+          <a
+            href="#helpful-resources"
+            onClick={() => setMenuOpen(false)}
+            className="nav-link"
+          >
+            Resources
+          </a>
           <button
             onClick={() => {
               setMenuOpen(false);
@@ -42,6 +49,32 @@ const Home = () => {
         <p className="tagline-style">
           Helping you connect, navigate, and explore with ease.
         </p>
+
+        {/* Helpful Resources */}
+        <section className="resources-section">
+          <h2 id="helpful-resources">Helpful Resources</h2>
+          <div className="resources-grid">
+            <div className="resource-card">
+              <h3>🏠 Housing Assistance</h3>
+              <p>
+                Find affordable senior housing options and emergency shelters.
+              </p>
+              <Link to="/home">Explore</Link>
+            </div>
+
+            <div className="resource-card">
+              <h3>🚗 Transportation Support</h3>
+              <p>Learn about senior ride services and mobility aid programs.</p>
+              <Link to="/home">Get Rides</Link>
+            </div>
+
+            <div className="resource-card">
+              <h3>☎️ Hotlines & Safety</h3>
+              <p>Contact elder abuse hotlines or mental health support.</p>
+              <Link to="/home">See Hotlines</Link>
+            </div>
+          </div>
+        </section>
       </main>
     </>
   );
