@@ -3,15 +3,12 @@ import {
   GoogleMap,
   useLoadScript,
   Marker,
-  InfoWindow,
 } from "@react-google-maps/api";
 import { getEldercareByZip } from "./api/eldercare";
 import xml2js from "xml2js";
-import "./MapComponent.css"; // 🌟 All styles come from here
+import "./MapComponent.css";
 
 const libraries = ["places"];
-
-/* These are just settings for how the map will look, Can change depending our theme*/
 
 const mapOptions = {
   styles: [
@@ -31,54 +28,91 @@ export default function MapComponent() {
     libraries,
   });
 
+  
   const [zip, setZip] = useState("");
   const [center, setCenter] = useState({ lat: 34.0522, lng: -118.2437 });
   const [markers, setMarkers] = useState([]);
   const [selectedPlace, setSelectedPlace] = useState(null);
 
-  const handleSearch = async () => {
+  const fetchPlaceDetails = (placeId) => {
+    const map = new window.google.maps.Map(document.createElement("div"));
+    const service = new window.google.maps.places.PlacesService(map);
 
-    /* This doesn't work. Fix later */
-    try {
-      const xml = await getEldercareByZip(zip);
-      const result = await xml2js.parseStringPromise(xml);
-      const agencies =
-        result?.["soap:Envelope"]?.["soap:Body"]?.[0]?.["GetAgenciesByZipResponse"]?.[0]
-          ?.["GetAgenciesByZipResult"]?.[0]?.["diffgr:diffgram"]?.[0]?.["NewDataSet"]?.[0]
-          ?.["Table"] || [];
-
-      const geocoded = await Promise.all(
-        agencies.map(async (agency) => {
-          const fullAddress = `${agency.Address[0]}, ${agency.City[0]}, ${agency.State[0]} ${agency.Zip[0]}`;
-          const geoRes = await fetch(
-            `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
-              fullAddress
-            )}&key=AIzaSyB52D9GjkLcAkdQ9iXxro6ptMsD7Nv6Lts`
-          );
-          const geoData = await geoRes.json();
-          const loc = geoData.results?.[0]?.geometry?.location;
-          return loc
-            ? {
-                name: agency.Name[0],
-                lat: loc.lat,
-                lng: loc.lng,
-              }
-            : null;
-        })
-      );
-
-      const validMarkers = geocoded.filter(Boolean);
-      setMarkers(validMarkers);
-      if (validMarkers.length > 0) {
-        setCenter({ lat: validMarkers[0].lat, lng: validMarkers[0].lng });
+    service.getDetails(
+      {
+        placeId,
+        fields: [
+          "name",
+          "formatted_address",
+          "formatted_phone_number",
+          "website",
+          "place_id",
+          "geometry"
+        ],
+      },
+      (details, status) => {
+        if (status === window.google.maps.places.PlacesServiceStatus.OK) {
+          setSelectedPlace({
+            name: details.name,
+            address: details.formatted_address,
+            phone: details.formatted_phone_number,
+            website: details.website,
+            placeId: details.place_id,
+            lat: details.geometry.location.lat(),
+            lng: details.geometry.location.lng(),
+          });
+        } else {
+          console.error("Place Details error:", status);
+        }
       }
+    );
+  };
+
+  const handleSearch = async () => {
+    try {
+      const geoRes = await fetch(
+        `https://maps.googleapis.com/maps/api/geocode/json?address=${zip}&key=AIzaSyB52D9GjkLcAkdQ9iXxro6ptMsD7Nv6Lts`
+      );
+      const geoData = await geoRes.json();
+      const location = geoData.results?.[0]?.geometry?.location;
+
+      if (!location) {
+        alert("Could not find location for that ZIP code.");
+        return;
+      }
+
+      setCenter({ lat: location.lat, lng: location.lng });
+
+      const map = new window.google.maps.Map(document.createElement("div"));
+      const service = new window.google.maps.places.PlacesService(map);
+
+      service.nearbySearch(
+        {
+          location: location,
+          radius: 5000,
+          keyword: "eldercare",
+        },
+        (results, status) => {
+          if (status === window.google.maps.places.PlacesServiceStatus.OK) {
+            const places = results.map((place) => ({
+              name: place.name,
+              lat: place.geometry.location.lat(),
+              lng: place.geometry.location.lng(),
+              placeId: place.place_id,
+              address: place.vicinity || "",
+            }));
+            setMarkers(places);
+          } else {
+            console.error("Places API error:", status);
+          }
+        }
+      );
     } catch (err) {
-      console.error("Failed to fetch agencies:", err);
+      console.error("Search by ZIP failed:", err);
+      alert("Something went wrong. Please try again.");
     }
   };
 
-
-  /* We ask user for location and then show them stuff close to them */
   const handleUseMyLocation = () => {
     if (!navigator.geolocation) {
       alert("Geolocation not supported.");
@@ -95,8 +129,6 @@ export default function MapComponent() {
 
         service.nearbySearch(
           {
-            /* we use elderare as keyword to find any senior services. might need to change it 
-              depending on our needs */
             location: { lat: latitude, lng: longitude },
             radius: 5000,
             keyword: "eldercare",
@@ -107,6 +139,8 @@ export default function MapComponent() {
                 name: place.name,
                 lat: place.geometry.location.lat(),
                 lng: place.geometry.location.lng(),
+                placeId: place.place_id,
+                address: place.vicinity || "",
               }));
               setMarkers(nearbyPlaces);
             } else {
@@ -125,8 +159,8 @@ export default function MapComponent() {
   if (loadError) return <div>Error loading map</div>;
   if (!isLoaded) return <div>Loading map...</div>;
 
+  // Form for map using ZIP/Location and filter
   return (
-    
     <div className="map-wrapper">
       <div className="map-controls">
         <h2>Find Nearby Services</h2>
@@ -143,6 +177,11 @@ export default function MapComponent() {
           <button className="btn-location" onClick={handleUseMyLocation}>
             Use My Location
           </button>
+        
+          <button className="btn-filter" onClick={() => alert("Filters coming soon!")}>
+              ⚙️ Filter Services
+            </button>
+
         </div>
       </div>
 
@@ -157,23 +196,35 @@ export default function MapComponent() {
             <Marker
               key={i}
               position={{ lat: place.lat, lng: place.lng }}
-              onClick={() => setSelectedPlace(place)}
+              onClick={() => fetchPlaceDetails(place.placeId)}
             />
           ))}
-          {selectedPlace && (
-            <InfoWindow
-              position={{
-                lat: selectedPlace.lat,
-                lng: selectedPlace.lng,
-              }}
-              onCloseClick={() => setSelectedPlace(null)}
-            >
-              <div className="info-window">
-                <strong>{selectedPlace.name}</strong>
-              </div>
-            </InfoWindow>
-          )}
         </GoogleMap>
+
+        {selectedPlace && (
+          <div className="details-panel">
+            <button onClick={() => setSelectedPlace(null)} className="close-button">×</button>
+            <h3>{selectedPlace.name}</h3>
+            {selectedPlace.address && <p>{selectedPlace.address}</p>}
+            {selectedPlace.phone && <p>📞 {selectedPlace.phone}</p>}
+            {selectedPlace.website && (
+              <p>
+                <a href={selectedPlace.website} target="_blank" rel="noopener noreferrer">
+                  Visit Website
+                </a>
+              </p>
+            )}
+            <p>
+              <a
+                href={`https://www.google.com/maps/place/?q=place_id:${selectedPlace.placeId}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View in Google Maps
+              </a>
+            </p>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -43,7 +43,7 @@
   }
   
 
-  .map-controls button {
+  .map-controls .btn-zip {
     padding: 14px;
     font-size: 16px;
     font-weight: 500;
@@ -55,7 +55,7 @@
     transition: background-color 0.3s ease;
   }
   
-  .map-controls button:hover {
+  .map-controls .btn-zip:hover {
     background-color: #5a6976;
   }
   
@@ -87,4 +87,77 @@
     font-size: 16px;
     color: #333;
   }
+
+  .details-panel {
+    width: 280px;
+    background-color: #f3f3f0; /* Matches header background */
+    border: 1px solid #f3f3f0;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Softer shadow like nav */
+    color: #5a5a5a;
+    font-family: "Nunito", sans-serif;
+    flex-shrink: 0;
+  }
+
+  .details-panel h3 {
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-weight: 700;
+    color: #333;
+  }
+  
+  .details-panel p {
+    font-size: 15px;
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+  
+  .details-panel a {
+    color: #6c7a89;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .details-panel a:hover {
+    text-decoration: underline;
+  }
+  
+  .close-button {
+    background: none;
+    border: none;
+    font-size: 22px;
+    font-weight: bold;
+    color: #999;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-bottom: 10px;
+    transition: color 0.2s ease;
+  }
+  
+  .close-button:hover {
+    color: #666;
+  }
+  .btn-filter {
+    align-self: flex-start;
+    background-color: #eaf0f8;
+    border: 1px solid #b6c9db;
+    padding: 6px 12px;
+    font-size: 14px;
+    color: #5c7ea5;
+    cursor: pointer;
+    margin-top: 8px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+  
+  .btn-filter:hover {
+    background-color: #dce6f2;
+    border-color: #a0b8cd;
+  }
+  
   
