@@ -7,6 +7,7 @@ import { Link } from "react-router-dom"; // we using routers to switch pages
 import LogoSymbol from "./assets/LogoSymbol.png";
 import MapComponent from "./MapComponent.jsx";
 import Home from "./Home";
+import UserDashboard from "./UserDashboard.jsx";
 
 function App() {
   const [count, setCount] = useState(0); // Keeping count state as requested
@@ -50,6 +51,10 @@ function App() {
 
         {/* Home */}
         <Route path="/home" element={<Home />} />
+
+          {/* User Dashboard*/}
+          <Route path="/userdashboard" element={<UserDashboard />} />
+
       </Routes>
     </Router>
   );
