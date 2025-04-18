@@ -31,6 +31,9 @@ public class Resource {
     @Column(name = "email", length = 100) // Mapped to "email" column; max 100 characters.
     private String email;
 
+    @Column(name = "Website", length = 255) // Mapped to "street" column; max 255 characters.
+    private String Website;
+
     @Column(name = "street", length = 255) // Mapped to "street" column; max 255 characters.
     private String street;
 

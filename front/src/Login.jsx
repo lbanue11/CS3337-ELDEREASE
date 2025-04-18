@@ -17,7 +17,8 @@ const Login = () => {
     try {
       const response = await axios.post(
         "http://localhost:8080/api/auth/login",
-        { email, password, }
+        { email, password, },
+        { withCredentials: true }
       );
       if (response.status === 200 && response.data) {
         // Consider storing token or user info if backend sends it
