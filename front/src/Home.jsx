@@ -47,7 +47,7 @@ const Home = () => {
       <main className="home-intro-container fade-in">
         <h1 className="app-text-style">Welcome to Our Platform</h1>
         <p className="tagline-style">
-          Helping you connect, navigate, and explore with ease.
+          To helping Seniors connect, navigate, and explore with ease.
         </p>
 
         <section className="resources-section">
