@@ -8,6 +8,9 @@ import LogoSymbol from "./assets/LogoSymbol.png";
 import MapComponent from "./MapComponent.jsx";
 import Home from "./Home";
 import UserDashboard from "./UserDashboard.jsx";
+import Housing from "./resources/Housing";
+import Transportation from "./resources/Transportation";
+import Hotlinesafety from "./resources/Hotlinesafety";
 
 function App() {
   const [count, setCount] = useState(0); // Keeping count state as requested
@@ -52,9 +55,15 @@ function App() {
         {/* Home */}
         <Route path="/home" element={<Home />} />
 
-          {/* User Dashboard*/}
-          <Route path="/userdashboard" element={<UserDashboard />} />
+        {/* User Dashboard*/}
+        <Route path="/userdashboard" element={<UserDashboard />} />
 
+        {/*Resources - Housing*/}
+        <Route path="/housing" element={<Housing />} />
+        {/*Resources - Transportation*/}
+        <Route path="/transportation" element={<Transportation />} />
+        {/*Resources - Transportation*/}
+        <Route path="/hotlinesafety" element={<Hotlinesafety />} />
       </Routes>
     </Router>
   );

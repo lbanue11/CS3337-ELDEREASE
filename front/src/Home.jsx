@@ -44,12 +44,12 @@ const Home = () => {
         </nav>
       </header>
 
-      <main className="home-intro-container">
+      <main className="home-intro-container fade-in">
         <h1 className="app-text-style">Welcome to Our Platform</h1>
         <p className="tagline-style">
           Helping you connect, navigate, and explore with ease.
         </p>
-        
+
         <section className="resources-section">
           <h2 id="helpful-resources">Helpful Resources</h2>
           <div className="resources-grid">
@@ -58,23 +58,19 @@ const Home = () => {
               <p>
                 Find affordable senior housing options and emergency shelters.
               </p>
-              <Link to="/home">Explore</Link>
+              <Link to="/housing">Explore</Link>
             </div>
 
             <div className="resource-card">
               <h3>🚗 Transportation Support</h3>
-              <p>
-                Learn about senior ride services and mobility aid programs.
-              </p>
-              <Link to="/home">Get Rides</Link>
+              <p>Learn about senior ride services and mobility aid programs.</p>
+              <Link to="/transportation">Get Rides</Link>
             </div>
 
             <div className="resource-card">
               <h3>☎️ Hotlines & Safety</h3>
-              <p>
-                Contact elder abuse hotlines or mental health support.
-              </p>
-              <Link to="/home">See Hotlines</Link>
+              <p>Contact elder abuse hotlines or mental health support.</p>
+              <Link to="/hotlinesafety">See Hotlines</Link>
             </div>
           </div>
         </section>
