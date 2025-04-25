@@ -2,6 +2,7 @@ package group1.elderease_back.DTO;
 
 public class GoogleFavoriteRequest {
 
+
     private String placeId;
     private String name;
     private String address;

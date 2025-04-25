@@ -2,13 +2,24 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "./home.css";
 import LogoSymbol from "./assets/LogoSymbol.png";
+import axios from "axios";
 
 const Home = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    navigate("/login");
+    axios
+        .post("/api/auth/logout")
+        .then(() => {
+          // session is invalidated server-side
+          navigate("/login");
+        })
+        .catch((err) => {
+          console.error("Logout failed:", err);
+          // redirect anyway
+          navigate("/login");
+        });
   };
 
   return (
@@ -23,6 +34,9 @@ const Home = () => {
         </button>
 
         <nav className={`nav ${menuOpen ? "open" : ""}`}>
+          <Link to="/userdashboard" onClick={() => setMenuOpen(false)}>
+            Dashboard
+          </Link>
           <Link to="/map" onClick={() => setMenuOpen(false)}>
             Map
           </Link>

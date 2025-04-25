@@ -26,6 +26,7 @@ public class UserProfileController {
     @GetMapping("")
     public ResponseEntity<UserProfileRequest> getProfile(HttpSession session) {
 
+        //checks if user is logged in
         Integer userId = (Integer) session.getAttribute("userId");
         if(userId == null) {
             return ResponseEntity.status(401).build();

@@ -3,6 +3,7 @@ import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 import { getEldercareByZip } from "./api/eldercare";
 import xml2js from "xml2js";
 import "./MapComponent.css";
+import axios from "axios";
 
 const libraries = ["places"];
 
@@ -37,6 +38,28 @@ export default function MapComponent() {
   const [markers, setMarkers] = useState([]);
   const [selectedPlace, setSelectedPlace] = useState(null);
   const [selectedCategories, setSelectedCategories] = useState(["eldercare"]);
+
+  const handleFavorite = async () => {
+    if (!selectedPlace) return;
+    try {
+      await axios.post("/api/google-favorites", {
+        placeId:        selectedPlace.placeId,
+        name:           selectedPlace.name,
+        address:        selectedPlace.address,
+        phone:          selectedPlace.phone,
+        website:        selectedPlace.website,
+        googleMapsLink: `https://www.google.com/maps/place/?q=place_id:${selectedPlace.placeId}`,
+      });
+      alert("Added to favorites! ❤️");
+    } catch (err) {
+      console.error("Favorite error:", err);
+      alert(
+          err.response?.status === 401
+              ? "Please log in first."
+              : "Failed to add favorite."
+      );
+    }
+  };
 
   const toggleCategory = (value) => {
     setSelectedCategories((prev) =>
@@ -235,6 +258,11 @@ export default function MapComponent() {
                 </a>
               </p>
             )}
+
+            <button className="btn-favorite" onClick={handleFavorite}>
+              ❤️ Favorite
+            </button>
+
             <p>
               <a
                 href={`https://www.google.com/maps/place/?q=place_id:${selectedPlace.placeId}`}

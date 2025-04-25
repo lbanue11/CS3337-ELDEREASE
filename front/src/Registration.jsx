@@ -6,7 +6,8 @@ import password_icon from "./assets/password_icon.png";
 import person_icon from "./assets/person_icon.png";
 
 const Registration = () => {
-  const [name, setName] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -17,8 +18,8 @@ const Registration = () => {
     e.preventDefault();
     setError("");
      try {
-      const response = await axios.post('http://localhost:8080/api/auth/register', {
-        name, email, password, role: 'USER', // Gonna hardcode role as USER
+      const response = await axios.post('/api/auth/register', {
+          firstName, lastName, email, password, role: 'USER', // Gonna hardcode role as USER
       });
       console.log('Registration successful:', response.data);
       navigate('/login'); // Redirect to login after successful registration
@@ -44,18 +45,34 @@ const Registration = () => {
         <div className='input-group'>
            <div className='input-label-line'>
             <img src={person_icon} alt="Name icon"/>
-            <label htmlFor="name"> Name *</label>
+            <label htmlFor="firstName"> First Name *</label>
            </div>
           <input
             type="text"
-            id="name"
+            id="firstName"
             className='textbox'
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
             required
             aria-required="true"
           />
         </div>
+
+          <div className='input-group'>
+              <div className='input-label-line'>
+                  <img src={person_icon} alt="Name icon"/>
+                  <label htmlFor="lastName"> Last Name *</label>
+              </div>
+              <input
+                  type="text"
+                  id="lastName"
+                  className='textbox'
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                  required
+                  aria-required="true"
+              />
+          </div>
 
         <div className='input-group'>
           <div className='input-label-line'>

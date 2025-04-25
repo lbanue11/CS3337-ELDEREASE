@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState } from "react";
 import "./App.css";
 import Login from "./Login";
@@ -11,6 +12,9 @@ import UserDashboard from "./UserDashboard.jsx";
 import Housing from "./resources/Housing";
 import Transportation from "./resources/Transportation";
 import Hotlinesafety from "./resources/Hotlinesafety";
+
+axios.defaults.baseURL = 'http://localhost:8080';
+axios.defaults.withCredentials = true;
 
 function App() {
   const [count, setCount] = useState(0); // Keeping count state as requested

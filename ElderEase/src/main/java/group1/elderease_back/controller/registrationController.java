@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin(origins = "${frontend.url}")
+@CrossOrigin(origins = "${frontend.url}", allowCredentials = "true", allowedHeaders = "*")
 public class registrationController {
 
     private final UserRegistrationService userRegistrationService;

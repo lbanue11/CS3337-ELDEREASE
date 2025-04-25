@@ -16,9 +16,8 @@ const Login = () => {
     setError(""); // Clear previous errors on new submit
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/auth/login",
-        { email, password, },
-        { withCredentials: true }
+        "/api/auth/login",
+        { email, password, }
       );
       if (response.status === 200 && response.data) {
         // Consider storing token or user info if backend sends it

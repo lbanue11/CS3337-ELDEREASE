@@ -46,6 +46,11 @@ public class loginController {
     }
 
     // SHOULD ADD LOGOUT FUNCTIONALITY LATER
+    @PostMapping("/logout")
+    public ResponseEntity<Void> logout(HttpSession session) {
+        session.invalidate();
+        return ResponseEntity.noContent().build();
+    }
 
 
 }
