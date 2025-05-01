@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import "./resources.css"; // Assuming this CSS works for Housing too
+import "./resources.css"; 
 import LogoSymbol from "../assets/LogoSymbol.png";
 import HouseIcon from "../assets/house_icon.png";
-import { useTranslation } from 'react-i18next'; // Import useTranslation
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from "../components/LanguageSwitcher"; 
 
 // Original data array for non-translatable fields (link)
 const housingResourcesData = [
@@ -22,7 +23,7 @@ const housingResourcesData = [
 ];
 
 const Housing = () => {
-  const { t } = useTranslation(); // Get the t function
+  const { t } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -34,23 +35,26 @@ const Housing = () => {
     navigate("/login");
   };
 
-  // Assume 4 resources based on JSON structure
   const resourceIndices = [0, 1, 2, 3];
 
   return (
     <>
+      {/* ======== HEADER ========== */}
       <header className="header">
-        <Link to="/home" className="nav-logo">
-          {/* Reusing the key from hotlinesPage assuming logo alt is consistent */}
-          <img src={LogoSymbol} alt={t('hotlinesPage.header.logoAlt')} />
-        </Link>
+        {/* Mimic structure with header-left-group */}
+        <div className="header-left-group"> {/* <--- Added this wrapper div */}
+          <Link to="/home" className="nav-logo">
+            {/* Consider using common.logoAlt key here too if consistent */}
+            <img src={LogoSymbol} alt={t('hotlinesPage.header.logoAlt')} />
+          </Link>
+          <LanguageSwitcher /> {/* <--- Added the switcher */}
+        </div>
 
+        {/* --- Keep other header elements unchanged --- */}
         <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
           ☰
         </button>
-
         <nav className={`nav ${menuOpen ? "open" : ""}`}>
-          {/* Reusing keys from navbar section */}
           <Link to="/map" onClick={() => setMenuOpen(false)}>
             {t('navbar.map')}
           </Link>
@@ -63,10 +67,12 @@ const Housing = () => {
             {t('navbar.logout')}
           </button>
         </nav>
+        {/* --- End of unchanged elements --- */}
       </header>
+      {/* ======== END HEADER ========== */}
 
+      {/* ======== MAIN CONTENT (Unchanged) ========== */}
       <main className="elder-main fade-in">
-        {/* Using specific CSS classes might be better than reusing 'housing-*' if layouts differ */}
         <section className="housing-content">
           <div className="housing-header">
             <h1>
@@ -84,7 +90,6 @@ const Housing = () => {
                 <h2>{t(`housingPage.resources.${index}.name`)}</h2>
                 <p className="card-location">{t(`housingPage.resources.${index}.location`)}</p>
                 <p className="card-specialization">{t(`housingPage.resources.${index}.specialization`)}</p>
-                {/* Reusing key from hotlinesPage assuming link text is consistent */}
                 <a
                   href={housingResourcesData[index]?.link}
                   className="card-link"
@@ -98,6 +103,7 @@ const Housing = () => {
           </div>
         </section>
       </main>
+      {/* ======== END MAIN CONTENT ========== */}
     </>
   );
 };

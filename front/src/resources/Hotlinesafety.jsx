@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import "./resources.css";
+import "./resources.css"; 
 import LogoSymbol from "../assets/LogoSymbol.png";
 import HotlinesafetyIcon from "../assets/hotlinesafety_icon.png";
-import { useTranslation } from 'react-i18next'; // Import useTranslation
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from "../components/LanguageSwitcher";
 
 // Original data array - We keep it for non-translatable fields like link and phone
 const HotlinesafetyResourcesData = [
@@ -22,7 +23,7 @@ const HotlinesafetyResourcesData = [
 ];
 
 const Hotlinesafety = () => {
-  const { t } = useTranslation(); // Get the t function
+  const { t } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -31,28 +32,29 @@ const Hotlinesafety = () => {
   }, []);
 
   const handleLogout = () => {
-    // Consider using t function for any potential logout confirmation messages later
     navigate("/login");
   };
 
-  // Determine the number of resources based on a translated key count if possible,
-  // or assume a fixed number based on your JSON structure. Here we assume 3.
   const resourceIndices = [0, 1, 2];
 
   return (
     <>
+      {/* ======== HEADER ========== */}
       <header className="header">
-        {/* Note: Alt text differs from common.logoAlt. Using a specific key. */}
-        <Link to="/home" className="nav-logo">
-          <img src={LogoSymbol} alt={t('hotlinesPage.header.logoAlt')} />
-        </Link>
+        {/* 2. Mimic Home.js structure: Wrap logo Link and Switcher in header-left-group */}
+        <div className="header-left-group"> { }
+          <Link to="/home" className="nav-logo">
+            <img src={LogoSymbol} alt={t('hotlinesPage.header.logoAlt')} />
+          </Link>
+          <LanguageSwitcher /> {  }
+        </div>
 
+        {/* --- Keep other header elements unchanged --- */}
         <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
           ☰
         </button>
 
         <nav className={`nav ${menuOpen ? "open" : ""}`}>
-          {/* Reusing keys from navbar section */}
           <Link to="/map" onClick={() => setMenuOpen(false)}>
             {t('navbar.map')}
           </Link>
@@ -65,11 +67,14 @@ const Hotlinesafety = () => {
             {t('navbar.logout')}
           </button>
         </nav>
+        {/* --- End of unchanged elements --- */}
       </header>
+      {/* ======== END HEADER ========== */}
 
+      {/* ======== MAIN CONTENT ========== */}
       <main className="elder-main fade-in">
-        <section className="housing-content"> {/* Consider renaming CSS class if specific */}
-          <div className="housing-header"> {/* Consider renaming CSS class if specific */}
+        <section className="housing-content">
+          <div className="housing-header">
             <h1>
               <img
                 src={HotlinesafetyIcon}
@@ -79,20 +84,17 @@ const Hotlinesafety = () => {
               {t('hotlinesPage.pageTitle')}
             </h1>
           </div>
-          <p className="housing-text"> {/* Consider renaming CSS class if specific */}
+          <p className="housing-text">
             {t('hotlinesPage.intro')}
           </p>
 
-          <div className="housing-cards-container"> {/* Consider renaming CSS class if specific */}
-            {/* Loop based on indices to match JSON structure */}
+          <div className="housing-cards-container">
             {resourceIndices.map((index) => (
-              <div className="housing-card" key={index}> {/* Consider renaming CSS class if specific */}
+              <div className="housing-card" key={index}>
                 <h2>{t(`hotlinesPage.resources.${index}.name`)}</h2>
                 <p className="card-location">{t(`hotlinesPage.resources.${index}.location`)}</p>
                 <p className="card-specialization">{t(`hotlinesPage.resources.${index}.specialization`)}</p>
-                {/* Get phone number from original data array */}
                 <p className="card-phone">{t('hotlinesPage.card.phonePrefix')}{HotlinesafetyResourcesData[index]?.phone}</p>
-                {/* Get link from original data array */}
                 <a
                   href={HotlinesafetyResourcesData[index]?.link}
                   className="card-link"
@@ -106,6 +108,7 @@ const Hotlinesafety = () => {
           </div>
         </section>
       </main>
+      {/* ======== END MAIN CONTENT ========== */}
     </>
   );
 };

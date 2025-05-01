@@ -1,46 +1,114 @@
 {
-    "common": {
-      "logoAlt": "Logo"
-    },
     "navbar": {
       "dashboard": "Bảng điều khiển",
       "map": "Bản đồ",
       "resources": "Tài nguyên",
-      "logout": "Đăng xuất",
-      "home": "Trang chủ"
+      "logout": "Đăng xuất"
     },
     "home": {
-      "welcome": "Chào mừng đến với ElderLOS",
-      "tagline": "Kết nối người cao tuổi với các tài nguyên thiết yếu ở Los Angeles.",
+      "welcome": "Chào mừng đến với Nền tảng của chúng tôi",
+      "tagline": "Giúp người cao tuổi kết nối, điều hướng và khám phá một cách dễ dàng.",
       "helpfulResources": "Tài nguyên Hữu ích",
       "resources": {
         "housing": {
-          "title": "Nhà ở",
-          "description": "Tìm các lựa chọn nhà ở an toàn và hỗ trợ cho người cao tuổi.",
-          "link": "Khám phá Nhà ở"
+          "title": "🏠 Hỗ trợ Nhà ở",
+          "description": "Tìm các lựa chọn nhà ở giá cả phải chăng cho người cao tuổi và nơi ở tạm khẩn cấp.",
+          "link": "Khám phá"
         },
         "transportation": {
-          "title": "Đi lại",
-          "description": "Tiếp cận các dịch vụ vận chuyển đáng tin cậy cho các cuộc hẹn và việc vặt.",
-          "link": "Xem Vận chuyển"
+          "title": "🚗 Hỗ trợ Đi lại",
+          "description": "Tìm hiểu về các dịch vụ đưa đón người cao tuổi và chương trình hỗ trợ di chuyển.",
+          "link": "Tìm hiểu thêm"
         },
         "hotlines": {
-          "title": "Đường dây nóng & An toàn",
-          "description": "Nhận hỗ trợ ngay lập tức và các nguồn lực an toàn cho người cao tuổi.",
-          "link": "Tìm Đường dây nóng"
+          "title": "☎️ Đường dây nóng & An toàn",
+          "description": "Liên hệ đường dây nóng chống lạm dụng người cao tuổi hoặc hỗ trợ sức khỏe tâm thần.",
+          "link": "Xem Đường dây nóng"
         }
       }
     },
-    "dashboard": {
-      "loading": "Đang tải hồ sơ của bạn…",
-      "editProfile": "Chỉnh sửa Hồ sơ"
+    "common": {
+      "logoAlt": "Logo"
+    },
+    "hotlinesPage": {
+      "header": {
+        "logoAlt": "Logo ElderEase"
+      },
+      "titleIconAlt": "Biểu tượng Đường dây nóng & An toàn",
+      "pageTitle": "Đường dây nóng & An toàn",
+      "intro": "Các đường dây nóng đáng tin cậy và tài nguyên an toàn cho người cao tuổi — sự giúp đỡ chỉ cách một cuộc gọi.",
+      "card": {
+        "phonePrefix": "📞 ",
+        "moreInfoLink": "Thông tin thêm →"
+      },
+      "resources": [
+        {
+          "name": "Dịch vụ Bảo vệ Người lớn Quận Los Angeles (APS)",
+          "location": "Los Angeles, CA",
+          "specialization": "Cung cấp hỗ trợ 24/7 cho người lớn tuổi và người phụ thuộc có thể là nạn nhân của lạm dụng, bỏ bê hoặc bóc lột. APS điều tra các báo cáo và cung cấp dịch vụ bảo vệ để đảm bảo an toàn và phúc lợi cho người lớn dễ bị tổn thương."
+        },
+        {
+          "name": "Sở Lão khoa Thành phố Los Angeles – Thông tin & Hỗ trợ",
+          "location": "Los Angeles, CA",
+          "specialization": "Cung cấp thông tin và giới thiệu cho người cao tuổi về các dịch vụ khác nhau, bao gồm đi lại, dinh dưỡng, hỗ trợ người chăm sóc, và nhiều hơn nữa. Đường dây nóng này kết nối người lớn tuổi và người chăm sóc của họ với các tài nguyên thúc đẩy cuộc sống độc lập."
+        },
+        {
+          "name": "Chương trình Thanh tra Chăm sóc Dài hạn – WISE & Healthy Aging",
+          "location": "Los Angeles, CA",
+          "specialization": "Bênh vực cho cư dân trong các cơ sở chăm sóc dài hạn, giải quyết các mối quan tâm liên quan đến chất lượng chăm sóc, quyền của cư dân, và lạm dụng hoặc bỏ bê. Chương trình làm việc để giải quyết các khiếu nại và cải thiện chất lượng cuộc sống cho người cao tuổi trong các cơ sở chăm sóc."
+        }
+      ]
+    },
+    "housingPage": {
+      "titleIconAlt": "Biểu tượng Nhà",
+      "pageTitle": "Hỗ trợ Nhà ở",
+      "intro": "Tại đây bạn có thể tìm thấy các lựa chọn nhà ở giá cả phải chăng cho người cao tuổi và nơi ở tạm khẩn cấp.",
+      "resources": [
+        {
+          "name": "Tài nguyên Nhà ở Cao cấp Quận Los Angeles",
+          "location": "Los Angeles, CA",
+          "specialization": "Trang web Trung tâm Tài nguyên Nhà ở Quận Los Angeles giúp cung cấp quyền truy cập thông tin và công cụ để tìm kiếm nhà ở và tài nguyên cho người cao tuổi. Vui lòng tiếp tục kiểm tra trang web này để biết thông tin mới. Liên kết đến các trang web và cơ quan quan trọng khác cũng như các công cụ định vị nhà ở được cung cấp dưới đây."
+        },
+        {
+          "name": "Cơ quan Quản lý Nhà ở Thành phố Los Angeles (HACLA)",
+          "location": "Los Angeles, CA",
+          "specialization": "HACLA cung cấp một loạt các chương trình cho người thu nhập thấp, người vô gia cư, người khuyết tật, trẻ em và người lớn tuổi. Để đăng ký nhà ở công cộng hoặc nhận thông tin cập nhật về Danh sách Chờ Mục 8, bạn có thể liên hệ với văn phòng chính của họ hoặc truy cập trang web của họ."
+        },
+        {
+          "name": "Nhà ở Giá cả phải chăng cho Người cao tuổi (ALA)",
+          "location": "Los Angeles, CA",
+          "specialization": "ALA cung cấp một số chương trình phù hợp cho người cao tuổi: Nhà ở Chung: Kết nối người cao tuổi để ở chung nhà, chuyển đổi phòng trống thành không gian sống giá cả phải chăng. Nhà ở Hỗ trợ Thường xuyên: Cung cấp nhà ở với nhân viên xã hội tại chỗ cho người cao tuổi trải qua tình trạng vô gia cư mãn tính."
+        },
+        {
+          "name": "Sở Lão khoa & Người khuyết tật Quận Los Angeles",
+          "location": "Los Angeles, CA",
+          "specialization": "Sở này cung cấp danh sách các lựa chọn nhà ở giá cả phải chăng dành riêng cho người lớn tuổi trên 65 tuổi, bao gồm Chương trình Voucher Lựa chọn Nhà ở Mục 8 và hỗ trợ tiện ích cho những người cần giúp đỡ về hóa đơn tiện ích."
+        }
+      ]
+    },
+    "transportationPage": {
+      "titleIconAlt": "Biểu tượng Đi lại",
+      "pageTitle": "Hỗ trợ Đi lại",
+      "intro": "Khám phá các chương trình đáng tin cậy cung cấp các chuyến đi an toàn và giá cả phải chăng cho người cao tuổi và cá nhân có khả năng di chuyển hạn chế.",
+      "resources": [
+        {
+          "name": "Dịch vụ Đi lại và Di động Quận Los Angeles",
+          "location": "Los Angeles, CA",
+          "specialization": "Để tích cực hỗ trợ một Quận Los Angeles thân thiện với người cao tuổi hơn, các dịch vụ vận chuyển và di động này dành riêng cho người lớn tuổi và người phụ thuộc."
+        },
+        {
+          "name": "Sở Lão khoa Thành phố Los Angeles - Dịch vụ Đi lại",
+          "location": "Los Angeles, CA",
+          "specialization": "Thành phố Los Angeles cung cấp các dịch vụ vận chuyển chi phí thấp và dễ tiếp cận cho người cao tuổi, bao gồm đưa đón tận nơi, vận chuyển phụ trợ (paratransit) và chương trình CityRide để giúp đỡ việc vặt, các cuộc hẹn, và nhiều hơn nữa."
+        }
+      ]
     },
     "mapPage": {
+      "loadError": "Lỗi tải bản đồ",
+      "loading": "Đang tải bản đồ...",
       "controls": {
-        "title": "Tìm Dịch vụ Lân cận",
+        "title": "Tìm Dịch vụ Chăm sóc Người cao tuổi Lân cận",
         "zipPlaceholder": "Nhập mã ZIP",
-        "searchButton": "Tìm kiếm",
-        "useMyLocationButton": "Sử dụng Vị trí của tôi",
         "categories": {
           "nursingHome": "Viện dưỡng lão",
           "homeCare": "Chăm sóc tại nhà",
@@ -48,40 +116,37 @@
           "hospice": "Chăm sóc cuối đời",
           "transportation": "Đi lại",
           "defaultSearchKeyword": "chăm sóc người cao tuổi"
-        }
+        },
+        "searchButton": "Tìm kiếm",
+        "useMyLocationButton": "Sử dụng Vị trí của tôi"
       },
       "details": {
-        "closeAlt": "Đóng chi tiết",
-        "visitWebsiteLink": "Truy cập trang web",
-        "favoriteButton": "Thêm vào Yêu thích",
+        "phonePrefix": "📞 ",
+        "visitWebsiteLink": "Truy cập Trang web",
+        "favoriteButton": "❤️ Yêu thích",
         "viewInGoogleMapsLink": "Xem trên Google Maps",
         "leaveReviewTitle": "Để lại Đánh giá",
-        "reviewPlaceholder": "Viết đánh giá của bạn tại đây...",
-        "ratingLabel": "Xếp hạng",
+        "reviewPlaceholder": "Viết đánh giá của bạn...",
         "ratingOptions": {
-          "star": "{{count}} Sao"
+          "star": "{{count}} Sao",
+          "star_plural": "{{count}} Sao"
         },
+        "ratingLabel": "Xếp hạng",
         "submitReviewButton": "Gửi Đánh giá",
         "reviewsTitle": "Đánh giá",
         "noReviews": "Chưa có đánh giá nào.",
-        "reviewUserFallback": "Người dùng ẩn danh"
+        "reviewUserFallback": "Người dùng",
+        "closeAlt": "Đóng chi tiết"
       },
       "alerts": {
         "reviewSubmitFailed": "Gửi đánh giá thất bại.",
-        "favoriteAdded": "Đã thêm vào yêu thích.",
-        "pleaseLogIn": "Vui lòng đăng nhập để thêm vào yêu thích.",
+        "favoriteAdded": "Đã thêm vào yêu thích! ❤️",
+        "pleaseLogIn": "Vui lòng đăng nhập trước.",
         "favoriteFailed": "Thêm yêu thích thất bại.",
-        "zipNotFound": "Không tìm thấy mã ZIP hoặc không hợp lệ.",
-        "searchFailed": "Tìm kiếm thất bại. Vui lòng thử lại.",
-        "geolocationNotSupported": "Trình duyệt này không hỗ trợ định vị địa lý.",
-        "locationError": "Không thể lấy vị trí."
-      },
-      "loadError": "Lỗi tải bản đồ.",
-      "loading": "Đang tải bản đồ..."
-    },
-    "hotlinesPage": {
-      "card": {
-          "phonePrefix": "Điện thoại: "
-        }
+        "zipNotFound": "Không thể tìm thấy vị trí cho mã ZIP đó.",
+        "searchFailed": "Đã xảy ra lỗi. Vui lòng thử lại.",
+        "geolocationNotSupported": "Không hỗ trợ định vị địa lý.",
+        "locationError": "Không thể lấy vị trí của bạn."
+      }
     }
   }

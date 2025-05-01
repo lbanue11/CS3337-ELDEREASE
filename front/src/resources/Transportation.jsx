@@ -3,7 +3,8 @@ import { useNavigate, Link } from "react-router-dom";
 import "./resources.css"; // Assuming shared CSS
 import LogoSymbol from "../assets/LogoSymbol.png";
 import TransportationIcon from "../assets/transportation_icon.png";
-import { useTranslation } from 'react-i18next'; // Import useTranslation
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from "../components/LanguageSwitcher";
 
 // Original data array for non-translatable fields (link)
 const transportationResourcesData = [
@@ -16,7 +17,7 @@ const transportationResourcesData = [
 ];
 
 const Transportation = () => {
-  const { t } = useTranslation(); // Get the t function
+  const { t } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -28,23 +29,25 @@ const Transportation = () => {
     navigate("/login");
   };
 
-  // Assume 2 resources based on JSON structure
   const resourceIndices = [0, 1];
 
   return (
     <>
+      {/* ======== HEADER ========== */}
       <header className="header">
-        <Link to="/home" className="nav-logo">
-          {/* Reusing key from hotlinesPage assuming logo alt is consistent */}
-          <img src={LogoSymbol} alt={t('hotlinesPage.header.logoAlt')} />
-        </Link>
+        {}
+        <div className="header-left-group">
+          <Link to="/home" className="nav-logo">
+            <img src={LogoSymbol} alt={t('hotlinesPage.header.logoAlt')} />
+          </Link>
+          <LanguageSwitcher /> {}
+        </div>
 
+        {/* --- Keep other header elements unchanged --- */}
         <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
           ☰
         </button>
-
         <nav className={`nav ${menuOpen ? "open" : ""}`}>
-          {/* Reusing keys from navbar section */}
           <Link to="/map" onClick={() => setMenuOpen(false)}>
             {t('navbar.map')}
           </Link>
@@ -57,10 +60,12 @@ const Transportation = () => {
             {t('navbar.logout')}
           </button>
         </nav>
+        {/* --- End of unchanged elements --- */}
       </header>
+      {/* ======== END HEADER ========== */}
 
+      {/* ======== MAIN CONTENT (Unchanged) ========== */}
       <main className="elder-main fade-in">
-        {/* Using specific CSS classes might be better */}
         <section className="housing-content">
           <div className="housing-header">
             <h1>
@@ -82,7 +87,6 @@ const Transportation = () => {
                 <h2>{t(`transportationPage.resources.${index}.name`)}</h2>
                 <p className="card-location">{t(`transportationPage.resources.${index}.location`)}</p>
                 <p className="card-specialization">{t(`transportationPage.resources.${index}.specialization`)}</p>
-                {/* Reusing key from hotlinesPage assuming link text is consistent */}
                 <a
                   href={transportationResourcesData[index]?.link}
                   className="card-link"
@@ -96,6 +100,7 @@ const Transportation = () => {
           </div>
         </section>
       </main>
+      {/* ======== END MAIN CONTENT ========== */}
     </>
   );
 };
