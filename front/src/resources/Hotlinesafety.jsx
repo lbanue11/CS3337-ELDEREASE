@@ -3,35 +3,26 @@ import { useNavigate, Link } from "react-router-dom";
 import "./resources.css";
 import LogoSymbol from "../assets/LogoSymbol.png";
 import HotlinesafetyIcon from "../assets/hotlinesafety_icon.png";
+import { useTranslation } from 'react-i18next'; // Import useTranslation
 
-const HotlinesafetyResources = [
+// Original data array - We keep it for non-translatable fields like link and phone
+const HotlinesafetyResourcesData = [
   {
-    name: "Los Angeles County Adult Protective Services (APS)",
-    location: "Los Angeles, CA",
-    specialization:
-      "Provides 24/7 support for older and dependent adults who may be victims of abuse, neglect, or exploitation. APS investigates reports and offers protective services to ensure the safety and well-being of vulnerable adults.",
     link: "https://ad.lacounty.gov/services/adult-protective-services/",
     phone: "1-877-4R-SENIORS (1-877-477-3646)",
   },
   {
-    name: "City of Los Angeles Department of Aging – Information & Assistance",
-    location: "Los Angeles, CA",
-    specialization:
-      "Offers information and referrals for seniors on various services, including transportation, nutrition, caregiver support, and more. This hotline connects older adults and their caregivers to resources that promote independent living.",
     link: "https://aging.lacity.gov/",
     phone: "1-800-510-2020",
   },
   {
-    name: "Long-Term Care Ombudsman Program – WISE & Healthy Aging",
-    location: "Los Angeles, CA",
-    specialization:
-      "Advocates for residents in long-term care facilities, addressing concerns related to quality of care, residents' rights, and abuse or neglect. The program works to resolve complaints and improve the quality of life for seniors in care facilities.",
     link: "https://www.wiseandhealthyaging.org/elder-abuse-prevention",
     phone: "1-800-334-WISE (1-800-334-9473)",
   },
 ];
 
 const Hotlinesafety = () => {
+  const { t } = useTranslation(); // Get the t function
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -40,14 +31,20 @@ const Hotlinesafety = () => {
   }, []);
 
   const handleLogout = () => {
+    // Consider using t function for any potential logout confirmation messages later
     navigate("/login");
   };
+
+  // Determine the number of resources based on a translated key count if possible,
+  // or assume a fixed number based on your JSON structure. Here we assume 3.
+  const resourceIndices = [0, 1, 2];
 
   return (
     <>
       <header className="header">
+        {/* Note: Alt text differs from common.logoAlt. Using a specific key. */}
         <Link to="/home" className="nav-logo">
-          <img src={LogoSymbol} alt="ElderEase Logo" />
+          <img src={LogoSymbol} alt={t('hotlinesPage.header.logoAlt')} />
         </Link>
 
         <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
@@ -55,8 +52,9 @@ const Hotlinesafety = () => {
         </button>
 
         <nav className={`nav ${menuOpen ? "open" : ""}`}>
+          {/* Reusing keys from navbar section */}
           <Link to="/map" onClick={() => setMenuOpen(false)}>
-            Map
+            {t('navbar.map')}
           </Link>
           <button
             onClick={() => {
@@ -64,42 +62,44 @@ const Hotlinesafety = () => {
               handleLogout();
             }}
           >
-            Logout
+            {t('navbar.logout')}
           </button>
         </nav>
       </header>
 
       <main className="elder-main fade-in">
-        <section className="housing-content">
-          <div className="housing-header">
+        <section className="housing-content"> {/* Consider renaming CSS class if specific */}
+          <div className="housing-header"> {/* Consider renaming CSS class if specific */}
             <h1>
               <img
                 src={HotlinesafetyIcon}
-                alt="Hotlinesafety Icon"
+                alt={t('hotlinesPage.titleIconAlt')}
                 className="section-icon"
               />
-              Hotlines & Safety
+              {t('hotlinesPage.pageTitle')}
             </h1>
           </div>
-          <p className="housing-text">
-            Trusted hotlines and safety resources for seniors — help is just a
-            call away.
+          <p className="housing-text"> {/* Consider renaming CSS class if specific */}
+            {t('hotlinesPage.intro')}
           </p>
 
-          <div className="housing-cards-container">
-            {HotlinesafetyResources.map((resource, index) => (
-              <div className="housing-card" key={index}>
-                <h2>{resource.name}</h2>
-                <p className="card-location">{resource.location}</p>
-                <p className="card-specialization">{resource.specialization}</p>
-                <p className="card-phone">📞 {resource.phone}</p>
+          <div className="housing-cards-container"> {/* Consider renaming CSS class if specific */}
+            {/* Loop based on indices to match JSON structure */}
+            {resourceIndices.map((index) => (
+              <div className="housing-card" key={index}> {/* Consider renaming CSS class if specific */}
+                <h2>{t(`hotlinesPage.resources.${index}.name`)}</h2>
+                <p className="card-location">{t(`hotlinesPage.resources.${index}.location`)}</p>
+                <p className="card-specialization">{t(`hotlinesPage.resources.${index}.specialization`)}</p>
+                {/* Get phone number from original data array */}
+                <p className="card-phone">{t('hotlinesPage.card.phonePrefix')}{HotlinesafetyResourcesData[index]?.phone}</p>
+                {/* Get link from original data array */}
                 <a
-                  href={resource.link}
+                  href={HotlinesafetyResourcesData[index]?.link}
                   className="card-link"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  More Info →
+                  {t('hotlinesPage.card.moreInfoLink')}
                 </a>
               </div>
             ))}

@@ -1,0 +1,87 @@
+{
+    "common": {
+      "logoAlt": "Լոգո"
+    },
+    "navbar": {
+      "dashboard": "Կառավարման վահանակ",
+      "map": "Քարտեզ",
+      "resources": "Ռեսուրսներ",
+      "logout": "Դուրս գալ",
+      "home": "Գլխավոր"
+    },
+    "home": {
+      "welcome": "Բարի գալուստ ElderLOS",
+      "tagline": "Կապելով տարեցներին Լոս Անջելեսի էական ռեսուրսների հետ:",
+      "helpfulResources": "Օգտակար ռեսուրսներ",
+      "resources": {
+        "housing": {
+          "title": "Բնակարան",
+          "description": "Գտեք անվտանգ և աջակցող բնակարանային տարբերակներ տարեցների համար:",
+          "link": "Ուսումնասիրել բնակարանային տարբերակները"
+        },
+        "transportation": {
+          "title": "Տրանսպորտ",
+          "description": "Մուտք գործեք հուսալի տրանսպորտային ծառայություններ նշանակումների և գործերի համար:",
+          "link": "Դիտել տրանսպորտը"
+        },
+        "hotlines": {
+          "title": "Թեժ գծեր և անվտանգություն",
+          "description": "Ստացեք անհապաղ աջակցություն և անվտանգության ռեսուրսներ տարեցների համար:",
+          "link": "Գտնել թեժ գծեր"
+        }
+      }
+    },
+    "dashboard": {
+      "loading": "Բեռնվում է ձեր պրոֆիլը…",
+      "editProfile": "Խմբագրել պրոֆիլը"
+    },
+    "mapPage": {
+      "controls": {
+        "title": "Գտնել մոտակա ծառայությունները",
+        "zipPlaceholder": "Մուտքագրեք փոստային կոդը",
+        "searchButton": "Որոնել",
+        "useMyLocationButton": "Օգտագործել իմ տեղադիրքը",
+        "categories": {
+          "nursingHome": "Ծերանոց",
+          "homeCare": "Տնային խնամք",
+          "assistedLiving": "Օժանդակ բնակություն",
+          "hospice": "Հոսպիս",
+          "transportation": "Տրանսպորտ",
+          "defaultSearchKeyword": "տարեցների խնամք"
+        }
+      },
+      "details": {
+        "closeAlt": "Փակել մանրամասները",
+        "visitWebsiteLink": "Այցելել կայք",
+        "favoriteButton": "Ավելացնել ընտրյալներում",
+        "viewInGoogleMapsLink": "Դիտել Google Maps-ում",
+        "leaveReviewTitle": "Թողնել կարծիք",
+        "reviewPlaceholder": "Գրեք ձեր կարծիքը այստեղ...",
+        "ratingLabel": "Գնահատական",
+        "ratingOptions": {
+          "star": "{{count}} Աստղ"
+        },
+        "submitReviewButton": "Ուղարկել կարծիքը",
+        "reviewsTitle": "Կարծիքներ",
+        "noReviews": "Դեռ կարծիքներ չկան:",
+        "reviewUserFallback": "Անանուն օգտատեր"
+      },
+      "alerts": {
+        "reviewSubmitFailed": "Կարծիքի ուղարկումը ձախողվեց:",
+        "favoriteAdded": "Ավելացված է ընտրյալներում:",
+        "pleaseLogIn": "Խնդրում ենք մուտք գործել՝ ընտրյալներում ավելացնելու համար:",
+        "favoriteFailed": "Ընտրյալներում ավելացնելը ձախողվեց:",
+        "zipNotFound": "Փոստային կոդը չի գտնվել կամ անվավեր է:",
+        "searchFailed": "Որոնումը ձախողվեց: Խնդրում ենք նորից փորձել:",
+        "geolocationNotSupported": "Այս զննարկիչը չի աջակցում տեղորոշումը:",
+        "locationError": "Չհաջողվեց ստանալ տեղադիրքը:"
+      },
+      "loadError": "Քարտեզի բեռնման սխալ:",
+      "loading": "Բեռնվում է քարտեզը..."
+    },
+    "hotlinesPage": {
+      "card": {
+          "phonePrefix": "Հեռախոս՝ "
+        }
+    }
+  }

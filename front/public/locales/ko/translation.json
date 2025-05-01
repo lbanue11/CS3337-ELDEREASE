@@ -1,0 +1,87 @@
+{
+    "common": {
+      "logoAlt": "로고"
+    },
+    "navbar": {
+      "dashboard": "대시보드",
+      "map": "지도",
+      "resources": "리소스",
+      "logout": "로그아웃",
+      "home": "홈"
+    },
+    "home": {
+      "welcome": "ElderLOS에 오신 것을 환영합니다",
+      "tagline": "로스앤젤레스의 노인분들과 필수 자원을 연결합니다.",
+      "helpfulResources": "유용한 리소스",
+      "resources": {
+        "housing": {
+          "title": "주거",
+          "description": "노인분들을 위한 안전하고 지원적인 주거 옵션을 찾아보세요.",
+          "link": "주거 정보 탐색"
+        },
+        "transportation": {
+          "title": "교통",
+          "description": "약속 및 심부름을 위한 신뢰할 수 있는 교통 서비스에 접근하세요.",
+          "link": "교통 정보 보기"
+        },
+        "hotlines": {
+          "title": "핫라인 및 안전",
+          "description": "노인분들을 위한 즉각적인 지원 및 안전 자원을 받으세요.",
+          "link": "핫라인 찾기"
+        }
+      }
+    },
+    "dashboard": {
+      "loading": "프로필을 로드하는 중…",
+      "editProfile": "프로필 수정"
+    },
+    "mapPage": {
+      "controls": {
+        "title": "주변 서비스 찾기",
+        "zipPlaceholder": "우편번호 입력",
+        "searchButton": "검색",
+        "useMyLocationButton": "내 위치 사용",
+        "categories": {
+          "nursingHome": "요양원",
+          "homeCare": "재가 돌봄",
+          "assistedLiving": "생활 지원 주택",
+          "hospice": "호스피스",
+          "transportation": "교통",
+          "defaultSearchKeyword": "노인 돌봄"
+        }
+      },
+      "details": {
+        "closeAlt": "세부 정보 닫기",
+        "visitWebsiteLink": "웹사이트 방문",
+        "favoriteButton": "즐겨찾기에 추가",
+        "viewInGoogleMapsLink": "Google 지도에서 보기",
+        "leaveReviewTitle": "리뷰 남기기",
+        "reviewPlaceholder": "여기에 리뷰를 작성하세요...",
+        "ratingLabel": "평점",
+        "ratingOptions": {
+          "star": "별 {{count}}개"
+        },
+        "submitReviewButton": "리뷰 제출",
+        "reviewsTitle": "리뷰",
+        "noReviews": "아직 리뷰가 없습니다.",
+        "reviewUserFallback": "익명 사용자"
+      },
+      "alerts": {
+        "reviewSubmitFailed": "리뷰 제출에 실패했습니다.",
+        "favoriteAdded": "즐겨찾기에 추가되었습니다.",
+        "pleaseLogIn": "즐겨찾기에 추가하려면 로그인하세요.",
+        "favoriteFailed": "즐겨찾기 추가에 실패했습니다.",
+        "zipNotFound": "우편번호를 찾을 수 없거나 잘못되었습니다.",
+        "searchFailed": "검색에 실패했습니다. 다시 시도해 주세요.",
+        "geolocationNotSupported": "이 브라우저는 위치 정보를 지원하지 않습니다.",
+        "locationError": "위치를 가져올 수 없습니다."
+      },
+      "loadError": "지도 로드 오류.",
+      "loading": "지도 로드 중..."
+    },
+    "hotlinesPage": {
+      "card": {
+          "phonePrefix": "전화번호: "
+        }
+    }
+  }

@@ -1,0 +1,87 @@
+{
+    "common": {
+      "logoAlt": "Logo"
+    },
+    "navbar": {
+      "dashboard": "Bảng điều khiển",
+      "map": "Bản đồ",
+      "resources": "Tài nguyên",
+      "logout": "Đăng xuất",
+      "home": "Trang chủ"
+    },
+    "home": {
+      "welcome": "Chào mừng đến với ElderLOS",
+      "tagline": "Kết nối người cao tuổi với các tài nguyên thiết yếu ở Los Angeles.",
+      "helpfulResources": "Tài nguyên Hữu ích",
+      "resources": {
+        "housing": {
+          "title": "Nhà ở",
+          "description": "Tìm các lựa chọn nhà ở an toàn và hỗ trợ cho người cao tuổi.",
+          "link": "Khám phá Nhà ở"
+        },
+        "transportation": {
+          "title": "Đi lại",
+          "description": "Tiếp cận các dịch vụ vận chuyển đáng tin cậy cho các cuộc hẹn và việc vặt.",
+          "link": "Xem Vận chuyển"
+        },
+        "hotlines": {
+          "title": "Đường dây nóng & An toàn",
+          "description": "Nhận hỗ trợ ngay lập tức và các nguồn lực an toàn cho người cao tuổi.",
+          "link": "Tìm Đường dây nóng"
+        }
+      }
+    },
+    "dashboard": {
+      "loading": "Đang tải hồ sơ của bạn…",
+      "editProfile": "Chỉnh sửa Hồ sơ"
+    },
+    "mapPage": {
+      "controls": {
+        "title": "Tìm Dịch vụ Lân cận",
+        "zipPlaceholder": "Nhập mã ZIP",
+        "searchButton": "Tìm kiếm",
+        "useMyLocationButton": "Sử dụng Vị trí của tôi",
+        "categories": {
+          "nursingHome": "Viện dưỡng lão",
+          "homeCare": "Chăm sóc tại nhà",
+          "assistedLiving": "Sống có hỗ trợ",
+          "hospice": "Chăm sóc cuối đời",
+          "transportation": "Đi lại",
+          "defaultSearchKeyword": "chăm sóc người cao tuổi"
+        }
+      },
+      "details": {
+        "closeAlt": "Đóng chi tiết",
+        "visitWebsiteLink": "Truy cập trang web",
+        "favoriteButton": "Thêm vào Yêu thích",
+        "viewInGoogleMapsLink": "Xem trên Google Maps",
+        "leaveReviewTitle": "Để lại Đánh giá",
+        "reviewPlaceholder": "Viết đánh giá của bạn tại đây...",
+        "ratingLabel": "Xếp hạng",
+        "ratingOptions": {
+          "star": "{{count}} Sao"
+        },
+        "submitReviewButton": "Gửi Đánh giá",
+        "reviewsTitle": "Đánh giá",
+        "noReviews": "Chưa có đánh giá nào.",
+        "reviewUserFallback": "Người dùng ẩn danh"
+      },
+      "alerts": {
+        "reviewSubmitFailed": "Gửi đánh giá thất bại.",
+        "favoriteAdded": "Đã thêm vào yêu thích.",
+        "pleaseLogIn": "Vui lòng đăng nhập để thêm vào yêu thích.",
+        "favoriteFailed": "Thêm yêu thích thất bại.",
+        "zipNotFound": "Không tìm thấy mã ZIP hoặc không hợp lệ.",
+        "searchFailed": "Tìm kiếm thất bại. Vui lòng thử lại.",
+        "geolocationNotSupported": "Trình duyệt này không hỗ trợ định vị địa lý.",
+        "locationError": "Không thể lấy vị trí."
+      },
+      "loadError": "Lỗi tải bản đồ.",
+      "loading": "Đang tải bản đồ..."
+    },
+    "hotlinesPage": {
+      "card": {
+          "phonePrefix": "Điện thoại: "
+        }
+    }
+  }

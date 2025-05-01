@@ -1,0 +1,87 @@
+{
+    "common": {
+      "logoAlt": "Logo"
+    },
+    "navbar": {
+      "dashboard": "Dashboard",
+      "map": "Mapa",
+      "resources": "Mga Mapagkukunan",
+      "logout": "Mag-logout",
+      "home": "Home"
+    },
+    "home": {
+      "welcome": "Maligayang pagdating sa ElderLOS",
+      "tagline": "Pag-uugnay sa mga nakatatanda sa mahahalagang mapagkukunan sa Los Angeles.",
+      "helpfulResources": "Mga Nakatutulong na Mapagkukunan",
+      "resources": {
+        "housing": {
+          "title": "Pabahay",
+          "description": "Maghanap ng ligtas at sumusuportang mga opsyon sa pabahay para sa mga nakatatanda.",
+          "link": "Galugarin ang Pabahay"
+        },
+        "transportation": {
+          "title": "Transportasyon",
+          "description": "Mag-access ng maaasahang mga serbisyo sa transportasyon para sa mga appointment at gawain.",
+          "link": "Tingnan ang Transportasyon"
+        },
+        "hotlines": {
+          "title": "Mga Hotline at Kaligtasan",
+          "description": "Kumuha ng agarang suporta at mga mapagkukunan sa kaligtasan para sa mga nakatatanda.",
+          "link": "Maghanap ng Mga Hotline"
+        }
+      }
+    },
+    "dashboard": {
+      "loading": "Nilo-load ang iyong profile…",
+      "editProfile": "I-edit ang Profile"
+    },
+    "mapPage": {
+      "controls": {
+        "title": "Maghanap ng Mga Kalapit na Serbisyo",
+        "zipPlaceholder": "Ilagay ang zip code",
+        "searchButton": "Maghanap",
+        "useMyLocationButton": "Gamitin ang Aking Lokasyon",
+        "categories": {
+          "nursingHome": "Nursing Home",
+          "homeCare": "Home Care",
+          "assistedLiving": "Assisted Living",
+          "hospice": "Hospice",
+          "transportation": "Transportasyon",
+          "defaultSearchKeyword": "pangangalaga sa matatanda"
+        }
+      },
+      "details": {
+        "closeAlt": "Isara ang mga detalye",
+        "visitWebsiteLink": "Bisitahin ang website",
+        "favoriteButton": "Idagdag sa Mga Paborito",
+        "viewInGoogleMapsLink": "Tingnan sa Google Maps",
+        "leaveReviewTitle": "Mag-iwan ng Review",
+        "reviewPlaceholder": "Isulat ang iyong review dito...",
+        "ratingLabel": "Rating",
+        "ratingOptions": {
+          "star": "{{count}} Bituin"
+        },
+        "submitReviewButton": "Ipadala ang Review",
+        "reviewsTitle": "Mga Review",
+        "noReviews": "Wala pang mga review.",
+        "reviewUserFallback": "Hindi Kilalang User"
+      },
+      "alerts": {
+        "reviewSubmitFailed": "Nabigo ang pagpapadala ng review.",
+        "favoriteAdded": "Idinagdag sa mga paborito.",
+        "pleaseLogIn": "Mangyaring mag-login upang magdagdag sa mga paborito.",
+        "favoriteFailed": "Nabigo ang pagdagdag sa paborito.",
+        "zipNotFound": "Hindi nahanap o hindi wasto ang zip code.",
+        "searchFailed": "Nabigo ang paghahanap. Pakisubukang muli.",
+        "geolocationNotSupported": "Hindi suportado ng browser na ito ang geolocation.",
+        "locationError": "Hindi makuha ang lokasyon."
+      },
+      "loadError": "Error sa pag-load ng mapa.",
+      "loading": "Nilo-load ang mapa..."
+    },
+    "hotlinesPage": {
+      "card": {
+          "phonePrefix": "Telepono: "
+        }
+    }
+  }

@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
-import { getEldercareByZip } from "./api/eldercare";
-import xml2js from "xml2js";
 import "./MapComponent.css";
 import axios from "axios";
+import { useTranslation } from 'react-i18next';
+import { useNavigate, Link } from "react-router-dom";
+import LogoSymbol from "./assets/LogoSymbol.png";
+import LanguageSwitcher from './components/LanguageSwitcher';
+
 
 const libraries = ["places"];
-
 const mapOptions = {
   styles: [
     { elementType: "geometry", stylers: [{ color: "#eaf0f6" }] },
@@ -19,17 +21,15 @@ const mapOptions = {
   ],
 };
 
-const categoryOptions = [
-  { label: "Nursing Homes", value: "nursing home" },
-  { label: "Home Care", value: "home care" },
-  { label: "Assisted Living", value: "assisted living" },
-  { label: "Hospice", value: "hospice" },
-  { label: "Transportation", value: "bus station" },
-];
+
+const Maps_API_KEY = "AIzaSyB52D9GjkLcAkdQ9iXxro6ptMsD7Nv6Lts";
 
 export default function MapComponent() {
+  const { t } = useTranslation()
+
+
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: "AIzaSyB52D9GjkLcAkdQ9iXxro6ptMsD7Nv6Lts",
+    googleMapsApiKey: Maps_API_KEY,
     libraries,
   });
 
@@ -42,14 +42,41 @@ export default function MapComponent() {
   const [newReview, setNewReview] = useState("");
   const [selectedRating, setSelectedRating] = useState(5);
 
+  const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    axios
+      .post("/api/auth/logout")
+      .then(() => {
+        navigate("/login");
+      })
+      .catch((err) => {
+        console.error("Logout failed:", err);
+        navigate("/login");
+      });
+  };
+
+  const categoryOptions = [
+    { label: t('mapPage.controls.categories.nursingHome'), value: 'nursing home' },
+    { label: t('mapPage.controls.categories.homeCare'), value: 'home care' },
+    { label: t('mapPage.controls.categories.assistedLiving'), value: 'assisted living' },
+    { label: t('mapPage.controls.categories.hospice'), value: 'hospice' },
+    { label: t('mapPage.controls.categories.transportation'), value: 'transportation' },
+  ];
+
+
   useEffect(() => {
     if (selectedPlace?.placeId) {
       axios
-          .get(`/api/google-reviews/${selectedPlace.placeId}`)
-          .then((res) => setReviews(res.data))
-          .catch((err) => console.error("Failed to load reviews", err));
+        .get(`/api/google-reviews/${selectedPlace.placeId}`)
+        .then((res) => setReviews(res.data))
+        .catch((err) => console.error("Failed to load reviews", err));
+    } else {
+      setReviews([]);
     }
   }, [selectedPlace]);
+
 
   const handleSubmitReview = async () => {
     if (!selectedPlace || !newReview.trim()) return;
@@ -64,7 +91,7 @@ export default function MapComponent() {
       setReviews(res.data);
     } catch (err) {
       console.error("Review submission error:", err);
-      alert("Failed to submit review.");
+      alert(t('mapPage.alerts.reviewSubmitFailed'));
     }
   };
 
@@ -79,254 +106,248 @@ export default function MapComponent() {
         website: selectedPlace.website,
         googleMapsLink: `https://www.google.com/maps/place/?q=place_id:${selectedPlace.placeId}`,
       });
-      alert("Added to favorites! ❤️");
+      alert(t('mapPage.alerts.favoriteAdded'));
     } catch (err) {
       console.error("Favorite error:", err);
-      alert(err.response?.status === 401 ? "Please log in first." : "Failed to add favorite.");
+      const alertKey = err.response?.status === 401 ? 'mapPage.alerts.pleaseLogIn' : 'mapPage.alerts.favoriteFailed';
+      alert(t(alertKey));
     }
   };
 
   const toggleCategory = (value) => {
     setSelectedCategories((prev) =>
-        prev.includes(value) ? prev.filter((v) => v !== value) : [...prev, value]
+      prev.includes(value) ? prev.filter((v) => v !== value) : [...prev, value]
     );
   };
 
   const fetchPlaceDetails = (placeId) => {
+    if (!window.google || !window.google.maps || !window.google.maps.places) {
+      console.error("Google Maps PlacesService not ready.");
+      return;
+    }
     const map = new window.google.maps.Map(document.createElement("div"));
     const service = new window.google.maps.places.PlacesService(map);
 
     service.getDetails(
-        {
-          placeId,
-          fields: [
-            "name",
-            "formatted_address",
-            "formatted_phone_number",
-            "website",
-            "place_id",
-            "geometry",
-          ],
-        },
-        (details, status) => {
-          if (status === window.google.maps.places.PlacesServiceStatus.OK) {
-            setSelectedPlace({
-              name: details.name,
-              address: details.formatted_address,
-              phone: details.formatted_phone_number,
-              website: details.website,
-              placeId: details.place_id,
-              lat: details.geometry.location.lat(),
-              lng: details.geometry.location.lng(),
-            });
-          } else {
-            console.error("Place Details error:", status);
-          }
+      {
+        placeId,
+        fields: ["name", "formatted_address", "formatted_phone_number", "website", "place_id", "geometry"],
+      },
+      (details, status) => {
+        if (status === window.google.maps.places.PlacesServiceStatus.OK && details) {
+          setSelectedPlace({
+            name: details.name,
+            address: details.formatted_address,
+            phone: details.formatted_phone_number,
+            website: details.website,
+            placeId: details.place_id,
+            lat: details.geometry?.location?.lat(),
+            lng: details.geometry?.location?.lng(),
+          });
+        } else {
+          console.error(`Place Details error for placeId ${placeId}: ${status}`);
         }
+      }
     );
   };
 
   const fetchGooglePlacesResults = async (location, keywords) => {
+    if (!window.google || !window.google.maps || !window.google.maps.places) {
+      console.error("Google Maps PlacesService not ready for search.");
+      return [];
+    }
     const allResults = [];
-    for (const keyword of keywords.length ? keywords : ["eldercare"]) {
-      const map = new window.google.maps.Map(document.createElement("div"));
-      const service = new window.google.maps.places.PlacesService(map);
+    const searchKeywords = keywords.length ? keywords : [t('mapPage.controls.categories.defaultSearchKeyword') || 'eldercare'];
+    const map = new window.google.maps.Map(document.createElement("div"));
+    const service = new window.google.maps.places.PlacesService(map);
 
+    for (const keyword of searchKeywords) {
       await new Promise((resolve) => {
         service.nearbySearch(
-            {
-              location,
-              radius: 5000,
-              keyword,
-            },
-            (results, status) => {
-              if (status === window.google.maps.places.PlacesServiceStatus.OK) {
-                const mapped = results.map((place) => ({
-                  name: place.name,
-                  lat: place.geometry.location.lat(),
-                  lng: place.geometry.location.lng(),
-                  placeId: place.place_id,
-                  address: place.vicinity || "",
-                }));
-                allResults.push(...mapped);
-              }
-              resolve();
+          { location, radius: 5000, keyword },
+          (results, status, pagination) => {
+            if (status === window.google.maps.places.PlacesServiceStatus.OK && results) {
+              const mapped = results.map((place) => ({
+                name: place.name,
+                lat: place.geometry?.location?.lat(),
+                lng: place.geometry?.location?.lng(),
+                placeId: place.place_id,
+                address: place.vicinity || "",
+              }));
+              allResults.push(...mapped);
+            } else if (status !== window.google.maps.places.PlacesServiceStatus.ZERO_RESULTS) {
+              console.warn(`Nearby search for "${keyword}" failed or returned no results: ${status}`);
             }
+            resolve();
+          }
         );
       });
     }
-    return allResults;
+    const uniqueResults = Array.from(new Map(allResults.map(item => [item.placeId, item])).values());
+    return uniqueResults;
   };
 
   const handleSearch = async () => {
+    if (!zip.trim()) return;
+    setSelectedPlace(null);
+    setMarkers([]);
     try {
       const geoRes = await fetch(
-          `https://maps.googleapis.com/maps/api/geocode/json?address=${zip}&key=AIzaSyB52D9GjkLcAkdQ9iXxro6ptMsD7Nv6Lts`
+        `https://maps.googleapis.com/maps/api/geocode/json?address=${zip}&key=${Maps_API_KEY}`
       );
       const geoData = await geoRes.json();
       const location = geoData.results?.[0]?.geometry?.location;
 
       if (!location) {
-        alert("Could not find location for that ZIP code.");
+        alert(t('mapPage.alerts.zipNotFound'));
         return;
       }
-
       setCenter(location);
-
       const googleMarkers = await fetchGooglePlacesResults(location, selectedCategories);
       setMarkers(googleMarkers);
     } catch (err) {
       console.error("Search by ZIP failed:", err);
-      alert("Something went wrong. Please try again.");
+      alert(t('mapPage.alerts.searchFailed'));
     }
   };
 
   const handleUseMyLocation = () => {
+    setSelectedPlace(null);
+    setMarkers([]);
     if (!navigator.geolocation) {
-      alert("Geolocation not supported.");
+      alert(t('mapPage.alerts.geolocationNotSupported'));
       return;
     }
-
     navigator.geolocation.getCurrentPosition(
-        async (pos) => {
-          const { latitude, longitude } = pos.coords;
-          const location = { lat: latitude, lng: longitude };
-          setCenter(location);
-
-          const googleMarkers = await fetchGooglePlacesResults(location, selectedCategories);
-          setMarkers(googleMarkers);
-        },
-        (err) => {
-          console.error("Location error:", err);
-          alert("Could not get your location.");
-        }
+      async (pos) => {
+        const { latitude, longitude } = pos.coords;
+        const location = { lat: latitude, lng: longitude };
+        setCenter(location);
+        const googleMarkers = await fetchGooglePlacesResults(location, selectedCategories);
+        setMarkers(googleMarkers);
+      },
+      (err) => {
+        console.error("Location error:", err);
+        alert(t('mapPage.alerts.locationError'));
+      }
     );
   };
 
-  if (loadError) return <div>Error loading map</div>;
-  if (!isLoaded) return <div>Loading map...</div>;
+
+  if (loadError) return <div>{t('mapPage.loadError')}</div>;
+  if (!isLoaded) return <div>{t('mapPage.loading')}</div>;
+
 
   return (
+    <>
+      <header className="header">
+        <div className="header-left-group">
+          <Link to="/home" className="nav-logo">
+            <img src={LogoSymbol} alt={t('hotlinesPage.header.logoAlt')} />
+          </Link>
+          <LanguageSwitcher />
+        </div>
+        <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+          ☰
+        </button>
+        <nav className={`nav ${menuOpen ? "open" : ""}`}>
+          <Link to="/userdashboard" onClick={() => setMenuOpen(false)}>
+            {t('navbar.dashboard')}
+          </Link>
+          <Link to="/map" onClick={() => setMenuOpen(false)} style={{ pointerEvents: 'none', opacity: 0.6 }}>
+            {t('navbar.map')}
+          </Link>
+          <a href="/home#helpful-resources" onClick={(e) => { e.preventDefault(); navigate('/home'); setTimeout(() => { const el = document.getElementById('helpful-resources'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }, 100); setMenuOpen(false); }} className="nav-link">
+            {t('navbar.resources')}
+          </a>
+          <button
+            onClick={() => {
+              setMenuOpen(false);
+              handleLogout();
+            }}
+          >
+            {t('navbar.logout')}
+          </button>
+        </nav>
+      </header>
+
       <div className="map-wrapper fade-in">
         <div className="map-controls">
-          <h2>Find Nearby Eldercare Services</h2>
+          <h2>{t('mapPage.controls.title')}</h2>
           <div className="form-group">
             <input
-                type="text"
-                placeholder="Enter ZIP code"
-                value={zip}
-                onChange={(e) => setZip(e.target.value)}
+              type="text"
+              placeholder={t('mapPage.controls.zipPlaceholder')}
+              value={zip}
+              onChange={(e) => setZip(e.target.value)}
+              aria-label={t('mapPage.controls.zipPlaceholder')}
             />
             <div className="checkbox-group">
               {categoryOptions.map((opt) => (
-                  <label key={opt.value}>
-                    <input
-                        type="checkbox"
-                        value={opt.value}
-                        checked={selectedCategories.includes(opt.value)}
-                        onChange={() => toggleCategory(opt.value)}
-                    />
-                    {opt.label}
-                  </label>
+                <label key={opt.value}>
+                  <input
+                    type="checkbox"
+                    value={opt.value}
+                    checked={selectedCategories.includes(opt.value)}
+                    onChange={() => toggleCategory(opt.value)}
+                  />
+                  {opt.label}
+                </label>
               ))}
             </div>
             <button className="btn-zip" onClick={handleSearch}>
-              Search
+              {t('mapPage.controls.searchButton')}
             </button>
             <button className="btn-location" onClick={handleUseMyLocation}>
-              Use My Location
+              {t('mapPage.controls.useMyLocationButton')}
             </button>
           </div>
         </div>
 
         <div className="map-container-wrapper">
           <GoogleMap
-              mapContainerClassName="map-container"
-              center={center}
-              zoom={11}
-              options={mapOptions}
+            mapContainerClassName="map-container"
+            center={center}
+            zoom={11}
+            options={mapOptions}
           >
             {markers.map((place, i) => (
-                <Marker
-                    key={i}
-                    position={{ lat: place.lat, lng: place.lng }}
-                    onClick={() => fetchPlaceDetails(place.placeId)}
-                />
+              <Marker
+                key={place.placeId || i}
+                position={{ lat: place.lat, lng: place.lng }}
+                onClick={() => fetchPlaceDetails(place.placeId)}
+                title={place.name}
+              />
             ))}
           </GoogleMap>
 
           {selectedPlace && (
-              <div className="details-panel">
-                <button
-                    onClick={() => setSelectedPlace(null)}
-                    className="close-button"
-                >
-                  ×
-                </button>
-                <h3>{selectedPlace.name}</h3>
-                {selectedPlace.address && <p>{selectedPlace.address}</p>}
-                {selectedPlace.phone && <p>📞 {selectedPlace.phone}</p>}
-                {selectedPlace.website && (
-                    <p>
-                      <a
-                          href={selectedPlace.website}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                      >
-                        Visit Website
-                      </a>
-                    </p>
-                )}
+            <div className="details-panel">
+              <button onClick={() => setSelectedPlace(null)} className="close-button" aria-label={t('mapPage.details.closeAlt') || "Close details"}>×</button>
+              <h3>{selectedPlace.name}</h3>
+              {selectedPlace.address && <p>{selectedPlace.address}</p>}
+              {selectedPlace.phone && <p>{t('hotlinesPage.card.phonePrefix')}{selectedPlace.phone}</p>}
+              {selectedPlace.website && <p><a href={selectedPlace.website} target="_blank" rel="noopener noreferrer">{t('mapPage.details.visitWebsiteLink')}</a></p>}
+              <button className="btn-favorite" onClick={handleFavorite}>{t('mapPage.details.favoriteButton')}</button>
+              <p><a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(selectedPlace.name)}&query_place_id=${selectedPlace.placeId}`} target="_blank" rel="noopener noreferrer">{t('mapPage.details.viewInGoogleMapsLink')}</a></p>
 
-                <button className="btn-favorite" onClick={handleFavorite}>
-                  ❤️ Favorite
-                </button>
-
-                <p>
-                  <a
-                      href={`https://www.google.com/maps/place/?q=place_id:${selectedPlace.placeId}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                  >
-                    View in Google Maps
-                  </a>
-                </p>
-
-                <div className="review-section">
-                  <h4>Leave a Review</h4>
-                  <textarea
-                      value={newReview}
-                      onChange={(e) => setNewReview(e.target.value)}
-                      placeholder="Write your review..."
-                  />
-                  <select
-                      value={selectedRating}
-                      onChange={(e) => setSelectedRating(Number(e.target.value))}
-                  >
-                    {[1, 2, 3, 4, 5].map((r) => (
-                        <option key={r} value={r}>{r} Star{r > 1 && "s"}</option>
-                    ))}
-                  </select>
-                  <button onClick={handleSubmitReview}>Submit Review</button>
-                </div>
-
-                <div className="review-list">
-                  <h4>Reviews</h4>
-                  {reviews.length === 0 ? (
-                      <p>No reviews yet.</p>
-                  ) : (
-                      reviews.map((rev, i) => (
-                          <div key={i} className="review-entry">
-                            <p>⭐ {rev.rating}</p>
-                            <p>{rev.review_text}</p>
-                            <small>{rev.first_name || "User"}</small>
-                          </div>
-                      ))
-                  )}
-                </div>
+              <div className="review-section">
+                <h4>{t('mapPage.details.leaveReviewTitle')}</h4>
+                <textarea value={newReview} onChange={(e) => setNewReview(e.target.value)} placeholder={t('mapPage.details.reviewPlaceholder')} rows={3} />
+                <select value={selectedRating} onChange={(e) => setSelectedRating(Number(e.target.value))} aria-label={t('mapPage.details.ratingLabel') || "Rating"}>
+                  {[1, 2, 3, 4, 5].map((r) => (<option key={r} value={r}>{t('mapPage.details.ratingOptions.star', { count: r })}</option>))}
+                </select>
+                <button onClick={handleSubmitReview}>{t('mapPage.details.submitReviewButton')}</button>
               </div>
+
+              <div className="review-list">
+                <h4>{t('mapPage.details.reviewsTitle')}</h4>
+                {reviews.length === 0 ? (<p>{t('mapPage.details.noReviews')}</p>) : (reviews.map((rev, i) => (<div key={rev.review_id || i} className="review-entry"><p>⭐ {rev.rating || '-'}</p><p>{rev.review_text}</p><small>{rev.first_name || t('mapPage.details.reviewUserFallback')}</small></div>)))}
+              </div>
+            </div>
           )}
         </div>
       </div>
+    </>
   );
 }

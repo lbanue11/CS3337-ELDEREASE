@@ -1,0 +1,87 @@
+{
+    "common": {
+      "logoAlt": "لوگو"
+    },
+    "navbar": {
+      "dashboard": "داشبورد",
+      "map": "نقشه",
+      "resources": "منابع",
+      "logout": "خروج",
+      "home": "خانه"
+    },
+    "home": {
+      "welcome": "به ElderLOS خوش آمدید",
+      "tagline": "اتصال سالمندان به منابع ضروری در لس آنجلس.",
+      "helpfulResources": "منابع مفید",
+      "resources": {
+        "housing": {
+          "title": "مسکن",
+          "description": "گزینه های مسکن امن و حمایتی برای سالمندان پیدا کنید.",
+          "link": "کاوش مسکن"
+        },
+        "transportation": {
+          "title": "حمل و نقل",
+          "description": "به خدمات حمل و نقل قابل اعتماد برای قرار ملاقات ها و کارها دسترسی پیدا کنید.",
+          "link": "مشاهده حمل و نقل"
+        },
+        "hotlines": {
+          "title": "خطوط تلفنی و ایمنی",
+          "description": "پشتیبانی فوری و منابع ایمنی برای سالمندان دریافت کنید.",
+          "link": "یافتن خطوط تلفنی"
+        }
+      }
+    },
+    "dashboard": {
+      "loading": "در حال بارگذاری پروفایل شما…",
+      "editProfile": "ویرایش پروفایل"
+    },
+    "mapPage": {
+      "controls": {
+        "title": "یافتن خدمات نزدیک",
+        "zipPlaceholder": "کد پستی را وارد کنید",
+        "searchButton": "جستجو",
+        "useMyLocationButton": "استفاده از موقعیت مکانی من",
+        "categories": {
+          "nursingHome": "خانه سالمندان",
+          "homeCare": "مراقبت در منزل",
+          "assistedLiving": "زندگی با کمک",
+          "hospice": "آسایشگاه",
+          "transportation": "حمل و نقل",
+          "defaultSearchKeyword": "مراقبت از سالمندان"
+        }
+      },
+      "details": {
+        "closeAlt": "بستن جزئیات",
+        "visitWebsiteLink": "بازدید از وب سایت",
+        "favoriteButton": "افزودن به موارد دلخواه",
+        "viewInGoogleMapsLink": "مشاهده در Google Maps",
+        "leaveReviewTitle": "ثبت نظر",
+        "reviewPlaceholder": "نظر خود را اینجا بنویسید...",
+        "ratingLabel": "امتیاز",
+        "ratingOptions": {
+          "star": "{{count}} ستاره"
+        },
+        "submitReviewButton": "ارسال نظر",
+        "reviewsTitle": "نظرات",
+        "noReviews": "هنوز نظری ثبت نشده است.",
+        "reviewUserFallback": "کاربر ناشناس"
+      },
+      "alerts": {
+        "reviewSubmitFailed": "ارسال نظر ناموفق بود.",
+        "favoriteAdded": "به موارد دلخواه اضافه شد.",
+        "pleaseLogIn": "لطفاً برای افزودن به موارد دلخواه وارد شوید.",
+        "favoriteFailed": "افزودن به موارد دلخواه ناموفق بود.",
+        "zipNotFound": "کد پستی یافت نشد یا نامعتبر است.",
+        "searchFailed": "جستجو ناموفق بود. لطفاً دوباره امتحان کنید.",
+        "geolocationNotSupported": "موقعیت یابی جغرافیایی توسط این مرورگر پشتیبانی نمی شود.",
+        "locationError": "دریافت موقعیت مکانی امکان پذیر نبود."
+      },
+      "loadError": "خطا در بارگذاری نقشه.",
+      "loading": "در حال بارگذاری نقشه..."
+    },
+    "hotlinesPage": {
+      "card": {
+          "phonePrefix": "تلفن: "
+        }
+    }
+  }

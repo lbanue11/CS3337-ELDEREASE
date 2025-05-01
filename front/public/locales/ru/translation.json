@@ -1,0 +1,89 @@
+{
+    "common": {
+      "logoAlt": "Логотип"
+    },
+    "navbar": {
+      "dashboard": "Панель управления",
+      "map": "Карта",
+      "resources": "Ресурсы",
+      "logout": "Выйти",
+      "home": "Главная"
+    },
+    "home": {
+      "welcome": "Добро пожаловать в ElderLOS",
+      "tagline": "Соединяем пожилых людей с необходимыми ресурсами в Лос-Анджелесе.",
+      "helpfulResources": "Полезные ресурсы",
+      "resources": {
+        "housing": {
+          "title": "Жилье",
+          "description": "Найдите безопасные и поддерживающие варианты жилья для пожилых людей.",
+          "link": "Изучить жилье"
+        },
+        "transportation": {
+          "title": "Транспорт",
+          "description": "Получите доступ к надежным транспортным услугам для поездок на приемы и по делам.",
+          "link": "Посмотреть транспорт"
+        },
+        "hotlines": {
+          "title": "Горячие линии и безопасность",
+          "description": "Получите немедленную поддержку и ресурсы безопасности для пожилых людей.",
+          "link": "Найти горячие линии"
+        }
+      }
+    },
+    "dashboard": {
+      "loading": "Загрузка вашего профиля…",
+      "editProfile": "Редактировать профиль"
+    },
+    "mapPage": {
+      "controls": {
+        "title": "Найти ближайшие службы",
+        "zipPlaceholder": "Введите почтовый индекс",
+        "searchButton": "Поиск",
+        "useMyLocationButton": "Использовать мое местоположение",
+        "categories": {
+          "nursingHome": "Дом престарелых",
+          "homeCare": "Уход на дому",
+          "assistedLiving": "Проживание с уходом",
+          "hospice": "Хоспис",
+          "transportation": "Транспорт",
+          "defaultSearchKeyword": "уход за пожилыми"
+        }
+      },
+      "details": {
+        "closeAlt": "Закрыть детали",
+        "visitWebsiteLink": "Посетить веб-сайт",
+        "favoriteButton": "Добавить в избранное",
+        "viewInGoogleMapsLink": "Посмотреть в Google Maps",
+        "leaveReviewTitle": "Оставить отзыв",
+        "reviewPlaceholder": "Напишите свой отзыв здесь...",
+        "ratingLabel": "Рейтинг",
+        "ratingOptions": {
+          "star": "{{count}} звезда",
+          "star_plural": "{{count}} звезды",
+          "star_many": "{{count}} звезд"
+        },
+        "submitReviewButton": "Отправить отзыв",
+        "reviewsTitle": "Отзывы",
+        "noReviews": "Отзывов пока нет.",
+        "reviewUserFallback": "Анонимный пользователь"
+      },
+      "alerts": {
+        "reviewSubmitFailed": "Не удалось отправить отзыв.",
+        "favoriteAdded": "Добавлено в избранное.",
+        "pleaseLogIn": "Пожалуйста, войдите, чтобы добавить в избранное.",
+        "favoriteFailed": "Не удалось добавить в избранное.",
+        "zipNotFound": "Почтовый индекс не найден или недействителен.",
+        "searchFailed": "Поиск не удался. Пожалуйста, попробуйте еще раз.",
+        "geolocationNotSupported": "Геолокация не поддерживается этим браузером.",
+        "locationError": "Не удалось получить местоположение."
+      },
+      "loadError": "Ошибка загрузки карты.",
+      "loading": "Загрузка карты..."
+    },
+    "hotlinesPage": {
+      "card": {
+          "phonePrefix": "Телефон: "
+        }
+    }
+  }

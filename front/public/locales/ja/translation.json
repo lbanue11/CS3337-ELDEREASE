@@ -1,0 +1,87 @@
+{
+    "common": {
+      "logoAlt": "ロゴ"
+    },
+    "navbar": {
+      "dashboard": "ダッシュボード",
+      "map": "地図",
+      "resources": "リソース",
+      "logout": "ログアウト",
+      "home": "ホーム"
+    },
+    "home": {
+      "welcome": "ElderLOSへようこそ",
+      "tagline": "ロサンゼルスの高齢者と必要不可欠なリソースをつなぎます。",
+      "helpfulResources": "役立つリソース",
+      "resources": {
+        "housing": {
+          "title": "住居",
+          "description": "高齢者向けの安全でサポートのある住居オプションを見つけましょう。",
+          "link": "住居を探す"
+        },
+        "transportation": {
+          "title": "交通手段",
+          "description": "予約や用事のための信頼できる交通サービスにアクセス。",
+          "link": "交通手段を見る"
+        },
+        "hotlines": {
+          "title": "ホットラインと安全",
+          "description": "高齢者向けの即時サポートと安全リソースを入手。",
+          "link": "ホットラインを探す"
+        }
+      }
+    },
+    "dashboard": {
+      "loading": "プロフィールを読み込み中…",
+      "editProfile": "プロフィールを編集"
+    },
+    "mapPage": {
+      "controls": {
+        "title": "近くのサービスを探す",
+        "zipPlaceholder": "郵便番号を入力",
+        "searchButton": "検索",
+        "useMyLocationButton": "現在地を使用",
+        "categories": {
+          "nursingHome": "介護施設",
+          "homeCare": "在宅ケア",
+          "assistedLiving": "アシスティッドリビング",
+          "hospice": "ホスピス",
+          "transportation": "交通手段",
+          "defaultSearchKeyword": "高齢者ケア"
+        }
+      },
+      "details": {
+        "closeAlt": "詳細を閉じる",
+        "visitWebsiteLink": "ウェブサイトを見る",
+        "favoriteButton": "お気に入りに追加",
+        "viewInGoogleMapsLink": "Google Mapsで表示",
+        "leaveReviewTitle": "レビューを残す",
+        "reviewPlaceholder": "レビューをここに書いてください...",
+        "ratingLabel": "評価",
+        "ratingOptions": {
+          "star": "星{{count}}つ"
+        },
+        "submitReviewButton": "レビューを送信",
+        "reviewsTitle": "レビュー",
+        "noReviews": "まだレビューはありません。",
+        "reviewUserFallback": "匿名のユーザー"
+      },
+      "alerts": {
+        "reviewSubmitFailed": "レビューの送信に失敗しました。",
+        "favoriteAdded": "お気に入りに追加しました。",
+        "pleaseLogIn": "お気に入りに追加するにはログインしてください。",
+        "favoriteFailed": "お気に入りの追加に失敗しました。",
+        "zipNotFound": "郵便番号が見つからないか、無効です。",
+        "searchFailed": "検索に失敗しました。もう一度お試しください。",
+        "geolocationNotSupported": "このブラウザは地理位置情報に対応していません。",
+        "locationError": "位置情報を取得できませんでした。"
+      },
+      "loadError": "地図の読み込みエラー。",
+      "loading": "地図を読み込み中..."
+    },
+    "hotlinesPage": {
+      "card": {
+          "phonePrefix": "電話番号: "
+        }
+    }
+  }

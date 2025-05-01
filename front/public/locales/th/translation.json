@@ -1,0 +1,87 @@
+{
+    "common": {
+      "logoAlt": "โลโก้"
+    },
+    "navbar": {
+      "dashboard": "แดชบอร์ด",
+      "map": "แผนที่",
+      "resources": "แหล่งข้อมูล",
+      "logout": "ออกจากระบบ",
+      "home": "หน้าหลัก"
+    },
+    "home": {
+      "welcome": "ยินดีต้อนรับสู่ ElderLOS",
+      "tagline": "เชื่อมต่อผู้สูงอายุกับทรัพยากรที่จำเป็นในลอสแอนเจลิส",
+      "helpfulResources": "แหล่งข้อมูลที่เป็นประโยชน์",
+      "resources": {
+        "housing": {
+          "title": "ที่อยู่อาศัย",
+          "description": "ค้นหาตัวเลือกที่อยู่อาศัยที่ปลอดภัยและให้การสนับสนุนสำหรับผู้สูงอายุ",
+          "link": "สำรวจที่อยู่อาศัย"
+        },
+        "transportation": {
+          "title": "การเดินทาง",
+          "description": "เข้าถึงบริการขนส่งที่เชื่อถือได้สำหรับการนัดหมายและทำธุระ",
+          "link": "ดูการเดินทาง"
+        },
+        "hotlines": {
+          "title": "สายด่วนและความปลอดภัย",
+          "description": "รับการสนับสนุนทันทีและแหล่งข้อมูลด้านความปลอดภัยสำหรับผู้สูงอายุ",
+          "link": "ค้นหาสายด่วน"
+        }
+      }
+    },
+    "dashboard": {
+      "loading": "กำลังโหลดโปรไฟล์ของคุณ...",
+      "editProfile": "แก้ไขโปรไฟล์"
+    },
+    "mapPage": {
+      "controls": {
+        "title": "ค้นหาบริการใกล้เคียง",
+        "zipPlaceholder": "ป้อนรหัสไปรษณีย์",
+        "searchButton": "ค้นหา",
+        "useMyLocationButton": "ใช้ตำแหน่งของฉัน",
+        "categories": {
+          "nursingHome": "บ้านพักคนชรา",
+          "homeCare": "การดูแลที่บ้าน",
+          "assistedLiving": "ที่อยู่อาศัยพร้อมความช่วยเหลือ",
+          "hospice": "การดูแลระยะสุดท้าย",
+          "transportation": "การเดินทาง",
+          "defaultSearchKeyword": "การดูแลผู้สูงอายุ"
+        }
+      },
+      "details": {
+        "closeAlt": "ปิดรายละเอียด",
+        "visitWebsiteLink": "เยี่ยมชมเว็บไซต์",
+        "favoriteButton": "เพิ่มในรายการโปรด",
+        "viewInGoogleMapsLink": "ดูใน Google Maps",
+        "leaveReviewTitle": "แสดงความคิดเห็น",
+        "reviewPlaceholder": "เขียนความคิดเห็นของคุณที่นี่...",
+        "ratingLabel": "คะแนน",
+        "ratingOptions": {
+          "star": "{{count}} ดาว"
+        },
+        "submitReviewButton": "ส่งความคิดเห็น",
+        "reviewsTitle": "ความคิดเห็น",
+        "noReviews": "ยังไม่มีความคิดเห็น",
+        "reviewUserFallback": "ผู้ใช้ที่ไม่ระบุชื่อ"
+      },
+      "alerts": {
+        "reviewSubmitFailed": "ส่งความคิดเห็นไม่สำเร็จ",
+        "favoriteAdded": "เพิ่มในรายการโปรดแล้ว",
+        "pleaseLogIn": "กรุณาเข้าสู่ระบบเพื่อเพิ่มในรายการโปรด",
+        "favoriteFailed": "เพิ่มในรายการโปรดไม่สำเร็จ",
+        "zipNotFound": "ไม่พบรหัสไปรษณีย์หรือไม่ถูกต้อง",
+        "searchFailed": "การค้นหาล้มเหลว กรุณาลองใหม่อีกครั้ง",
+        "geolocationNotSupported": "เบราว์เซอร์นี้ไม่รองรับตำแหน่งทางภูมิศาสตร์",
+        "locationError": "ไม่สามารถรับตำแหน่งได้"
+      },
+      "loadError": "เกิดข้อผิดพลาดในการโหลดแผนที่",
+      "loading": "กำลังโหลดแผนที่..."
+    },
+    "hotlinesPage": {
+      "card": {
+          "phonePrefix": "โทรศัพท์: "
+        }
+    }
+  }
