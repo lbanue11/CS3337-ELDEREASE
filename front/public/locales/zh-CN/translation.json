@@ -28,7 +28,10 @@
         }
     },
     "common": {
-        "logoAlt": "标志"
+        "logoAlt": "标志",
+        "edit": "编辑",
+        "cancel": "取消",
+        "save": "保存更改"
     },
     "hotlinesPage": {
         "header": {
@@ -102,7 +105,7 @@
                 "specialization": "洛杉矶市为老年人提供低成本、无障碍的交通服务，包括门到门接送、辅助客运服务以及CityRide计划，以帮助处理差事、预约等事宜。"
             }
         ]
-    }, 
+    },
     "mapPage": {
         "loadError": "地图加载错误",
         "loading": "正在加载地图...",
@@ -129,7 +132,7 @@
             "reviewPlaceholder": "写下你的评论...",
             "ratingOptions": {
                 "star": "{{count}} 星",
-                "star_plural": "{{count}} 星" 
+                "star_plural": "{{count}} 星"
             },
             "ratingLabel": "评分",
             "submitReviewButton": "提交评论",
@@ -148,5 +151,27 @@
             "geolocationNotSupported": "不支持地理定位。",
             "locationError": "无法获取您的位置。"
         }
-    } 
+    },
+    "dashboard": {
+        "loading": "正在加载您的个人资料…",
+        "savedLocations": "收藏的地点",
+        "noSavedLocations": "您还没有收藏任何地点。",
+        "findLocations": "在地图上查找地点"
+    },
+    "profile": {
+        "detailsTitle": "个人资料详情",
+        "fullNameLabel": "姓名:",
+        "emailLabel": "邮箱:",
+        "phoneLabel": "电话:",
+        "phonePlaceholder": "(XXX) XXX-XXXX 或纯数字",
+        "addressLabel": "地址:",
+        "streetLabel": "街道",
+        "streetPlaceholder": "街道地址",
+        "cityLabel": "城市",
+        "cityPlaceholder": "城市",
+        "stateLabel": "州/省",
+        "statePlaceholder": "州/省",
+        "zipcodeLabel": "邮政编码",
+        "zipcodePlaceholder": "邮政/邮政编码"
+    }
 }

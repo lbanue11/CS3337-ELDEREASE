@@ -28,7 +28,10 @@
         }
     },
     "common": {
-        "logoAlt": "Logo"
+        "logoAlt": "Logo",
+        "edit": "Edit",
+        "cancel": "Cancel",
+        "save": "Save Changes"
     },
     "hotlinesPage": {
         "header": {
@@ -148,5 +151,27 @@
             "geolocationNotSupported": "Geolocation not supported.",
             "locationError": "Could not get your location."
         }
+    },
+    "dashboard": {
+        "loading": "Loading your profile…",
+        "savedLocations": "Saved Locations",
+        "noSavedLocations": "You haven't saved any locations yet.",
+        "findLocations": "Find Locations on Map"
+    },
+    "profile": {
+        "detailsTitle": "Profile Details",
+        "fullNameLabel": "Full Name:",
+        "emailLabel": "Email:",
+        "phoneLabel": "Phone:",
+        "phonePlaceholder": "(XXX) XXX-XXXX or digits",
+        "addressLabel": "Address:",
+        "streetLabel": "Street",
+        "streetPlaceholder": "Street address",
+        "cityLabel": "City",
+        "cityPlaceholder": "City",
+        "stateLabel": "State",
+        "statePlaceholder": "State/Province",
+        "zipcodeLabel": "Zip Code",
+        "zipcodePlaceholder": "Postal/Zip code"
     }
 }

@@ -28,7 +28,10 @@
         }
     },
     "common": {
-        "logoAlt": "Logo"
+        "logoAlt": "Logo",
+        "edit": "Editar",
+        "cancel": "Cancelar",
+        "save": "Guardar cambios"
     },
     "hotlinesPage": {
         "header": {
@@ -102,7 +105,7 @@
                 "specialization": "La ciudad de Los Ángeles ofrece servicios de transporte accesibles y de bajo costo para personas mayores, que incluyen viajes puerta a puerta, paratránsito y el programa CityRide para ayudar con recados, citas y más."
             }
         ]
-    }, 
+    },
     "mapPage": {
         "loadError": "Error al cargar el mapa",
         "loading": "Cargando mapa...",
@@ -148,5 +151,27 @@
             "geolocationNotSupported": "Geolocalización no compatible.",
             "locationError": "No se pudo obtener tu ubicación."
         }
-    } 
+    },
+    "dashboard": {
+        "loading": "Cargando tu perfil…",
+        "savedLocations": "Ubicaciones guardadas",
+        "noSavedLocations": "Aún no has guardado ninguna ubicación.",
+        "findLocations": "Buscar ubicaciones en el mapa"
+    },
+    "profile": {
+        "detailsTitle": "Detalles del perfil",
+        "fullNameLabel": "Nombre completo:",
+        "emailLabel": "Correo electrónico:",
+        "phoneLabel": "Teléfono:",
+        "phonePlaceholder": "(XXX) XXX-XXXX o dígitos",
+        "addressLabel": "Dirección:",
+        "streetLabel": "Calle",
+        "streetPlaceholder": "Dirección postal",
+        "cityLabel": "Ciudad",
+        "cityPlaceholder": "Ciudad",
+        "stateLabel": "Estado",
+        "statePlaceholder": "Estado/Provincia",
+        "zipcodeLabel": "Código postal",
+        "zipcodePlaceholder": "Código postal"
+    }
 }

@@ -28,7 +28,10 @@
         }
     },
     "common": {
-        "logoAlt": "標誌"
+        "logoAlt": "標誌",
+        "edit": "編輯",
+        "cancel": "取消",
+        "save": "儲存變更"
     },
     "hotlinesPage": {
         "header": {
@@ -102,7 +105,7 @@
                 "specialization": "洛杉磯市為年長者提供低成本、無障礙的交通服務，包括門到門接送、輔助客運服務以及CityRide計劃，以協助處理差事、預約等事宜。"
             }
         ]
-    }, 
+    },
     "mapPage": {
         "loadError": "地圖載入錯誤",
         "loading": "正在載入地圖...",
@@ -148,5 +151,27 @@
             "geolocationNotSupported": "不支援地理定位。",
             "locationError": "無法取得您的位置。"
         }
-    } 
+    },
+    "dashboard": {
+        "loading": "正在載入您的個人資料…",
+        "savedLocations": "收藏的地點",
+        "noSavedLocations": "您尚未收藏任何地點。",
+        "findLocations": "在地圖上尋找地點"
+    },
+    "profile": {
+        "detailsTitle": "個人資料詳情",
+        "fullNameLabel": "姓名:",
+        "emailLabel": "郵箱:",
+        "phoneLabel": "電話:",
+        "phonePlaceholder": "(XXX) XXX-XXXX 或純數字",
+        "addressLabel": "地址:",
+        "streetLabel": "街道",
+        "streetPlaceholder": "街道地址",
+        "cityLabel": "城市",
+        "cityPlaceholder": "城市",
+        "stateLabel": "州/省",
+        "statePlaceholder": "州/省",
+        "zipcodeLabel": "郵遞區號",
+        "zipcodePlaceholder": "郵遞/郵遞區號"
+    }
 }
