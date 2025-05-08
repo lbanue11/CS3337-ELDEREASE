@@ -1,0 +1,177 @@
+{
+  "navbar": {
+    "dashboard": "Dashboard",
+    "map": "Mapa",
+    "resources": "Mga Mapagkukunan",
+    "logout": "Mag-logout"
+  },
+  "home": {
+    "welcome": "Maligayang pagdating sa Aming Plataporma",
+    "tagline": "Upang matulungan ang mga Nakatatanda na kumonekta, mag-navigate, at mag-explore nang madali.",
+    "helpfulResources": "Mga Nakatutulong na Mapagkukunan",
+    "resources": {
+      "housing": {
+        "title": "🏠 Tulong sa Pabahay",
+        "description": "Maghanap ng abot-kayang mga opsyon sa pabahay para sa mga nakatatanda at mga emergency shelter.",
+        "link": "Galugarin"
+      },
+      "transportation": {
+        "title": "🚗 Suporta sa Transportasyon",
+        "description": "Alamin ang tungkol sa mga serbisyo sa pagsakay para sa mga nakatatanda at mga programa sa tulong sa paggalaw.",
+        "link": "Matuto Nang Higit Pa"
+      },
+      "hotlines": {
+        "title": "☎️ Mga Hotline at Kaligtasan",
+        "description": "Makipag-ugnay sa mga hotline para sa pang-aabuso sa matatanda o suporta sa kalusugan ng isip.",
+        "link": "Tingnan ang Mga Hotline"
+      }
+    }
+  },
+  "common": {
+    "logoAlt": "Logo",
+    "edit": "ኣመሓይሽ",
+    "cancel": "ስረዝ",
+    "save": "ለውጥታት ኣቐምጥ"
+  },
+  "hotlinesPage": {
+    "header": {
+      "logoAlt": "Logo ng ElderEase"
+    },
+    "titleIconAlt": "Icon ng Mga Hotline at Kaligtasan",
+    "pageTitle": "Mga Hotline at Kaligtasan",
+    "intro": "Mga pinagkakatiwalaang hotline at mapagkukunan ng kaligtasan para sa mga nakatatanda — ang tulong ay isang tawag lang ang layo.",
+    "card": {
+      "phonePrefix": "📞 ",
+      "moreInfoLink": "Karagdagang Impormasyon →"
+    },
+    "resources": [
+      {
+        "name": "Los Angeles County Adult Protective Services (APS)",
+        "location": "Los Angeles, CA",
+        "specialization": "Nagbibigay ng 24/7 na suporta para sa mga matatanda at dependent adults na maaaring biktima ng pang-aabuso, pagpapabaya, o pagsasamantala. Iniimbestigahan ng APS ang mga ulat at nag-aalok ng mga serbisyong pang-proteksyon upang matiyak ang kaligtasan at kapakanan ng mga vulnerable adults."
+      },
+      {
+        "name": "City of Los Angeles Department of Aging – Information & Assistance",
+        "location": "Los Angeles, CA",
+        "specialization": "Nag-aalok ng impormasyon at mga referral para sa mga nakatatanda sa iba't ibang serbisyo, kabilang ang transportasyon, nutrisyon, suporta sa tagapag-alaga, at iba pa. Ikinokonekta ng hotline na ito ang mga matatanda at kanilang mga tagapag-alaga sa mga mapagkukunan na nagtataguyod ng independent living."
+      },
+      {
+        "name": "Long-Term Care Ombudsman Program – WISE & Healthy Aging",
+        "location": "Los Angeles, CA",
+        "specialization": "Nagtataguyod para sa mga residente sa mga pasilidad ng pangmatagalang pangangalaga, tinutugunan ang mga alalahanin na may kaugnayan sa kalidad ng pangangalaga, mga karapatan ng residente, at pang-aabuso o pagpapabaya. Gumagana ang programa upang malutas ang mga reklamo at mapabuti ang kalidad ng buhay para sa mga nakatatanda sa mga pasilidad ng pangangalaga."
+      }
+    ]
+  },
+  "housingPage": {
+    "titleIconAlt": "Icon ng Bahay",
+    "pageTitle": "Tulong sa Pabahay",
+    "intro": "Dito mahahanap mo ang mga abot-kayang opsyon sa pabahay para sa mga nakatatanda at mga emergency shelter.",
+    "resources": [
+      {
+        "name": "Mga Mapagkukunan ng Pabahay para sa Nakatatanda ng County ng Los Angeles",
+        "location": "Los Angeles, CA",
+        "specialization": "Ang website ng Los Angeles County Housing Resource Center ay tumutulong na magbigay ng access sa impormasyon at mga tool para sa paghahanap ng pabahay at mga mapagkukunan para sa mga nakatatanda. Mangyaring patuloy na suriin ang site na ito para sa bagong impormasyon. Ang mga link sa iba pang mahahalagang website at ahensya at mga tool sa paghahanap ng pabahay ay ibinibigay sa ibaba."
+      },
+      {
+        "name": "Housing Authority of the City of Los Angeles (HACLA)",
+        "location": "Los Angeles, CA",
+        "specialization": "Nag-aalok ang HACLA ng iba't ibang programa para sa mga may mababang kita, walang tirahan, may kapansanan, mga bata, at matatanda. Upang mag-apply para sa pampublikong pabahay o makakuha ng mga update sa Section 8 Waiting List, maaari kang makipag-ugnay sa kanilang pangunahing opisina o bisitahin ang kanilang website."
+      },
+      {
+        "name": "Affordable Living for the Aging (ALA)",
+        "location": "Los Angeles, CA",
+        "specialization": "Nagbibigay ang ALA ng ilang programa na angkop para sa mga nakatatanda: Shared Housing: Pinagtutugma ang mga nakatatanda upang magbahagi ng pabahay, ginagawang abot-kayang mga living space ang mga bakanteng kuwarto. Permanent Supportive Housing: Nag-aalok ng pabahay na may on-site na social workers para sa mga nakatatandang nakakaranas ng chronic homelessness."
+      },
+      {
+        "name": "Los Angeles County Aging & Disabilities Department",
+        "location": "Los Angeles, CA",
+        "specialization": "Nagbibigay ang departamentong ito ng listahan ng mga abot-kayang opsyon sa pabahay na partikular sa mga matatandang higit sa 65 taong gulang, kabilang ang Section 8 Housing Choice Voucher Program at tulong sa utility para sa mga nangangailangan ng tulong sa mga bayarin sa utility."
+      }
+    ]
+  },
+  "transportationPage": {
+    "titleIconAlt": "Icon ng Transportasyon",
+    "pageTitle": "Suporta sa Transportasyon",
+    "intro": "Galugarin ang mga pinagkakatiwalaang programa na nag-aalok ng ligtas at abot-kayang mga sakay para sa mga nakatatanda at mga indibidwal na may limitadong mobility.",
+    "resources": [
+      {
+        "name": "Mga serbisyo sa transportasyon at mobile ng County ng Los Angeles",
+        "location": "Los Angeles, CA",
+        "specialization": "Upang aktibong suportahan ang isang mas age-friendly na Los Angeles County, ang mga serbisyong ito sa transportasyon at mobility ay nakatuon sa mga matatanda at dependent adults."
+      },
+      {
+        "name": "City of Los Angeles Department of Aging Transportation",
+        "location": "Los Angeles, CA",
+        "specialization": "Nag-aalok ang Lungsod ng Los Angeles ng mababang gastos at accessible na mga serbisyo sa transportasyon para sa mga nakatatanda, kabilang ang door-to-door rides, paratransit, at ang CityRide program upang tumulong sa mga gawain, appointment, at iba pa."
+      }
+    ]
+  },
+  "mapPage": {
+    "loadError": "Error sa pag-load ng mapa",
+    "loading": "Nilo-load ang mapa...",
+    "controls": {
+      "title": "Maghanap ng Mga Kalapit na Serbisyo sa Pangangalaga sa Matatanda",
+      "zipPlaceholder": "Ilagay ang ZIP code",
+      "categories": {
+        "nursingHome": "Mga Nursing Home",
+        "homeCare": "Pangangalaga sa Tahanan",
+        "assistedLiving": "Assisted Living",
+        "hospice": "Hospice",
+        "transportation": "Transportasyon",
+        "defaultSearchKeyword": "pangangalaga sa matatanda"
+      },
+      "searchButton": "Maghanap",
+      "useMyLocationButton": "Gamitin ang Aking Lokasyon"
+    },
+    "details": {
+      "phonePrefix": "📞 ",
+      "visitWebsiteLink": "Bisitahin ang Website",
+      "favoriteButton": "❤️ Paborito",
+      "viewInGoogleMapsLink": "Tingnan sa Google Maps",
+      "leaveReviewTitle": "Mag-iwan ng Review",
+      "reviewPlaceholder": "Isulat ang iyong review...",
+      "ratingOptions": {
+        "star": "{{count}} Bituin",
+        "star_plural": "{{count}} Bituin"
+      },
+      "ratingLabel": "Rating",
+      "submitReviewButton": "Ipadala ang Review",
+      "reviewsTitle": "Mga Review",
+      "noReviews": "Wala pang mga review.",
+      "reviewUserFallback": "User",
+      "closeAlt": "Isara ang mga detalye"
+    },
+    "alerts": {
+      "reviewSubmitFailed": "Nabigo ang pagpapadala ng review.",
+      "favoriteAdded": "Idinagdag sa mga paborito! ❤️",
+      "pleaseLogIn": "Mangyaring mag-login muna.",
+      "favoriteFailed": "Nabigo ang pagdagdag sa paborito.",
+      "zipNotFound": "Hindi mahanap ang lokasyon para sa ZIP code na iyon.",
+      "searchFailed": "May nangyaring mali. Pakisubukang muli.",
+      "geolocationNotSupported": "Hindi suportado ang geolocation.",
+      "locationError": "Hindi makuha ang iyong lokasyon."
+    }
+  },
+  "dashboard": {
+    "loading": "ናይ ኣካውንትኩም ሓበሬታ ይጽዕን ኣሎ…",
+    "savedLocations": "ዝተቐመጡ ቦታታት",
+    "noSavedLocations": "ዝኾነ ቦታ ኣይቀመጥኩምን።",
+    "findLocations": "ኣብ ካርታ ቦታታት ድለዩ"
+  },
+  "profile": {
+    "detailsTitle": "ናይ ኣካውንት ዝርዝር ሓበሬታ",
+    "fullNameLabel": "ሙሉእ ስም:",
+    "emailLabel": "ኢመይል:",
+    "phoneLabel": "ስልኪ:",
+    "phonePlaceholder": "(XXX) XXX-XXXX ወይ ቁጽርታት",
+    "addressLabel": "ኣድራሻ:",
+    "streetLabel": "ጎደና",
+    "streetPlaceholder": "ጎደና ኣድራሻ",
+    "cityLabel": "ከተማ",
+    "cityPlaceholder": "ከተማ",
+    "stateLabel": "ግዝኣት",
+    "statePlaceholder": "ግዝኣት/ክልሊ",
+    "zipcodeLabel": "ፖስታ ኮድ",
+    "zipcodePlaceholder": "ፖስታ ኮድ"
+  }
+}

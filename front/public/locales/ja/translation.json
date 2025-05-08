@@ -1,0 +1,177 @@
+{
+  "navbar": {
+    "dashboard": "ダッシュボード",
+    "map": "地図",
+    "resources": "リソース",
+    "logout": "ログアウト"
+  },
+  "home": {
+    "welcome": "私たちのプラットフォームへようこそ",
+    "tagline": "高齢者が簡単につながり、ナビゲートし、探索するのを支援します。",
+    "helpfulResources": "役立つリソース",
+    "resources": {
+      "housing": {
+        "title": "🏠 住居支援",
+        "description": "手頃な価格の高齢者向け住宅オプションと緊急避難所を見つける。",
+        "link": "探索する"
+      },
+      "transportation": {
+        "title": "🚗 交通支援",
+        "description": "高齢者向け配車サービスと移動補助プログラムについて学ぶ。",
+        "link": "詳細を見る"
+      },
+      "hotlines": {
+        "title": "☎️ ホットラインと安全",
+        "description": "高齢者虐待ホットラインやメンタルヘルスサポートに連絡する。",
+        "link": "ホットラインを見る"
+      }
+    }
+  },
+  "common": {
+    "logoAlt": "ロゴ",
+    "edit": "編集",
+    "cancel": "キャンセル",
+    "save": "変更を保存"
+  },
+  "hotlinesPage": {
+    "header": {
+      "logoAlt": "ElderEase ロゴ"
+    },
+    "titleIconAlt": "ホットラインと安全アイコン",
+    "pageTitle": "ホットラインと安全",
+    "intro": "高齢者向けの信頼できるホットラインと安全リソース — 電話一本で支援を。",
+    "card": {
+      "phonePrefix": "📞 ",
+      "moreInfoLink": "詳細情報 →"
+    },
+    "resources": [
+      {
+        "name": "ロサンゼルス郡 成人保護サービス (APS)",
+        "location": "Los Angeles, CA",
+        "specialization": "虐待、ネグレクト、または搾取の被害者である可能性のある高齢者および依存成人に対して24時間年中無休のサポートを提供します。APSは報告を調査し、脆弱な成人の安全と福祉を確保するための保護サービスを提供します。"
+      },
+      {
+        "name": "ロサンゼルス市 老人局 – 情報＆支援",
+        "location": "Los Angeles, CA",
+        "specialization": "交通、栄養、介護者支援など、様々なサービスに関する高齢者向けの情報提供および紹介を行います。このホットラインは、高齢者とその介護者を自立生活を促進するリソースに繋ぎます。"
+      },
+      {
+        "name": "長期ケア・オンブズマン・プログラム – WISE & Healthy Aging",
+        "location": "Los Angeles, CA",
+        "specialization": "長期ケア施設の入居者の権利を擁護し、ケアの質、入居者の権利、虐待やネグレクトに関する懸念に対処します。このプログラムは苦情を解決し、ケア施設での高齢者の生活の質を向上させるために活動します。"
+      }
+    ]
+  },
+  "housingPage": {
+    "titleIconAlt": "家アイコン",
+    "pageTitle": "住居支援",
+    "intro": "ここでは、手頃な価格の高齢者向け住宅オプションと緊急避難所を見つけることができます。",
+    "resources": [
+      {
+        "name": "ロサンゼルス郡 高齢者向け住宅リソース",
+        "location": "Los Angeles, CA",
+        "specialization": "ロサンゼルス郡住宅リソースセンターのウェブサイトは、高齢者向け住宅やリソースを見つけるための情報とツールへのアクセスを提供します。新しい情報については、このサイトを引き続きご確認ください。他の重要なウェブサイトや機関、住宅検索ツールへのリンクが以下に提供されています。"
+      },
+      {
+        "name": "ロサンゼルス市住宅局 (HACLA)",
+        "location": "Los Angeles, CA",
+        "specialization": "HACLAは、低所得者、ホームレス、障害者、子供、および高齢者向けに様々なプログラムを提供しています。公営住宅の申請やセクション8待機リストの更新情報を得るには、本局に連絡するか、ウェブサイトをご覧ください。"
+      },
+      {
+        "name": "高齢者のための手頃な価格の生活 (ALA)",
+        "location": "Los Angeles, CA",
+        "specialization": "ALAは高齢者向けにいくつかのプログラムを提供しています：共有住宅：高齢者をマッチングして住宅を共有し、空き部屋を手頃な価格の居住スペースに変えます。恒久的支援住宅：慢性的なホームレス状態にある高齢者向けに、敷地内にソーシャルワーカーがいる住宅を提供します。"
+      },
+      {
+        "name": "ロサンゼルス郡 老人・障害者局",
+        "location": "Los Angeles, CA",
+        "specialization": "この部署は、65歳以上の高齢者向けの具体的な手頃な価格の住宅オプションのリストを提供しており、セクション8住宅選択バウチャープログラムや光熱費の支払いに支援が必要な方向けの光熱費援助などが含まれます。"
+      }
+    ]
+  },
+  "transportationPage": {
+    "titleIconAlt": "交通アイコン",
+    "pageTitle": "交通支援",
+    "intro": "高齢者や移動が制限されている個人向けに、安全で手頃な価格の乗り物を提供する信頼できるプログラムを探しましょう。",
+    "resources": [
+      {
+        "name": "ロサンゼルス郡 交通およびモバイルサービス",
+        "location": "Los Angeles, CA",
+        "specialization": "より高齢者に優しいロサンゼルス郡を積極的に支援するため、これらの交通およびモビリティサービスは高齢者および依存成人に捧げられています。"
+      },
+      {
+        "name": "ロサンゼルス市 老人局 交通サービス",
+        "location": "Los Angeles, CA",
+        "specialization": "ロサンゼルス市は、高齢者向けに低コストでアクセスしやすい交通サービスを提供しており、ドアツードアの送迎、パラトランジット、用事や予約などを支援するCityRideプログラムが含まれます。"
+      }
+    ]
+  },
+  "mapPage": {
+    "loadError": "地図の読み込みエラー",
+    "loading": "地図を読み込み中...",
+    "controls": {
+      "title": "付近の高齢者介護サービスを探す",
+      "zipPlaceholder": "郵便番号を入力",
+      "categories": {
+        "nursingHome": "介護施設",
+        "homeCare": "在宅ケア",
+        "assistedLiving": "アシスティッドリビング",
+        "hospice": "ホスピス",
+        "transportation": "交通手段",
+        "defaultSearchKeyword": "高齢者ケア"
+      },
+      "searchButton": "検索",
+      "useMyLocationButton": "現在地を使用"
+    },
+    "details": {
+      "phonePrefix": "📞 ",
+      "visitWebsiteLink": "ウェブサイトを見る",
+      "favoriteButton": "❤️ お気に入り",
+      "viewInGoogleMapsLink": "Google Mapsで表示",
+      "leaveReviewTitle": "レビューを残す",
+      "reviewPlaceholder": "レビューを書く...",
+      "ratingOptions": {
+        "star": "星{{count}}つ",
+        "star_plural": "星{{count}}つ"
+      },
+      "ratingLabel": "評価",
+      "submitReviewButton": "レビューを送信",
+      "reviewsTitle": "レビュー",
+      "noReviews": "まだレビューはありません。",
+      "reviewUserFallback": "ユーザー",
+      "closeAlt": "詳細を閉じる"
+    },
+    "alerts": {
+      "reviewSubmitFailed": "レビューの送信に失敗しました。",
+      "favoriteAdded": "お気に入りに追加しました！❤️",
+      "pleaseLogIn": "先にログインしてください。",
+      "favoriteFailed": "お気に入りの追加に失敗しました。",
+      "zipNotFound": "その郵便番号の場所が見つかりませんでした。",
+      "searchFailed": "問題が発生しました。もう一度お試しください。",
+      "geolocationNotSupported": "位置情報はサポートされていません。",
+      "locationError": "位置情報を取得できませんでした。"
+    }
+  },
+  "dashboard": {
+    "loading": "プロフィールを読み込み中…",
+    "savedLocations": "保存した場所",
+    "noSavedLocations": "まだ場所を保存していません。",
+    "findLocations": "地図で場所を探す"
+  },
+  "profile": {
+    "detailsTitle": "プロフィールの詳細",
+    "fullNameLabel": "氏名:",
+    "emailLabel": "メールアドレス:",
+    "phoneLabel": "電話番号:",
+    "phonePlaceholder": "(XXX) XXX-XXXX または数字",
+    "addressLabel": "住所:",
+    "streetLabel": "通り",
+    "streetPlaceholder": "住所（番地まで）",
+    "cityLabel": "市区町村",
+    "cityPlaceholder": "市区町村",
+    "stateLabel": "都道府県",
+    "statePlaceholder": "都道府県",
+    "zipcodeLabel": "郵便番号",
+    "zipcodePlaceholder": "郵便番号"
+  }
+}

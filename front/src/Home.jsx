@@ -3,8 +3,11 @@ import { useNavigate, Link } from "react-router-dom";
 import "./home.css";
 import LogoSymbol from "./assets/LogoSymbol.png";
 import axios from "axios";
+import LanguageSwitcher from './components/LanguageSwitcher';
+import { useTranslation } from 'react-i18next';
 
 const Home = () => {
+  const { t } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
   const [profile, setProfile] = useState(null);
   const navigate = useNavigate();
@@ -38,10 +41,12 @@ const Home = () => {
   return (
     <>
       <header className="header">
-        <div className="home-logo">
-          <img className="home-logo" src={LogoSymbol} alt="Logo" />
+        <div className="header-left-group">
+          <div className="home-logo">
+            <img className="home-logo" src={LogoSymbol} alt={t('common.logoAlt')} />
+          </div>
+          <LanguageSwitcher /> {/* LanguageSwitcher component is included */}
         </div>
-
         <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
           ☰
         </button>
@@ -56,14 +61,14 @@ const Home = () => {
               </Link>
           )}
           <Link to="/map" onClick={() => setMenuOpen(false)}>
-            Map
+            {t('navbar.map')}
           </Link>
           <a
             href="#helpful-resources"
             onClick={() => setMenuOpen(false)}
             className="nav-link"
           >
-            Resources
+            {t('navbar.resources')}
           </a>
           <button
             onClick={() => {
@@ -71,38 +76,39 @@ const Home = () => {
               handleLogout();
             }}
           >
-            Logout
+            {t('navbar.logout')}
           </button>
         </nav>
       </header>
 
       <main className="home-intro-container fade-in">
-        <h1 className="app-text-style">Welcome to Our Platform</h1>
+        <h1 className="app-text-style">{t('home.welcome')}</h1>
         <p className="tagline-style">
-          To helping Seniors connect, navigate, and explore with ease.
+          {t('home.tagline')}
         </p>
 
         <section className="resources-section">
-          <h2 id="helpful-resources">Helpful Resources</h2>
+          <h2 id="helpful-resources">{t('home.helpfulResources')}</h2>
           <div className="resources-grid">
+            {/* Resource Card 1 */}
             <div className="resource-card">
-              <h3>🏠 Housing Assistance</h3>
-              <p>
-                Find affordable senior housing options and emergency shelters.
-              </p>
-              <Link to="/housing">Explore</Link>
+              <h3>{t('home.resources.housing.title')}</h3>
+              <p>{t('home.resources.housing.description')}</p>
+              <Link to="/housing">{t('home.resources.housing.link')}</Link>
             </div>
 
+            {/* Resource Card 2 */}
             <div className="resource-card">
-              <h3>🚗 Transportation Support</h3>
-              <p>Learn about senior ride services and mobility aid programs.</p>
-              <Link to="/transportation">Get Rides</Link>
+              <h3>{t('home.resources.transportation.title')}</h3>
+              <p>{t('home.resources.transportation.description')}</p>
+              <Link to="/transportation">{t('home.resources.transportation.link')}</Link>
             </div>
 
+            {/* Resource Card 3 */}
             <div className="resource-card">
-              <h3>☎️ Hotlines & Safety</h3>
-              <p>Contact elder abuse hotlines or mental health support.</p>
-              <Link to="/hotlinesafety">See Hotlines</Link>
+              <h3>{t('home.resources.hotlines.title')}</h3>
+              <p>{t('home.resources.hotlines.description')}</p>
+              <Link to="/hotlinesafety">{t('home.resources.hotlines.link')}</Link>
             </div>
           </div>
         </section>

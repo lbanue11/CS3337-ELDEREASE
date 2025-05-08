@@ -1,0 +1,177 @@
+{
+  "navbar": {
+    "dashboard": "대시보드",
+    "map": "지도",
+    "resources": "리소스",
+    "logout": "로그아웃"
+  },
+  "home": {
+    "welcome": "저희 플랫폼에 오신 것을 환영합니다",
+    "tagline": "노인분들이 쉽게 연결하고, 탐색하고, 탐험할 수 있도록 돕습니다.",
+    "helpfulResources": "유용한 리소스",
+    "resources": {
+      "housing": {
+        "title": "🏠 주거 지원",
+        "description": "저렴한 노인 주택 옵션과 긴급 보호소를 찾아보세요.",
+        "link": "탐색하기"
+      },
+      "transportation": {
+        "title": "🚗 교통 지원",
+        "description": "노인 승차 서비스 및 이동 보조 프로그램에 대해 알아보세요.",
+        "link": "더 알아보기"
+      },
+      "hotlines": {
+        "title": "☎️ 핫라인 및 안전",
+        "description": "노인 학대 핫라인 또는 정신 건강 지원에 연락하세요.",
+        "link": "핫라인 보기"
+      }
+    }
+  },
+  "common": {
+    "logoAlt": "로고",
+    "edit": "편집",
+    "cancel": "취소",
+    "save": "변경사항 저장"
+  },
+  "hotlinesPage": {
+    "header": {
+      "logoAlt": "ElderEase 로고"
+    },
+    "titleIconAlt": "핫라인 및 안전 아이콘",
+    "pageTitle": "핫라인 및 안전",
+    "intro": "노인분들을 위한 신뢰할 수 있는 핫라인과 안전 자원 — 전화 한 통이면 도움을 받을 수 있습니다.",
+    "card": {
+      "phonePrefix": "📞 ",
+      "moreInfoLink": "추가 정보 →"
+    },
+    "resources": [
+      {
+        "name": "로스앤젤레스 카운티 성인 보호 서비스 (APS)",
+        "location": "Los Angeles, CA",
+        "specialization": "학대, 방임 또는 착취의 피해자일 수 있는 노인 및 부양 성인을 위해 연중무휴 24시간 지원을 제공합니다. APS는 신고를 조사하고 취약한 성인의 안전과 복지를 보장하기 위한 보호 서비스를 제공합니다."
+      },
+      {
+        "name": "로스앤젤레스 시 노인국 – 정보 및 지원",
+        "location": "Los Angeles, CA",
+        "specialization": "교통, 영양, 간병인 지원 등 다양한 서비스에 대한 정보를 노인들에게 제공하고 추천합니다. 이 핫라인은 노인과 간병인을 독립적인 생활을 촉진하는 자원과 연결합니다."
+      },
+      {
+        "name": "장기 요양 옴부즈맨 프로그램 – WISE & Healthy Aging",
+        "location": "Los Angeles, CA",
+        "specialization": "장기 요양 시설 거주자를 옹호하며 치료의 질, 거주자의 권리, 학대 또는 방임과 관련된 우려 사항을 해결합니다. 이 프로그램은 불만을 해결하고 요양 시설에 있는 노인들의 삶의 질을 향상시키기 위해 노력합니다."
+      }
+    ]
+  },
+  "housingPage": {
+    "titleIconAlt": "집 아이콘",
+    "pageTitle": "주거 지원",
+    "intro": "여기에서 저렴한 노인 주택 옵션과 긴급 보호소를 찾을 수 있습니다.",
+    "resources": [
+      {
+        "name": "로스앤젤레스 카운티 노인 주택 자원",
+        "location": "Los Angeles, CA",
+        "specialization": "로스앤젤레스 카운티 주택 자원 센터 웹사이트는 노인 주택 및 자원 찾기를 위한 정보와 도구에 대한 접근을 제공합니다. 새로운 정보는 이 사이트를 계속 확인하십시오. 다른 중요한 웹사이트, 기관 및 주택 찾기 도구 링크는 아래에 제공됩니다."
+      },
+      {
+        "name": "로스앤젤레스 시 주택 관리국 (HACLA)",
+        "location": "Los Angeles, CA",
+        "specialization": "HACLA는 저소득층, 노숙자, 장애인, 아동 및 노인을 위한 다양한 프로그램을 제공합니다. 공공 주택 신청 또는 섹션 8 대기자 명단 업데이트를 받으려면 본사 사무실에 연락하거나 웹사이트를 방문하십시오."
+      },
+      {
+        "name": "노인을 위한 저렴한 생활 (ALA)",
+        "location": "Los Angeles, CA",
+        "specialization": "ALA는 노인을 위한 여러 프로그램을 제공합니다: 공유 주택: 노인들을 매칭하여 주택을 공유하고, 여분의 방을 저렴한 생활 공간으로 전환합니다. 영구 지원 주택: 만성 노숙 경험이 있는 노인을 위해 현장 사회 복지사가 있는 주택을 제공합니다."
+      },
+      {
+        "name": "로스앤젤레스 카운티 노인 및 장애인국",
+        "location": "Los Angeles, CA",
+        "specialization": "이 부서는 65세 이상 노인을 위한 저렴한 주택 옵션 목록을 제공하며, 섹션 8 주택 선택 바우처 프로그램과 공과금 납부에 도움이 필요한 사람들을 위한 공과금 지원을 포함합니다."
+      }
+    ]
+  },
+  "transportationPage": {
+    "titleIconAlt": "교통 아이콘",
+    "pageTitle": "교통 지원",
+    "intro": "노인 및 이동성이 제한된 개인을 위해 안전하고 저렴한 승차 서비스를 제공하는 신뢰할 수 있는 프로그램을 탐색하세요.",
+    "resources": [
+      {
+        "name": "로스앤젤레스 카운티 교통 및 모바일 서비스",
+        "location": "Los Angeles, CA",
+        "specialization": "보다 노인 친화적인 로스앤젤레스 카운티를 적극적으로 지원하기 위해 이러한 교통 및 이동성 서비스는 노인 및 부양 성인을 위해 제공됩니다."
+      },
+      {
+        "name": "로스앤젤레스 시 노인국 교통 서비스",
+        "location": "Los Angeles, CA",
+        "specialization": "로스앤젤레스 시는 노인을 위한 저렴하고 접근 가능한 교통 서비스를 제공하며, 방문 서비스, 장애인 이동 지원(paratransit), 심부름, 약속 등을 돕는 CityRide 프로그램을 포함합니다."
+      }
+    ]
+  },
+  "mapPage": {
+    "loadError": "지도 로드 오류",
+    "loading": "지도 로드 중...",
+    "controls": {
+      "title": "주변 노인 요양 서비스 찾기",
+      "zipPlaceholder": "우편번호 입력",
+      "categories": {
+        "nursingHome": "요양원",
+        "homeCare": "재가 돌봄",
+        "assistedLiving": "생활 지원 주택",
+        "hospice": "호스피스",
+        "transportation": "교통",
+        "defaultSearchKeyword": "노인 돌봄"
+      },
+      "searchButton": "검색",
+      "useMyLocationButton": "내 위치 사용"
+    },
+    "details": {
+      "phonePrefix": "📞 ",
+      "visitWebsiteLink": "웹사이트 방문",
+      "favoriteButton": "❤️ 즐겨찾기",
+      "viewInGoogleMapsLink": "Google 지도에서 보기",
+      "leaveReviewTitle": "리뷰 남기기",
+      "reviewPlaceholder": "리뷰 작성...",
+      "ratingOptions": {
+        "star": "별 {{count}}개",
+        "star_plural": "별 {{count}}개"
+      },
+      "ratingLabel": "평점",
+      "submitReviewButton": "리뷰 제출",
+      "reviewsTitle": "리뷰",
+      "noReviews": "아직 리뷰가 없습니다.",
+      "reviewUserFallback": "사용자",
+      "closeAlt": "세부 정보 닫기"
+    },
+    "alerts": {
+      "reviewSubmitFailed": "리뷰 제출 실패.",
+      "favoriteAdded": "즐겨찾기에 추가되었습니다! ❤️",
+      "pleaseLogIn": "먼저 로그인하십시오.",
+      "favoriteFailed": "즐겨찾기 추가 실패.",
+      "zipNotFound": "해당 우편번호의 위치를 찾을 수 없습니다.",
+      "searchFailed": "문제가 발생했습니다. 다시 시도하십시오.",
+      "geolocationNotSupported": "위치 정보가 지원되지 않습니다.",
+      "locationError": "위치를 가져올 수 없습니다."
+    }
+  },
+  "dashboard": {
+    "loading": "프로필 로드 중…",
+    "savedLocations": "저장된 위치",
+    "noSavedLocations": "아직 저장한 위치가 없습니다.",
+    "findLocations": "지도에서 위치 찾기"
+  },
+  "profile": {
+    "detailsTitle": "프로필 상세 정보",
+    "fullNameLabel": "전체 이름:",
+    "emailLabel": "이메일:",
+    "phoneLabel": "전화번호:",
+    "phonePlaceholder": "(XXX) XXX-XXXX 또는 숫자",
+    "addressLabel": "주소:",
+    "streetLabel": "도로명 주소",
+    "streetPlaceholder": "도로명 주소",
+    "cityLabel": "도시",
+    "cityPlaceholder": "도시",
+    "stateLabel": "주/도",
+    "statePlaceholder": "주/도",
+    "zipcodeLabel": "우편번호",
+    "zipcodePlaceholder": "우편번호"
+  }
+}

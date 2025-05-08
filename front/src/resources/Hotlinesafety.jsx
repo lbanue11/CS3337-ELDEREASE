@@ -1,37 +1,29 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import "./resources.css";
+import "./resources.css"; 
 import LogoSymbol from "../assets/LogoSymbol.png";
 import HotlinesafetyIcon from "../assets/hotlinesafety_icon.png";
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from "../components/LanguageSwitcher";
 
-const HotlinesafetyResources = [
+// Original data array - We keep it for non-translatable fields like link and phone
+const HotlinesafetyResourcesData = [
   {
-    name: "Los Angeles County Adult Protective Services (APS)",
-    location: "Los Angeles, CA",
-    specialization:
-      "Provides 24/7 support for older and dependent adults who may be victims of abuse, neglect, or exploitation. APS investigates reports and offers protective services to ensure the safety and well-being of vulnerable adults.",
     link: "https://ad.lacounty.gov/services/adult-protective-services/",
     phone: "1-877-4R-SENIORS (1-877-477-3646)",
   },
   {
-    name: "City of Los Angeles Department of Aging – Information & Assistance",
-    location: "Los Angeles, CA",
-    specialization:
-      "Offers information and referrals for seniors on various services, including transportation, nutrition, caregiver support, and more. This hotline connects older adults and their caregivers to resources that promote independent living.",
     link: "https://aging.lacity.gov/",
     phone: "1-800-510-2020",
   },
   {
-    name: "Long-Term Care Ombudsman Program – WISE & Healthy Aging",
-    location: "Los Angeles, CA",
-    specialization:
-      "Advocates for residents in long-term care facilities, addressing concerns related to quality of care, residents' rights, and abuse or neglect. The program works to resolve complaints and improve the quality of life for seniors in care facilities.",
     link: "https://www.wiseandhealthyaging.org/elder-abuse-prevention",
     phone: "1-800-334-WISE (1-800-334-9473)",
   },
 ];
 
 const Hotlinesafety = () => {
+  const { t } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -43,20 +35,28 @@ const Hotlinesafety = () => {
     navigate("/login");
   };
 
+  const resourceIndices = [0, 1, 2];
+
   return (
     <>
+      {/* ======== HEADER ========== */}
       <header className="header">
-        <Link to="/home" className="nav-logo">
-          <img src={LogoSymbol} alt="ElderEase Logo" />
-        </Link>
+        {/* 2. Mimic Home.js structure: Wrap logo Link and Switcher in header-left-group */}
+        <div className="header-left-group"> { }
+          <Link to="/home" className="nav-logo">
+            <img src={LogoSymbol} alt={t('hotlinesPage.header.logoAlt')} />
+          </Link>
+          <LanguageSwitcher /> {  }
+        </div>
 
+        {/* --- Keep other header elements unchanged --- */}
         <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
           ☰
         </button>
 
         <nav className={`nav ${menuOpen ? "open" : ""}`}>
           <Link to="/map" onClick={() => setMenuOpen(false)}>
-            Map
+            {t('navbar.map')}
           </Link>
           <button
             onClick={() => {
@@ -64,48 +64,51 @@ const Hotlinesafety = () => {
               handleLogout();
             }}
           >
-            Logout
+            {t('navbar.logout')}
           </button>
         </nav>
+        {/* --- End of unchanged elements --- */}
       </header>
+      {/* ======== END HEADER ========== */}
 
+      {/* ======== MAIN CONTENT ========== */}
       <main className="elder-main fade-in">
         <section className="housing-content">
           <div className="housing-header">
             <h1>
               <img
                 src={HotlinesafetyIcon}
-                alt="Hotlinesafety Icon"
+                alt={t('hotlinesPage.titleIconAlt')}
                 className="section-icon"
               />
-              Hotlines & Safety
+              {t('hotlinesPage.pageTitle')}
             </h1>
           </div>
           <p className="housing-text">
-            Trusted hotlines and safety resources for seniors — help is just a
-            call away.
+            {t('hotlinesPage.intro')}
           </p>
 
           <div className="housing-cards-container">
-            {HotlinesafetyResources.map((resource, index) => (
+            {resourceIndices.map((index) => (
               <div className="housing-card" key={index}>
-                <h2>{resource.name}</h2>
-                <p className="card-location">{resource.location}</p>
-                <p className="card-specialization">{resource.specialization}</p>
-                <p className="card-phone">📞 {resource.phone}</p>
+                <h2>{t(`hotlinesPage.resources.${index}.name`)}</h2>
+                <p className="card-location">{t(`hotlinesPage.resources.${index}.location`)}</p>
+                <p className="card-specialization">{t(`hotlinesPage.resources.${index}.specialization`)}</p>
+                <p className="card-phone">{t('hotlinesPage.card.phonePrefix')}{HotlinesafetyResourcesData[index]?.phone}</p>
                 <a
-                  href={resource.link}
+                  href={HotlinesafetyResourcesData[index]?.link}
                   className="card-link"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  More Info →
+                  {t('hotlinesPage.card.moreInfoLink')}
                 </a>
               </div>
             ))}
           </div>
         </section>
       </main>
+      {/* ======== END MAIN CONTENT ========== */}
     </>
   );
 };

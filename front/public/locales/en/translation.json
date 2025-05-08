@@ -1,0 +1,177 @@
+{
+    "navbar": {
+        "dashboard": "Dashboard",
+        "map": "Map",
+        "resources": "Resources",
+        "logout": "Logout"
+    },
+    "home": {
+        "welcome": "Welcome to Our Platform",
+        "tagline": "To helping Seniors connect, navigate, and explore with ease.",
+        "helpfulResources": "Helpful Resources",
+        "resources": {
+            "housing": {
+                "title": "🏠 Housing Assistance",
+                "description": "Find affordable senior housing options and emergency shelters.",
+                "link": "Explore"
+            },
+            "transportation": {
+                "title": "🚗 Transportation Support",
+                "description": "Learn about senior ride services and mobility aid programs.",
+                "link": "Learn More"
+            },
+            "hotlines": {
+                "title": "☎️ Hotlines & Safety",
+                "description": "Contact elder abuse hotlines or mental health support.",
+                "link": "See Hotlines"
+            }
+        }
+    },
+    "common": {
+        "logoAlt": "Logo",
+        "edit": "Edit",
+        "cancel": "Cancel",
+        "save": "Save Changes"
+    },
+    "hotlinesPage": {
+        "header": {
+            "logoAlt": "ElderEase Logo"
+        },
+        "titleIconAlt": "Hotlinesafety Icon",
+        "pageTitle": "Hotlines & Safety",
+        "intro": "Trusted hotlines and safety resources for seniors — help is just a call away.",
+        "card": {
+            "phonePrefix": "📞 ",
+            "moreInfoLink": "More Info →"
+        },
+        "resources": [
+            {
+                "name": "Los Angeles County Adult Protective Services (APS)",
+                "location": "Los Angeles, CA",
+                "specialization": "Provides 24/7 support for older and dependent adults who may be victims of abuse, neglect, or exploitation. APS investigates reports and offers protective services to ensure the safety and well-being of vulnerable adults."
+            },
+            {
+                "name": "City of Los Angeles Department of Aging – Information & Assistance",
+                "location": "Los Angeles, CA",
+                "specialization": "Offers information and referrals for seniors on various services, including transportation, nutrition, caregiver support, and more. This hotline connects older adults and their caregivers to resources that promote independent living."
+            },
+            {
+                "name": "Long-Term Care Ombudsman Program – WISE & Healthy Aging",
+                "location": "Los Angeles, CA",
+                "specialization": "Advocates for residents in long-term care facilities, addressing concerns related to quality of care, residents' rights, and abuse or neglect. The program works to resolve complaints and improve the quality of life for seniors in care facilities."
+            }
+        ]
+    },
+    "housingPage": {
+        "titleIconAlt": "House Icon",
+        "pageTitle": "Housing Assistance",
+        "intro": "Here you can find affordable senior housing options and emergency shelters.",
+        "resources": [
+            {
+                "name": "Los Angeles County Senior Housing Resources",
+                "location": "Los Angeles, CA",
+                "specialization": "The Los Angeles County Housing Resource Center website helps provide access to information and tools for finding senior housing and resources. Please continue to check this site for new information. Links to other important websites and agencies and housing locator tools are provided below."
+            },
+            {
+                "name": "Housing Authority of the City of Los Angeles (HACLA)",
+                "location": "Los Angeles, CA",
+                "specialization": "HACLA offers a range of programs for low-income, homeless, disabled, children, and older adults. To apply for public housing or get updates on the Section 8 Waiting List, you can contact their main office or visit their website."
+            },
+            {
+                "name": "Affordable Living for the Aging (ALA)",
+                "location": "Los Angeles, CA",
+                "specialization": "ALA provides several programs tailored for seniors: Shared Housing: Matches seniors to share housing, converting spare rooms into affordable living spaces. Permanent Supportive Housing: Offers housing with on-site social workers for seniors experiencing chronic homelessness."
+            },
+            {
+                "name": "Los Angeles County Aging & Disabilities Department",
+                "location": "Los Angeles, CA",
+                "specialization": "This department provides a list of affordable housing options specific to older adults over 65 years of age, including the Section 8 Housing Choice Voucher Program and utility assistance for those needing help with utility bills."
+            }
+        ]
+    },
+    "transportationPage": {
+        "titleIconAlt": "Transportation Icon",
+        "pageTitle": "Transportation Support",
+        "intro": "Explore trusted programs that offer safe and affordable rides for seniors and individuals with limited mobility.",
+        "resources": [
+            {
+                "name": "County of Los Angeles Transportation and mobile services",
+                "location": "Los Angeles, CA",
+                "specialization": "To actively support a more age-friendly Los Angeles County, these transportation and mobility services are dedicated to older and dependent adults."
+            },
+            {
+                "name": "City of Los Angeles Department of Aging Transportation",
+                "location": "Los Angeles, CA",
+                "specialization": "The City of Los Angeles offers low-cost and accessible transportation services for seniors, including door-to-door rides, paratransit, and the CityRide program to help with errands, appointments, and more."
+            }
+        ]
+    },
+    "mapPage": {
+        "loadError": "Error loading map",
+        "loading": "Loading map...",
+        "controls": {
+            "title": "Find Nearby Eldercare Services",
+            "zipPlaceholder": "Enter ZIP code",
+            "categories": {
+                "nursingHome": "Nursing Homes",
+                "homeCare": "Home Care",
+                "assistedLiving": "Assisted Living",
+                "hospice": "Hospice",
+                "transportation": "Transportation",
+                "defaultSearchKeyword": "eldercare"
+            },
+            "searchButton": "Search",
+            "useMyLocationButton": "Use My Location"
+        },
+        "details": {
+            "phonePrefix": "📞 ",
+            "visitWebsiteLink": "Visit Website",
+            "favoriteButton": "❤️ Favorite",
+            "viewInGoogleMapsLink": "View in Google Maps",
+            "leaveReviewTitle": "Leave a Review",
+            "reviewPlaceholder": "Write your review...",
+            "ratingOptions": {
+                "star": "{{count}} Star",
+                "star_plural": "{{count}} Stars"
+            },
+            "ratingLabel": "Rating",
+            "submitReviewButton": "Submit Review",
+            "reviewsTitle": "Reviews",
+            "noReviews": "No reviews yet.",
+            "reviewUserFallback": "User",
+            "closeAlt": "Close details"
+        },
+        "alerts": {
+            "reviewSubmitFailed": "Failed to submit review.",
+            "favoriteAdded": "Added to favorites! ❤️",
+            "pleaseLogIn": "Please log in first.",
+            "favoriteFailed": "Failed to add favorite.",
+            "zipNotFound": "Could not find location for that ZIP code.",
+            "searchFailed": "Something went wrong. Please try again.",
+            "geolocationNotSupported": "Geolocation not supported.",
+            "locationError": "Could not get your location."
+        }
+    },
+    "dashboard": {
+        "loading": "Loading your profile…",
+        "savedLocations": "Saved Locations",
+        "noSavedLocations": "You haven't saved any locations yet.",
+        "findLocations": "Find Locations on Map"
+    },
+    "profile": {
+        "detailsTitle": "Profile Details",
+        "fullNameLabel": "Full Name:",
+        "emailLabel": "Email:",
+        "phoneLabel": "Phone:",
+        "phonePlaceholder": "(XXX) XXX-XXXX or digits",
+        "addressLabel": "Address:",
+        "streetLabel": "Street",
+        "streetPlaceholder": "Street address",
+        "cityLabel": "City",
+        "cityPlaceholder": "City",
+        "stateLabel": "State",
+        "statePlaceholder": "State/Province",
+        "zipcodeLabel": "Zip Code",
+        "zipcodePlaceholder": "Postal/Zip code"
+    }
+}

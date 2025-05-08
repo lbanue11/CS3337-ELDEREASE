@@ -1,27 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import "./resources.css";
+import "./resources.css"; // Assuming shared CSS
 import LogoSymbol from "../assets/LogoSymbol.png";
 import TransportationIcon from "../assets/transportation_icon.png";
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from "../components/LanguageSwitcher";
 
-const transportationResources = [
+// Original data array for non-translatable fields (link)
+const transportationResourcesData = [
   {
-    name: "County of Los Angeles Transportation and mobile services",
-    location: "Los Angeles, CA",
-    specialization:
-      "To actively support a more age-friendly Los Angeles County, these transportation and mobility services are dedicated to older and dependent adults.",
     link: "https://lacounty.gov/residents/older-adults/transportation-and-mobile-services/",
   },
   {
-    name: "City of Los Angeles Department of Aging Transportation ",
-    location: "Los Angeles, CA",
-    specialization:
-      "The City of Los Angeles offers low-cost and accessible transportation services for seniors, including door-to-door rides, paratransit, and the CityRide program to help with errands, appointments, and more.",
     link: "https://aging.lacity.gov/transportation-services",
   },
 ];
 
 const Transportation = () => {
+  const { t } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -33,20 +29,27 @@ const Transportation = () => {
     navigate("/login");
   };
 
+  const resourceIndices = [0, 1];
+
   return (
     <>
+      {/* ======== HEADER ========== */}
       <header className="header">
-        <Link to="/home" className="nav-logo">
-          <img src={LogoSymbol} alt="ElderEase Logo" />
-        </Link>
+        {}
+        <div className="header-left-group">
+          <Link to="/home" className="nav-logo">
+            <img src={LogoSymbol} alt={t('hotlinesPage.header.logoAlt')} />
+          </Link>
+          <LanguageSwitcher /> {}
+        </div>
 
+        {/* --- Keep other header elements unchanged --- */}
         <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
           ☰
         </button>
-
         <nav className={`nav ${menuOpen ? "open" : ""}`}>
           <Link to="/map" onClick={() => setMenuOpen(false)}>
-            Map
+            {t('navbar.map')}
           </Link>
           <button
             onClick={() => {
@@ -54,47 +57,50 @@ const Transportation = () => {
               handleLogout();
             }}
           >
-            Logout
+            {t('navbar.logout')}
           </button>
         </nav>
+        {/* --- End of unchanged elements --- */}
       </header>
+      {/* ======== END HEADER ========== */}
 
+      {/* ======== MAIN CONTENT (Unchanged) ========== */}
       <main className="elder-main fade-in">
         <section className="housing-content">
           <div className="housing-header">
             <h1>
               <img
                 src={TransportationIcon}
-                alt="Transportation Icon"
+                alt={t('transportationPage.titleIconAlt')}
                 className="section-icon"
               />
-              Transportation Support
+              {t('transportationPage.pageTitle')}
             </h1>
           </div>
           <p className="housing-text">
-            Explore trusted programs that offer safe and affordable rides for
-            seniors and individuals with limited mobility.
+            {t('transportationPage.intro')}
           </p>
 
           <div className="housing-cards-container">
-            {transportationResources.map((resource, index) => (
+            {resourceIndices.map((index) => (
               <div className="housing-card" key={index}>
-                <h2>{resource.name}</h2>
-                <p className="card-location">{resource.location}</p>
-                <p className="card-specialization">{resource.specialization}</p>
+                <h2>{t(`transportationPage.resources.${index}.name`)}</h2>
+                <p className="card-location">{t(`transportationPage.resources.${index}.location`)}</p>
+                <p className="card-specialization">{t(`transportationPage.resources.${index}.specialization`)}</p>
                 <a
-                  href={resource.link}
+                  href={transportationResourcesData[index]?.link}
                   className="card-link"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  More Info →
+                  {t('hotlinesPage.card.moreInfoLink')}
                 </a>
               </div>
             ))}
           </div>
         </section>
       </main>
+      {/* ======== END MAIN CONTENT ========== */}
     </>
   );
 };

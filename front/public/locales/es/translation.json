@@ -1,0 +1,177 @@
+{
+    "navbar": {
+        "dashboard": "Mi Cuenta",
+        "map": "Mapa",
+        "resources": "Recursos",
+        "logout": "Cerrar sesión"
+    },
+    "home": {
+        "welcome": "Bienvenidos a Nuestra Plataforma",
+        "tagline": "Ayudando a las personas mayores a conectar, navegar y explorar con facilidad.",
+        "helpfulResources": "Recursos Útiles",
+        "resources": {
+            "housing": {
+                "title": "🏠 Asistencia de Vivienda",
+                "description": "Encuentre opciones de vivienda asequible para personas mayores y refugios de emergencia.",
+                "link": "Explorar"
+            },
+            "transportation": {
+                "title": "🚗 Apoyo de Transporte",
+                "description": "Infórmese sobre servicios de transporte para personas mayores y programas de ayuda para la movilidad.",
+                "link": "Más información"
+            },
+            "hotlines": {
+                "title": "☎️ Líneas Directas y Seguridad",
+                "description": "Contacte líneas directas de abuso de personas mayores o apoyo de salud mental.",
+                "link": "Ver Líneas Directas"
+            }
+        }
+    },
+    "common": {
+        "logoAlt": "Logo",
+        "edit": "Editar",
+        "cancel": "Cancelar",
+        "save": "Guardar cambios"
+    },
+    "hotlinesPage": {
+        "header": {
+            "logoAlt": "Logo de ElderEase"
+        },
+        "titleIconAlt": "Icono de Líneas Directas y Seguridad",
+        "pageTitle": "Líneas Directas y Seguridad",
+        "intro": "Líneas directas y recursos de seguridad confiables para personas mayores: la ayuda está a una llamada de distancia.",
+        "card": {
+            "phonePrefix": "📞 ",
+            "moreInfoLink": "Más info →"
+        },
+        "resources": [
+            {
+                "name": "Servicios de Protección para Adultos (APS) del Condado de Los Ángeles",
+                "location": "Los Ángeles, CA",
+                "specialization": "Proporciona apoyo 24/7 para adultos mayores y dependientes que puedan ser víctimas de abuso, negligencia o explotación. APS investiga informes y ofrece servicios de protección para garantizar la seguridad y el bienestar de los adultos vulnerables."
+            },
+            {
+                "name": "Departamento de Envejecimiento de la Ciudad de Los Ángeles – Información y Asistencia",
+                "location": "Los Ángeles, CA",
+                "specialization": "Ofrece información y referencias para personas mayores sobre diversos servicios, incluyendo transporte, nutrición, apoyo al cuidador y más. Esta línea directa conecta a los adultos mayores y sus cuidadores con recursos que promueven la vida independiente."
+            },
+            {
+                "name": "Programa Ombudsman de Cuidado a Largo Plazo – WISE & Healthy Aging",
+                "location": "Los Ángeles, CA",
+                "specialization": "Defiende a los residentes en centros de atención a largo plazo, abordando preocupaciones relacionadas con la calidad de la atención, los derechos de los residentes y el abuso o negligencia. El programa trabaja para resolver quejas y mejorar la calidad de vida de las personas mayores en centros de atención."
+            }
+        ]
+    },
+    "housingPage": {
+        "titleIconAlt": "Icono de Casa",
+        "pageTitle": "Asistencia de Vivienda",
+        "intro": "Aquí puede encontrar opciones de vivienda asequible para personas mayores y refugios de emergencia.",
+        "resources": [
+            {
+                "name": "Recursos de Vivienda para Personas Mayores del Condado de Los Ángeles",
+                "location": "Los Ángeles, CA",
+                "specialization": "El sitio web del Centro de Recursos de Vivienda del Condado de Los Ángeles ayuda a proporcionar acceso a información y herramientas para encontrar viviendas y recursos para personas mayores. Continúe revisando este sitio para obtener nueva información. A continuación se proporcionan enlaces a otros sitios web y agencias importantes y herramientas de localización de viviendas."
+            },
+            {
+                "name": "Autoridad de Vivienda de la Ciudad de Los Ángeles (HACLA)",
+                "location": "Los Ángeles, CA",
+                "specialization": "HACLA ofrece una variedad de programas para personas de bajos ingresos, sin hogar, discapacitados, niños y adultos mayores. Para solicitar vivienda pública u obtener actualizaciones sobre la Lista de Espera de la Sección 8, puede comunicarse con su oficina principal o visitar su sitio web."
+            },
+            {
+                "name": "Vivienda Asequible para el Envejecimiento (ALA)",
+                "location": "Los Ángeles, CA",
+                "specialization": "ALA ofrece varios programas diseñados para personas mayores: Vivienda Compartida: Empareja a personas mayores para compartir vivienda, convirtiendo habitaciones libres en espacios de vida asequibles. Vivienda de Apoyo Permanente: Ofrece vivienda con trabajadores sociales en el lugar para personas mayores que experimentan la falta de hogar crónica."
+            },
+            {
+                "name": "Departamento de Envejecimiento y Discapacidades del Condado de Los Ángeles",
+                "location": "Los Ángeles, CA",
+                "specialization": "Este departamento proporciona una lista de opciones de vivienda asequible específicas para adultos mayores de 65 años, incluido el Programa de Vales de Elección de Vivienda de la Sección 8 y asistencia con los servicios públicos para aquellos que necesitan ayuda con las facturas de servicios públicos."
+            }
+        ]
+    },
+    "transportationPage": {
+        "titleIconAlt": "Icono de Transporte",
+        "pageTitle": "Apoyo de Transporte",
+        "intro": "Explore programas confiables que ofrecen viajes seguros y asequibles para personas mayores y personas con movilidad reducida.",
+        "resources": [
+            {
+                "name": "Servicios móviles y de transporte del condado de Los Ángeles",
+                "location": "Los Ángeles, CA",
+                "specialization": "Para apoyar activamente un condado de Los Ángeles más amigable con las personas mayores, estos servicios de transporte y movilidad están dedicados a adultos mayores y dependientes."
+            },
+            {
+                "name": "Transporte del Departamento de Envejecimiento de la Ciudad de Los Ángeles",
+                "location": "Los Ángeles, CA",
+                "specialization": "La ciudad de Los Ángeles ofrece servicios de transporte accesibles y de bajo costo para personas mayores, que incluyen viajes puerta a puerta, paratránsito y el programa CityRide para ayudar con recados, citas y más."
+            }
+        ]
+    },
+    "mapPage": {
+        "loadError": "Error al cargar el mapa",
+        "loading": "Cargando mapa...",
+        "controls": {
+            "title": "Encuentre Servicios de Cuidado para Personas Mayores Cercanos",
+            "zipPlaceholder": "Ingrese código postal",
+            "categories": {
+                "nursingHome": "Residencias de ancianos",
+                "homeCare": "Cuidado en el hogar",
+                "assistedLiving": "Vivienda asistida",
+                "hospice": "Hospicio",
+                "transportation": "Transporte",
+                "defaultSearchKeyword": "cuidado de ancianos"
+            },
+            "searchButton": "Buscar",
+            "useMyLocationButton": "Usar mi ubicación"
+        },
+        "details": {
+            "phonePrefix": "📞 ",
+            "visitWebsiteLink": "Visitar sitio web",
+            "favoriteButton": "❤️ Favorito",
+            "viewInGoogleMapsLink": "Ver en Google Maps",
+            "leaveReviewTitle": "Dejar una reseña",
+            "reviewPlaceholder": "Escribe tu reseña...",
+            "ratingOptions": {
+                "star": "{{count}} Estrella",
+                "star_plural": "{{count}} Estrellas"
+            },
+            "ratingLabel": "Calificación",
+            "submitReviewButton": "Enviar reseña",
+            "reviewsTitle": "Reseñas",
+            "noReviews": "Aún no hay reseñas.",
+            "reviewUserFallback": "Usuario",
+            "closeAlt": "Cerrar detalles"
+        },
+        "alerts": {
+            "reviewSubmitFailed": "Error al enviar la reseña.",
+            "favoriteAdded": "¡Agregado a favoritos! ❤️",
+            "pleaseLogIn": "Por favor, inicie sesión primero.",
+            "favoriteFailed": "Error al agregar favorito.",
+            "zipNotFound": "No se pudo encontrar la ubicación para ese código postal.",
+            "searchFailed": "Algo salió mal. Por favor, inténtelo de nuevo.",
+            "geolocationNotSupported": "Geolocalización no compatible.",
+            "locationError": "No se pudo obtener tu ubicación."
+        }
+    },
+    "dashboard": {
+        "loading": "Cargando tu perfil…",
+        "savedLocations": "Ubicaciones guardadas",
+        "noSavedLocations": "Aún no has guardado ninguna ubicación.",
+        "findLocations": "Buscar ubicaciones en el mapa"
+    },
+    "profile": {
+        "detailsTitle": "Detalles del perfil",
+        "fullNameLabel": "Nombre completo:",
+        "emailLabel": "Correo electrónico:",
+        "phoneLabel": "Teléfono:",
+        "phonePlaceholder": "(XXX) XXX-XXXX o dígitos",
+        "addressLabel": "Dirección:",
+        "streetLabel": "Calle",
+        "streetPlaceholder": "Dirección postal",
+        "cityLabel": "Ciudad",
+        "cityPlaceholder": "Ciudad",
+        "stateLabel": "Estado",
+        "statePlaceholder": "Estado/Provincia",
+        "zipcodeLabel": "Código postal",
+        "zipcodePlaceholder": "Código postal"
+    }
+}
