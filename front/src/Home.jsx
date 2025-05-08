@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "./home.css";
 import LogoSymbol from "./assets/LogoSymbol.png";
@@ -6,18 +6,31 @@ import axios from "axios";
 
 const Home = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [profile, setProfile] = useState(null);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    axios
+        .get("/api/profile")
+        .then(res => setProfile(res.data))
+        .catch(err => {
+          // not logged in → back to login
+          if (err.response?.status === 401) {
+            navigate("/login");
+          } else {
+            console.error("Failed to load profile:", err);
+          }
+        });
+  }, [navigate]);
 
   const handleLogout = () => {
     axios
         .post("/api/auth/logout")
         .then(() => {
-          // session is invalidated server-side
           navigate("/login");
         })
         .catch((err) => {
           console.error("Logout failed:", err);
-          // redirect anyway
           navigate("/login");
         });
   };
@@ -34,9 +47,14 @@ const Home = () => {
         </button>
 
         <nav className={`nav ${menuOpen ? "open" : ""}`}>
-          <Link to="/userdashboard" onClick={() => setMenuOpen(false)}>
-            Dashboard
-          </Link>
+          {profile && (
+              <Link
+                  to={profile.role === "ADMIN" ? "/admin" : "/userdashboard"}
+                  onClick={() => setMenuOpen(false)}
+              >
+                Dashboard
+              </Link>
+          )}
           <Link to="/map" onClick={() => setMenuOpen(false)}>
             Map
           </Link>

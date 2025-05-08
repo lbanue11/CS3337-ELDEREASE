@@ -9,6 +9,7 @@ import LogoSymbol from "./assets/LogoSymbol.png";
 import MapComponent from "./MapComponent.jsx";
 import Home from "./Home";
 import UserDashboard from "./UserDashboard.jsx";
+import AdminDashboard from "./AdminDashboard.jsx";
 import Housing from "./resources/Housing";
 import Transportation from "./resources/Transportation";
 import Hotlinesafety from "./resources/Hotlinesafety";
@@ -61,6 +62,9 @@ function App() {
 
         {/* User Dashboard*/}
         <Route path="/userdashboard" element={<UserDashboard />} />
+
+          {/* Admin Dashboard*/}
+          <Route path="/admin" element={<AdminDashboard />} />
 
         {/*Resources - Housing*/}
         <Route path="/housing" element={<Housing />} />
