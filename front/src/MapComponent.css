@@ -182,3 +182,52 @@
 .btn-favorite:hover {
   opacity: 0.75;
 }
+
+.review-list {
+  margin-top: 1rem;
+}
+
+/* The card container */
+.review-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Header row inside each card */
+.review-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+/* Star styling */
+.review-rating {
+  color: #f4b400;
+}
+
+/* The review text */
+.review-text {
+  margin: 0;
+  color: #333;
+  line-height: 1.4;
+}
+
+.review-author {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.review-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
