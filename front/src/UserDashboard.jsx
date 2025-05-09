@@ -317,15 +317,64 @@ const UserDashboard = () => {
                         <CardContent>
                             <Box sx={{ display: 'flex', gap: 3 }}>
                                 {/* Left Column: Avatar/Name */}
-                                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flexShrink: 0, pt: 2 }}>
-                                    <Avatar sx={{ width: 80, height: 80, fontSize: 40, mb: 1, bgcolor: 'primary.main' }}> {(profile.firstName?.charAt(0)?.toUpperCase() || '') + (profile.lastName?.charAt(0)?.toUpperCase() || '?')} </Avatar>
-                                    <Typography variant="h6" component="h2" sx={{ wordBreak: 'break-word', textAlign: 'center' }}> {profile.firstName} {profile.lastName} </Typography>
+                                <Box
+                                    sx={{
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'center',
+                                        flexShrink: 0,
+                                        pt: 2
+                                    }}
+                                >
+                                    <Avatar
+                                        sx={{ width: 80, height: 80, fontSize: 40, mb: 1, bgcolor: 'primary.main' }}
+                                    >
+                                        {(profile.firstName?.charAt(0)?.toUpperCase() || '') +
+                                            (profile.lastName?.charAt(0)?.toUpperCase() || '?')}
+                                    </Avatar>
+                                    <Typography
+                                        variant="h6"
+                                        component="h2"
+                                        sx={{ wordBreak: 'break-word', textAlign: 'center' }}
+                                    >
+                                        {profile.firstName} {profile.lastName}
+                                    </Typography>
                                 </Box>
+
                                 {/* Right Column: Details */}
                                 <Box sx={{ flexGrow: 1 }}>
-                                    <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
-                                        <Typography variant="h6" component="h2"> {t('profile.detailsTitle', 'Profile Details')} </Typography>
-                                        {!isEditing && ( <Button size="small" startIcon={<EditIcon />} onClick={handleEditToggle} disabled={isSaving}> {t('common.edit', 'Edit')} </Button> )}
+                                    {/* Header with title, user ID, and edit button */}
+                                    <Box
+                                        sx={{
+                                            display: 'flex',
+                                            justifyContent: 'space-between',
+                                            alignItems: 'center',
+                                            mb: 2
+                                        }}
+                                    >
+                                        <Box sx={{ display: 'flex', alignItems: 'baseline', gap: 2 }}>
+                                            <Typography variant="h6" component="h2">
+                                                {t('profile.detailsTitle', 'Profile Details')}
+                                            </Typography>
+                                            <Typography
+                                                variant="subtitle2"
+                                                color="text.secondary"
+                                                sx={{ ml: 2 }}
+                                            >
+                                                {t('profile.userIdLabel', 'Your ID')}: {profile.userId}
+                                            </Typography>
+                                        </Box>
+
+                                        {!isEditing && (
+                                            <Button
+                                                size="small"
+                                                startIcon={<EditIcon />}
+                                                onClick={handleEditToggle}
+                                                disabled={isSaving}
+                                            >
+                                                {t('common.edit', 'Edit')}
+                                            </Button>
+                                        )}
                                     </Box>
                                     <List dense>
                                         {/* Email */}
