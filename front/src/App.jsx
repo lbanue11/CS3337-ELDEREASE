@@ -13,6 +13,8 @@ import AdminDashboard from "./AdminDashboard.jsx";
 import Housing from "./resources/Housing";
 import Transportation from "./resources/Transportation";
 import Hotlinesafety from "./resources/Hotlinesafety";
+import CaregiverSignup from "./CaregiverSignup.jsx";
+import CaregiverDashboard from "./CaregiverDashboard.jsx";
 
 axios.defaults.baseURL = 'http://localhost:8080';
 axios.defaults.withCredentials = true;
@@ -53,6 +55,10 @@ function App() {
 
         {/* Registration Route */}
         <Route path="/register" element={<Registration />} />
+
+          <Route path="/signup/caregiver" element={<CaregiverSignup />} />
+
+          <Route path="/caregiverdashboard" element={<CaregiverDashboard />} />
 
         {/* Map Route */}
         <Route path="/map" element={<MapComponent />} />

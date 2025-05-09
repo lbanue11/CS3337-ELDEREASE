@@ -54,7 +54,11 @@ const Home = () => {
         <nav className={`nav ${menuOpen ? "open" : ""}`}>
           {profile && (
               <Link
-                  to={profile.role === "ADMIN" ? "/admin" : "/userdashboard"}
+                  to={
+                    profile.role === "ADMIN" ? "/admin"
+                        : profile.role === "CAREGIVER" ? "/caregiverdashboard"
+                            : "/userdashboard"
+                  }
                   onClick={() => setMenuOpen(false)}
               >
                 {t('navbar.dashboard')}

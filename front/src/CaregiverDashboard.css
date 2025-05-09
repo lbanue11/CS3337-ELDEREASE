@@ -38,8 +38,8 @@
 /* Responsive Header */
 @media (max-width: 768px) {
     .nav { display: none; flex-direction: column; position: absolute; top: 60px; right: 1.5rem;
-           background-color: #fff; border: 1px solid #ccc; padding: 1rem; gap: 1rem;
-           box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); border-radius: 8px; }
+        background-color: #fff; border: 1px solid #ccc; padding: 1rem; gap: 1rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); border-radius: 8px; }
     .nav.open { display: flex; }
     .menu-toggle { display: block; }
 }
@@ -91,18 +91,7 @@ main.dashboard-main {
 
 /* Header utility style */
 .header-left-group {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.messages-list {
-    scrollbar-width: thin;
-}
-.messages-list::-webkit-scrollbar {
-    width: 6px;
-}
-.messages-list::-webkit-scrollbar-thumb {
-    background-color: rgba(0,0,0,0.2);
-    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }

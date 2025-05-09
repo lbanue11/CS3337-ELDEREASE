@@ -4,6 +4,8 @@ import group1.elderease_back.DTO.RegistrationRequest;
 import group1.elderease_back.entities.User;
 import group1.elderease_back.entities.UserRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
+import org.springframework.http.HttpStatus;
 
 @Service
 public class UserRegistrationService {
@@ -14,29 +16,26 @@ public class UserRegistrationService {
         this.userRepository = userRepository;
     }
 
-    public void registerUser(RegistrationRequest registrationRequest) {
+    public void registerUser(RegistrationRequest req) {
 
-        // Uses checks database to see if email is already in use
-        // if it is stopps whole method here and throws runtime exception with message
-        if (userRepository.findByEmail(registrationRequest.getEmail()).isPresent()) {
-            throw new RuntimeException("Email already in use");
+        if (userRepository.findByEmail(req.getEmail()).isPresent()) {
+            throw new ResponseStatusException(
+                    HttpStatus.CONFLICT, "Email already in use"
+            );
         }
 
-        // MORE RESCRICTIONS CAN BE ADDED HERE ON EMAILS NAMES PASSWORD ETC
-        // WE JUST HAVE TO DEVOLP THE CODE FOR IT
-
-        // If all rescritions pass, new User is created and added to the database
         User newUser = new User();
+        newUser.setFirstName(req.getFirstName());
+        newUser.setLastName(req.getLastName());
+        newUser.setEmail(req.getEmail());
+        newUser.setPassword(req.getPassword());
 
-        // user feilds are updated to equal the same as the request
-        newUser.setFirstName(registrationRequest.getFirstName());
-        newUser.setLastName(registrationRequest.getLastName());
-        newUser.setEmail(registrationRequest.getEmail());
-        newUser.setPassword(registrationRequest.getPassword());
-        newUser.setRole(registrationRequest.getRole());
+        if ("CAREGIVER".equalsIgnoreCase(req.getRole())) {
+            newUser.setRole("CAREGIVER");
+        } else {
+            newUser.setRole("USER");
+        }
 
-        // adds new user to the database server
         userRepository.save(newUser);
-
     }
 }

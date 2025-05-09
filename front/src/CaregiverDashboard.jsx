@@ -1,11 +1,10 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import "./UserDashboard.css";
 import LogoSymbol from "./assets/LogoSymbol.png";
 import {
     Avatar, Card, CardContent, CardActions, Button, Typography, List,
     ListItem, ListItemIcon, ListItemText, CircularProgress, Box, Divider,
-    TextField
+    TextField, DialogTitle, Dialog, DialogContent, DialogActions
 } from "@mui/material";
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import EditIcon from '@mui/icons-material/Edit';
@@ -14,9 +13,8 @@ import CancelIcon from '@mui/icons-material/Cancel';
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
 import HomeIcon from '@mui/icons-material/Home';
-import IconButton from "@mui/material/IconButton";
-import DeleteIcon from "@mui/icons-material/Delete";
-
+import "./CaregiverDashboard.css"
+// import CakeIcon from '@mui/icons-material/Cake';
 
 import axios from "axios";
 import { useTranslation } from 'react-i18next';
@@ -30,11 +28,11 @@ const formatPhoneNumber = (value) => {
     if (match) {
         return `(${match[1]}) ${match[2]}-${match[3]}`;
     }
-    return null;
+    return null; // Return null if format doesn't match
 };
 
 
-const UserDashboard = () => {
+const CaregiverDashboard = () => {
     const { t } = useTranslation();
     const [menuOpen, setMenuOpen] = useState(false);
     const [profile, setProfile] = useState(null);
@@ -43,47 +41,57 @@ const UserDashboard = () => {
     const [isEditing, setIsEditing] = useState(false);
     const [editedProfile, setEditedProfile] = useState(null);
     const [isSaving, setIsSaving] = useState(false);
-    const [messages, setMessages] = useState([]);
-    const [loadingMessages, setLoadingMessages] = useState(false);
     const navigate = useNavigate();
+    const [openAddElder, setOpenAddElder] = useState(false);
+    const [elderId, setElderId]     = useState("");
+    const [elderEmail, setElderEmail] = useState("");
+    const [elders, setElders] = useState([]);
+    const [loadingElders, setLoadingElders] = useState(true);
+    const [openMessageDialog, setOpenMessageDialog] = useState(false);
+    const [messageText, setMessageText] = useState("");
+    const [currentElder, setCurrentElder] = useState(null);
 
-    const handleDelete = (messageId) => {
-        console.log("Deleting message:", messageId);
-        axios
-            .delete(`/api/user/messages/${messageId}`, { withCredentials: true })
-            .then(() => {
-                // Remove the deleted message from state
-                setMessages(prev => prev.filter(m => m.messageId !== messageId));
-            })
-            .catch(err => {
-                console.error("Failed to delete message:", err);
-                alert("Could not delete the message.");
-            });
+    // links elder to cargiver
+    const handleLinkElder = async () => {
+        try {
+            await axios.post("/api/caregiver/elders", { elderId: Number(elderId) });
+            setOpenAddElder(false);
+            setElderId("");
+            setElderEmail("");
+            fetchElders(); // re‑load the list
+        } catch (e) {
+            alert("Failed to add elder.");
+        }
     };
 
-    const fetchMessages = useCallback(() => {
-        console.log("Fetching messages...");
-        setLoadingMessages(true);
+    const handleOpenMessage = elder => {
+        setCurrentElder(elder);
+        setMessageText("");
+        setOpenMessageDialog(true);
+    };
 
-        axios
-            .get("/api/elder/inbox", { withCredentials: true })
-            .then(res => {
-                console.log("Inbox response data:", res.data);
-                setMessages(res.data || []);
-            })
-            .catch(err => {
-                console.error("Failed to load messages:", err);
-                setMessages([]);
-            })
-            .finally(() => {
-                console.log("Finished fetching messages");
-                setLoadingMessages(false);
+    const handleSendMessage = async () => {
+        try {
+            await axios.post("/api/caregiver/messages", {
+                elderId: currentElder.userId,
+                message: messageText
             });
+            setOpenMessageDialog(false);
+            // optionally show a toast/snackbar
+        } catch (e) {
+            alert("Failed to send message.");
+        }
+    };
+
+    // gets elder data
+    const fetchElders = useCallback(() => {
+        setLoadingElders(true);
+        axios.get("/api/caregiver/elders")
+            .then(res => setElders(res.data || []))
+            .catch(() => setElders([]))
+            .finally(() => setLoadingElders(false));
     }, []);
 
-
-    // --- Data Fetching ---
-    // Removed duplicate placeholder for fetchProfile
     const fetchProfile = useCallback(() => {
         axios.get("/api/profile")
             .then(res => {
@@ -96,10 +104,10 @@ const UserDashboard = () => {
             });
     }, [navigate]);
 
-    // Removed duplicate placeholder for fetchFavorites
+
     const fetchFavorites = useCallback(() => {
         setLoadingFavorites(true);
-        axios.get("/api/google-favorites/user") // Corrected endpoint
+        axios.get("/api/google-favorites/user")
             .then(res => {
                 console.log("Fetched Favorites:", res.data);
                 setFavorites(res.data || []);
@@ -118,36 +126,30 @@ const UserDashboard = () => {
     useEffect(() => {
         fetchProfile();
         fetchFavorites();
-        fetchMessages();
-    }, [fetchProfile, fetchFavorites, fetchMessages]);
+        fetchElders();
+    }, [fetchProfile, fetchFavorites, fetchElders]);
 
-    // --- Event Handlers ---
-    // Removed duplicate placeholder for handleLogout
     const handleLogout = () => {
         axios.post("/api/auth/logout")
             .then(() => navigate("/login"))
             .catch(err => { console.error("Logout failed:", err); navigate("/login"); });
     };
 
-    // Removed duplicate placeholder for handleEditToggle
     const handleEditToggle = () => {
         if (!isEditing) { setEditedProfile({ ...profile }); }
         setIsEditing(!isEditing);
     };
 
-    // Removed duplicate placeholder for handleCancel
     const handleCancel = () => {
         setEditedProfile({ ...profile });
         setIsEditing(false);
     };
 
-    // Removed duplicate placeholder for handleInputChange
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         setEditedProfile(prev => ({ ...prev, [name]: value === '' ? null : value }));
     };
 
-    // Removed duplicate placeholder for handleSave
     const handleSave = () => {
         setIsSaving(true);
         const profileToSave = { ...editedProfile };
@@ -308,7 +310,78 @@ const UserDashboard = () => {
                             </CardActions>
                         )}
                     </Card>
+
+                    <Box sx={{ height: 18 }} />
+
+                    <Card sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
+                        <CardContent sx={{ flexGrow: 1 }}>
+                            <Typography variant="h6" gutterBottom>
+                                {t("dashboard.addElderly", "Add Elderly")}
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                                {t("dashboard.addElderlyHelp", "Select an elder to link to your profile.")}
+                            </Typography>
+                        </CardContent>
+                        <CardActions sx={{ justifyContent: "center", borderTop: "1px solid rgba(0,0,0,0.12)" }}>
+                            <Button size="small" onClick={() => setOpenAddElder(true)}>
+                                {t("dashboard.addElder", "Add Elder")}
+                            </Button>
+                        </CardActions>
+                    </Card>
+
+
+                    {!loadingElders && elders.length > 0 && (
+                        <Card sx={{ mt: 2 }}>
+                            <CardContent>
+                                <Typography variant="h6">Your Elders</Typography>
+                                <List dense>
+                                    {elders.map(elder => (
+                                        <ListItem
+                                            key={elder.userId}
+                                            sx={{ flexDirection: 'column', alignItems: 'flex-start', py: 1 }}
+                                        >
+                                            <Box
+                                                sx={{
+                                                    width: '100%',
+                                                    display: 'flex',
+                                                    alignItems: 'center'
+                                                }}
+                                            >
+                                                <Typography
+                                                    component={Link}
+                                                    to={`/elder/${elder.userId}`}
+                                                    sx={{
+                                                        textDecoration: 'none',
+                                                        color: 'primary.main',
+                                                        fontWeight: 500,
+                                                        flexGrow: 1
+                                                    }}
+                                                >
+                                                    {elder.firstName} {elder.lastName}
+                                                </Typography>
+                                                <Button
+                                                    variant="text"
+                                                    size="small"
+                                                    onClick={() => handleOpenMessage(elder)}
+                                                    sx={{ fontSize: '0.75rem', minWidth: 'auto', p: 0.5, ml: 2 }}
+                                                >
+                                                    Message
+                                                </Button>
+                                            </Box>
+                                            <Typography variant="caption" color="text.secondary" sx={{ ml: 0 }}>
+                                                {elder.email}
+                                            </Typography>
+                                        </ListItem>
+                                    ))}
+                                </List>
+                            </CardContent>
+                        </Card>
+                    )}
+
+
+
                 </aside>
+
 
 
                 {/* --- Main Content: Merged Profile Details (Left/Right Layout) --- */}
@@ -382,77 +455,88 @@ const UserDashboard = () => {
                             </CardActions>
                         )}
                     </Card>
-
-                    <Card sx={{ mt: 4 }}>
-                        <CardContent>
-                            <Typography variant="h6" gutterBottom>
-                                {t("dashboard.messages", "Your Messages")}
-                            </Typography>
-
-                            {loadingMessages ? (
-                                <Box sx={{ display: "flex", justifyContent: "center", p: 2 }}>
-                                    <CircularProgress size={24} />
-                                </Box>
-                            ) : messages.length > 0 ? (
-                                <List dense>
-                                    {messages.slice(0, 5).map(msg => (
-                                        <ListItem
-                                            key={msg.messageId}
-                                            alignItems="flex-start"
-                                            secondaryAction={
-                                                <IconButton
-                                                    edge="end"
-                                                    aria-label="delete"
-                                                    onClick={() => handleDelete(msg.messageId)}
-                                                >
-                                                    <DeleteIcon />
-                                                </IconButton>
-                                            }
-                                        >
-                                            <ListItemText
-                                                primary={
-                                                    <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-                                                        <Typography variant="body2" sx={{ fontWeight: 600 }}>
-                                                            {msg.caregiverFirstName} {msg.caregiverLastName}
-                                                        </Typography>
-                                                        <Typography variant="caption" color="text.secondary">
-                                                            {new Date(msg.sentAt).toLocaleString()}
-                                                        </Typography>
-                                                    </Box>
-                                                }
-                                                secondary={
-                                                    <Typography variant="body2" sx={{ mt: 0.5 }}>
-                                                        {msg.content}
-                                                    </Typography>
-                                                }
-                                            />
-                                        </ListItem>
-                                    ))}
-                                </List>
-                            ) : (
-                                <Typography variant="body2" color="text.secondary">
-                                    {t("dashboard.noMessages", "You have no messages.")}
-                                </Typography>
-                            )}
-                        </CardContent>
-
-                        {messages.length > 5 && (
-                            <CardActions sx={{ justifyContent: "center", borderTop: "1px solid rgba(0,0,0,0.12)" }}>
-                                <Button size="small" component={Link} to="/messages">
-                                    {t("common.viewAll", "View All")} ({messages.length})
-                                </Button>
-                            </CardActions>
-                        )}
-                    </Card>
-
-
-
-
                 </section>
 
             </main>
+
+            <Dialog open={openAddElder} onClose={() => setOpenAddElder(false)}>
+                <DialogTitle>{t("dashboard.addElder", "Add Elder")}</DialogTitle>
+                <DialogContent sx={{ display: "flex", flexDirection: "column", gap: 2, pt: 1 }}>
+                    <TextField
+                        label={t("dashboard.elderId", "Elder User ID")}
+                        value={elderId}
+                        onChange={(e) => setElderId(e.target.value)}
+                        type="number"
+                        fullWidth
+                    />
+                    <TextField
+                        label={t("dashboard.elderEmail", "Elder Email")}
+                        value={elderEmail}
+                        onChange={(e) => setElderEmail(e.target.value)}
+                        type="email"
+                        fullWidth
+                    />
+                </DialogContent>
+                <DialogActions>
+                    <Button onClick={() => setOpenAddElder(false)}>
+                        {t("common.cancel", "Cancel")}
+                    </Button>
+                    <Button
+                        variant="contained"
+                        onClick={handleLinkElder}
+                        disabled={!elderId.trim()}
+                    >
+                        {t("common.save", "Link Elder")}
+                    </Button>
+                </DialogActions>
+            </Dialog>
+
+            <Dialog
+                open={openMessageDialog}
+                onClose={() => setOpenMessageDialog(false)}
+                maxWidth="md"
+                fullWidth
+                sx={{
+                    '& .MuiPaper-root': {
+                        borderRadius: '16px'
+                    }
+                }}
+            >
+                <DialogTitle>
+                    Send Message to {currentElder?.firstName} {currentElder?.lastName}
+                </DialogTitle>
+                <DialogContent sx={{ pt: 1 }}>
+                    <TextField
+                        label="Your Message"
+                        value={messageText}
+                        onChange={e => setMessageText(e.target.value)}
+                        multiline
+                        rows={10}
+                        fullWidth
+                        sx={{
+                            '& .MuiOutlinedInput-root': {
+                                borderRadius: '8px'
+                            }
+                        }}
+                    />
+                    <Typography variant="caption" color="text.secondary" sx={{ mt: 0.5 }}>
+                        {messageText.length}/250
+                    </Typography>
+                </DialogContent>
+                <DialogActions>
+                    <Button onClick={() => setOpenMessageDialog(false)}>Cancel</Button>
+                    <Button
+                        variant="contained"
+                        onClick={handleSendMessage}
+                        disabled={!messageText.trim()}
+                    >
+                        Send
+                    </Button>
+                </DialogActions>
+            </Dialog>
+
         </>
     );
 };
 
-export default UserDashboard;
+export default CaregiverDashboard;

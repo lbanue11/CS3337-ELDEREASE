@@ -126,6 +126,14 @@ const Registration = () => {
           Already have an account?{' '}
           <Link to="/login" className="form-link">Login here</Link>
         </p>
+
+          <p>
+              Want to register as a caregiver?{' '}
+              <Link to="/signup/caregiver" className="form-link">
+                  Sign up as Caregiver
+              </Link>
+          </p>
+
       </div>
 
     </div>
