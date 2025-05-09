@@ -157,7 +157,14 @@
         "savedLocations": "Ubicaciones guardadas",
         "noSavedLocations": "Aún no has guardado ninguna ubicación.",
         "findLocations": "Buscar ubicaciones en el mapa",
-        "viewOnMap": "Obtener direcciones"
+        "viewOnMap": "Obtener direcciones",
+        "addElderly": "Añadir Persona Mayor",
+        "addElderlyHelp": "Seleccione una persona mayor para vincular a su perfil.",
+        "addElder": "Añadir Persona Mayor",
+        "elderId": "ID de Usuario de Persona Mayor",
+        "elderEmail": "Email de Persona Mayor",
+        "messages": "Tus Mensajes",
+        "noMessages": "No tienes mensajes."
     },
     "profile": {
         "detailsTitle": "Detalles del perfil",
@@ -174,5 +181,18 @@
         "statePlaceholder": "Estado/Provincia",
         "zipcodeLabel": "Código postal",
         "zipcodePlaceholder": "Código postal"
+    },
+    "caregiverDashboard": {
+        "yourEldersTitle": "Sus Personas Mayores",
+        "messageButton": "Mensaje",
+        "linkElderButton": "Vincular Persona Mayor",
+        "sendMessageToTitle": "Enviar Mensaje a {{name}}",
+        "unknownUser": "Usuario",
+        "yourMessageLabel": "Su Mensaje",
+        "sendButton": "Enviar",
+        "alerts": {
+            "addElderFailed": "Error al añadir persona mayor.",
+            "sendMessageFailed": "Error al enviar el mensaje."
+        }
     }
 }

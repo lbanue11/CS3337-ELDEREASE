@@ -157,7 +157,14 @@
     "savedLocations": "Պահպանված վայրեր",
     "noSavedLocations": "Դուք դեռևս որևէ վայր չեք պահպանել:",
     "findLocations": "Գտնել վայրեր քարտեզի վրա",
-    "viewOnMap": "Ստանալ ուղղություններ"
+    "viewOnMap": "Ստանալ ուղղություններ",
+    "addElderly": "Ավելացնել տարեցի",
+    "addElderlyHelp": "Ընտրեք տարեցի՝ ձեր պրոֆիլին կապելու համար։",
+    "addElder": "Ավելացնել տարեցի",
+    "elderId": "Տարեցի օգտվողի ID",
+    "elderEmail": "Տարեցի էլ․ փոստ",
+    "messages": "Ձեր հաղորդագրությունները",
+    "noMessages": "Դուք հաղորդագրություններ չունեք։"
   },
   "profile": {
     "detailsTitle": "Պրոֆիլի մանրամասներ",
@@ -174,5 +181,18 @@
     "statePlaceholder": "Նահանգ/Մարզ",
     "zipcodeLabel": "Փոստային կոդ",
     "zipcodePlaceholder": "Փոստային կոդ"
+  },
+  "caregiverDashboard": {
+    "yourEldersTitle": "Ձեր տարեցները",
+    "messageButton": "Հաղորդագրություն",
+    "linkElderButton": "Կապել տարեցի",
+    "sendMessageToTitle": "Ուղարկել հաղորդագրություն {{name}} -ին",
+    "unknownUser": "Օգտատեր",
+    "yourMessageLabel": "Ձեր հաղորդագրությունը",
+    "sendButton": "Ուղարկել",
+    "alerts": {
+      "addElderFailed": "Չհաջողվեց ավելացնել տարեցի։",
+      "sendMessageFailed": "Չհաջողվեց ուղարկել հաղորդագրությունը։"
+    }
   }
 }

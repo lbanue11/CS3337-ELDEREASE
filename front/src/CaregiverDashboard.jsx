@@ -43,7 +43,7 @@ const CaregiverDashboard = () => {
     const [isSaving, setIsSaving] = useState(false);
     const navigate = useNavigate();
     const [openAddElder, setOpenAddElder] = useState(false);
-    const [elderId, setElderId]     = useState("");
+    const [elderId, setElderId] = useState("");
     const [elderEmail, setElderEmail] = useState("");
     const [elders, setElders] = useState([]);
     const [loadingElders, setLoadingElders] = useState(true);
@@ -333,7 +333,7 @@ const CaregiverDashboard = () => {
                     {!loadingElders && elders.length > 0 && (
                         <Card sx={{ mt: 2 }}>
                             <CardContent>
-                                <Typography variant="h6">Your Elders</Typography>
+                                <Typography variant="h6">{t('caregiverDashboard.yourEldersTitle', 'Your Elders')}</Typography>
                                 <List dense>
                                     {elders.map(elder => (
                                         <ListItem
@@ -365,7 +365,7 @@ const CaregiverDashboard = () => {
                                                     onClick={() => handleOpenMessage(elder)}
                                                     sx={{ fontSize: '0.75rem', minWidth: 'auto', p: 0.5, ml: 2 }}
                                                 >
-                                                    Message
+                                                    {t('caregiverDashboard.messageButton', 'Message')}
                                                 </Button>
                                             </Box>
                                             <Typography variant="caption" color="text.secondary" sx={{ ml: 0 }}>
@@ -398,7 +398,7 @@ const CaregiverDashboard = () => {
                                 <Box sx={{ flexGrow: 1 }}>
                                     <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
                                         <Typography variant="h6" component="h2"> {t('profile.detailsTitle', 'Profile Details')} </Typography>
-                                        {!isEditing && ( <Button size="small" startIcon={<EditIcon />} onClick={handleEditToggle} disabled={isSaving}> {t('common.edit', 'Edit')} </Button> )}
+                                        {!isEditing && (<Button size="small" startIcon={<EditIcon />} onClick={handleEditToggle} disabled={isSaving}> {t('common.edit', 'Edit')} </Button>)}
                                     </Box>
                                     <List dense>
                                         {/* Email */}

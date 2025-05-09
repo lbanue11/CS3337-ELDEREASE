@@ -157,7 +157,14 @@
     "savedLocations": "مکان‌های ذخیره شده",
     "noSavedLocations": "شما هنوز هیچ مکانی را ذخیره نکرده‌اید.",
     "findLocations": "یافتن مکان‌ها روی نقشه",
-    "viewOnMap": "دریافت مسیرها"
+    "viewOnMap": "دریافت مسیرها",
+    "addElderly": "افزودن سالمند",
+    "addElderlyHelp": "یک سالمند را برای پیوند به پروفایل خود انتخاب کنید.",
+    "addElder": "افزودن سالمند",
+    "elderId": "شناسه کاربری سالمند",
+    "elderEmail": "ایمیل سالمند",
+    "messages": "پیام‌های شما",
+    "noMessages": "شما پیامی ندارید."
   },
   "profile": {
     "detailsTitle": "جزئیات نمایه",
@@ -174,5 +181,18 @@
     "statePlaceholder": "استان/ایالت",
     "zipcodeLabel": "کد پستی",
     "zipcodePlaceholder": "کد پستی"
+  },
+  "caregiverDashboard": {
+    "yourEldersTitle": "سالمندان شما",
+    "messageButton": "پیام",
+    "linkElderButton": "پیوند سالمند",
+    "sendMessageToTitle": "ارسال پیام به {{name}}",
+    "unknownUser": "کاربر",
+    "yourMessageLabel": "پیام شما",
+    "sendButton": "ارسال",
+    "alerts": {
+      "addElderFailed": "افزودن سالمند ناموفق بود.",
+      "sendMessageFailed": "ارسال پیام ناموفق بود."
+    }
   }
 }

@@ -157,7 +157,14 @@
     "savedLocations": "保存した場所",
     "noSavedLocations": "まだ場所を保存していません。",
     "findLocations": "地図で場所を探す",
-    "viewOnMap": "経路を見る"
+    "viewOnMap": "経路を見る",
+    "addElderly": "高齢者を追加",
+    "addElderlyHelp": "プロフィールにリンクする高齢者を選択してください。",
+    "addElder": "高齢者を追加",
+    "elderId": "高齢者ユーザーID",
+    "elderEmail": "高齢者メールアドレス",
+    "messages": "あなたのメッセージ",
+    "noMessages": "メッセージはありません。"
   },
   "profile": {
     "detailsTitle": "プロフィールの詳細",
@@ -174,5 +181,18 @@
     "statePlaceholder": "都道府県",
     "zipcodeLabel": "郵便番号",
     "zipcodePlaceholder": "郵便番号"
+  },
+  "caregiverDashboard": {
+    "yourEldersTitle": "あなたの担当高齢者",
+    "messageButton": "メッセージ",
+    "linkElderButton": "高齢者をリンク",
+    "sendMessageToTitle": "{{name}}にメッセージを送信",
+    "unknownUser": "ユーザー",
+    "yourMessageLabel": "メッセージ内容",
+    "sendButton": "送信",
+    "alerts": {
+      "addElderFailed": "高齢者の追加に失敗しました。",
+      "sendMessageFailed": "メッセージの送信に失敗しました。"
+    }
   }
 }

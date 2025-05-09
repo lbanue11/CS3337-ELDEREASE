@@ -158,7 +158,14 @@
         "savedLocations": "Saved Locations",
         "noSavedLocations": "You haven't saved any locations yet.",
         "findLocations": "Find Locations on Map",
-        "viewOnMap": "Get Directions"
+        "viewOnMap": "Get Directions",
+        "addElderly": "Add Elderly",
+        "addElderlyHelp": "Select an elder to link to your profile.",
+        "addElder": "Add Elder",
+        "elderId": "Elder User ID",
+        "elderEmail": "Elder Email",
+        "messages": "Your Messages",
+        "noMessages": "You have no messages."
     },
     "profile": {
         "detailsTitle": "Profile Details",
@@ -175,5 +182,18 @@
         "statePlaceholder": "State/Province",
         "zipcodeLabel": "Zip Code",
         "zipcodePlaceholder": "Postal/Zip code"
+    },
+    "caregiverDashboard": {
+        "yourEldersTitle": "Your Elders",
+        "messageButton": "Message",
+        "linkElderButton": "Link Elder",
+        "sendMessageToTitle": "Send Message to {{name}}",
+        "unknownUser": "User",
+        "yourMessageLabel": "Your Message",
+        "sendButton": "Send",
+        "alerts": {
+            "addElderFailed": "Failed to add elder.",
+            "sendMessageFailed": "Failed to send message."
+        }
     }
 }

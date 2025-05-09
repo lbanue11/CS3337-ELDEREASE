@@ -157,7 +157,14 @@
     "savedLocations": "Mga Nai-save na Lokasyon",
     "noSavedLocations": "Wala ka pang nai-save na mga lokasyon.",
     "findLocations": "Maghanap ng mga Lokasyon sa Mapa",
-    "viewOnMap": "Kumuha ng Direksyon"
+    "viewOnMap": "Kumuha ng Direksyon",
+    "addElderly": "Magdagdag ng Nakatatanda",
+    "addElderlyHelp": "Pumili ng nakatatanda na iuugnay sa iyong profile.",
+    "addElder": "Magdagdag ng Nakatatanda",
+    "elderId": "User ID ng Nakatatanda",
+    "elderEmail": "Email ng Nakatatanda",
+    "messages": "Iyong mga Mensahe",
+    "noMessages": "Wala kang mga mensahe."
   },
   "profile": {
     "detailsTitle": "Mga Detalye ng Profile",
@@ -174,5 +181,18 @@
     "statePlaceholder": "Estado/Lalawigan",
     "zipcodeLabel": "Zip Code",
     "zipcodePlaceholder": "Kodigo Postal/Zip Code"
+  },
+  "caregiverDashboard": {
+    "yourEldersTitle": "Iyong mga Nakatatanda",
+    "messageButton": "Mensahe",
+    "linkElderButton": "Iugnay ang Nakatatanda",
+    "sendMessageToTitle": "Magpadala ng Mensahe kay {{name}}",
+    "unknownUser": "User",
+    "yourMessageLabel": "Iyong Mensahe",
+    "sendButton": "Ipadala",
+    "alerts": {
+      "addElderFailed": "Nabigo ang pagdagdag ng nakatatanda.",
+      "sendMessageFailed": "Nabigo ang pagpapadala ng mensahe."
+    }
   }
 }

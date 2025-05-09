@@ -158,7 +158,14 @@
         "savedLocations": "收藏的地点",
         "noSavedLocations": "您还没有收藏任何地点。",
         "findLocations": "在地图上查找地点",
-        "viewOnMap": "获取路线"
+        "viewOnMap": "获取路线",
+        "addElderly": "添加长者",
+        "addElderlyHelp": "选择一位长者关联到您的个人资料。",
+        "addElder": "添加长者",
+        "elderId": "长者用户ID",
+        "elderEmail": "长者邮箱",
+        "messages": "您的消息",
+        "noMessages": "您没有消息。"
     },
     "profile": {
         "detailsTitle": "个人资料详情",
@@ -175,5 +182,18 @@
         "statePlaceholder": "州/省",
         "zipcodeLabel": "邮政编码",
         "zipcodePlaceholder": "邮政/邮政编码"
+    },
+    "caregiverDashboard": {
+        "yourEldersTitle": "您管理的长者",
+        "messageButton": "发送消息",
+        "linkElderButton": "关联长者",
+        "sendMessageToTitle": "发送消息给 {{name}}",
+        "unknownUser": "用户",
+        "yourMessageLabel": "您的消息",
+        "sendButton": "发送",
+        "alerts": {
+            "addElderFailed": "添加长者失败。",
+            "sendMessageFailed": "发送消息失败。"
+        }
     }
 }

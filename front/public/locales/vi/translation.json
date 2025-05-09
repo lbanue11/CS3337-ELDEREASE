@@ -158,7 +158,14 @@
     "savedLocations": "Địa điểm đã lưu",
     "noSavedLocations": "Bạn chưa lưu địa điểm nào.",
     "findLocations": "Tìm địa điểm trên bản đồ",
-    "viewOnMap": "Nhận chỉ đường"
+    "viewOnMap": "Nhận chỉ đường",
+    "addElderly": "Thêm người cao tuổi",
+    "addElderlyHelp": "Chọn một người cao tuổi để liên kết với hồ sơ của bạn.",
+    "addElder": "Thêm người cao tuổi",
+    "elderId": "ID người dùng cao tuổi",
+    "elderEmail": "Email người cao tuổi",
+    "messages": "Tin nhắn của bạn",
+    "noMessages": "Bạn không có tin nhắn nào."
   },
   "profile": {
     "detailsTitle": "Chi tiết hồ sơ",
@@ -175,5 +182,18 @@
     "statePlaceholder": "Tiểu bang/Tỉnh",
     "zipcodeLabel": "Mã bưu điện",
     "zipcodePlaceholder": "Mã bưu điện"
+  },
+  "caregiverDashboard": {
+    "yourEldersTitle": "Người cao tuổi của bạn",
+    "messageButton": "Tin nhắn",
+    "linkElderButton": "Liên kết người cao tuổi",
+    "sendMessageToTitle": "Gửi tin nhắn cho {{name}}",
+    "unknownUser": "Người dùng",
+    "yourMessageLabel": "Tin nhắn của bạn",
+    "sendButton": "Gửi",
+    "alerts": {
+      "addElderFailed": "Không thể thêm người cao tuổi.",
+      "sendMessageFailed": "Không thể gửi tin nhắn."
+    }
   }
 }

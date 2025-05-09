@@ -157,7 +157,14 @@
     "savedLocations": "저장된 위치",
     "noSavedLocations": "아직 저장한 위치가 없습니다.",
     "findLocations": "지도에서 위치 찾기",
-    "viewOnMap": "길찾기"
+    "viewOnMap": "길찾기",
+    "addElderly": "노인 추가",
+    "addElderlyHelp": "프로필에 연결할 노인을 선택하십시오.",
+    "addElder": "노인 추가",
+    "elderId": "노인 사용자 ID",
+    "elderEmail": "노인 이메일",
+    "messages": "내 메시지",
+    "noMessages": "메시지가 없습니다."
   },
   "profile": {
     "detailsTitle": "프로필 상세 정보",
@@ -174,5 +181,18 @@
     "statePlaceholder": "주/도",
     "zipcodeLabel": "우편번호",
     "zipcodePlaceholder": "우편번호"
+  },
+  "caregiverDashboard": {
+    "yourEldersTitle": "내 담당 노인",
+    "messageButton": "메시지",
+    "linkElderButton": "노인 연결",
+    "sendMessageToTitle": "{{name}}에게 메시지 보내기",
+    "unknownUser": "사용자",
+    "yourMessageLabel": "메시지 내용",
+    "sendButton": "보내기",
+    "alerts": {
+      "addElderFailed": "노인 추가에 실패했습니다.",
+      "sendMessageFailed": "메시지 전송에 실패했습니다."
+    }
   }
 }

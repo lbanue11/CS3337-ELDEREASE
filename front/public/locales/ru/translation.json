@@ -158,7 +158,14 @@
     "savedLocations": "Сохраненные места",
     "noSavedLocations": "Вы еще не сохранили ни одного места.",
     "findLocations": "Найти места на карте",
-    "viewOnMap": "Проложить маршрут"
+    "viewOnMap": "Проложить маршрут",
+    "addElderly": "Добавить пожилого",
+    "addElderlyHelp": "Выберите пожилого человека для связи с вашим профилем.",
+    "addElder": "Добавить пожилого",
+    "elderId": "ID пользователя пожилого",
+    "elderEmail": "Email пожилого",
+    "messages": "Ваши сообщения",
+    "noMessages": "У вас нет сообщений."
   },
   "profile": {
     "detailsTitle": "Сведения о профиле",
@@ -175,5 +182,18 @@
     "statePlaceholder": "Штат/Область",
     "zipcodeLabel": "Почтовый индекс",
     "zipcodePlaceholder": "Почтовый индекс"
+  },
+  "caregiverDashboard": {
+    "yourEldersTitle": "Ваши пожилые",
+    "messageButton": "Сообщение",
+    "linkElderButton": "Связать пожилого",
+    "sendMessageToTitle": "Отправить сообщение {{name}}",
+    "unknownUser": "Пользователь",
+    "yourMessageLabel": "Ваше сообщение",
+    "sendButton": "Отправить",
+    "alerts": {
+      "addElderFailed": "Не удалось добавить пожилого.",
+      "sendMessageFailed": "Не удалось отправить сообщение."
+    }
   }
 }

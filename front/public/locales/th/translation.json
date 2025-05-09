@@ -157,7 +157,14 @@
     "savedLocations": "สถานที่ที่บันทึกไว้",
     "noSavedLocations": "คุณยังไม่ได้บันทึกสถานที่ใดๆ",
     "findLocations": "ค้นหาสถานที่บนแผนที่",
-    "viewOnMap": "ขอเส้นทาง"
+    "viewOnMap": "ขอเส้นทาง",
+    "addElderly": "เพิ่มผู้สูงอายุ",
+    "addElderlyHelp": "เลือกผู้สูงอายุที่จะเชื่อมโยงกับโปรไฟล์ของคุณ",
+    "addElder": "เพิ่มผู้สูงอายุ",
+    "elderId": "ID ผู้ใช้ผู้สูงอายุ",
+    "elderEmail": "อีเมลผู้สูงอายุ",
+    "messages": "ข้อความของคุณ",
+    "noMessages": "คุณไม่มีข้อความ"
   },
   "profile": {
     "detailsTitle": "รายละเอียดโปรไฟล์",
@@ -174,5 +181,18 @@
     "statePlaceholder": "รัฐ/จังหวัด",
     "zipcodeLabel": "รหัสไปรษณีย์",
     "zipcodePlaceholder": "รหัสไปรษณีย์"
+  },
+  "caregiverDashboard": {
+    "yourEldersTitle": "ผู้สูงอายุของคุณ",
+    "messageButton": "ข้อความ",
+    "linkElderButton": "เชื่อมโยงผู้สูงอายุ",
+    "sendMessageToTitle": "ส่งข้อความถึง {{name}}",
+    "unknownUser": "ผู้ใช้",
+    "yourMessageLabel": "ข้อความของคุณ",
+    "sendButton": "ส่ง",
+    "alerts": {
+      "addElderFailed": "ไม่สามารถเพิ่มผู้สูงอายุได้",
+      "sendMessageFailed": "ไม่สามารถส่งข้อความได้"
+    }
   }
 }

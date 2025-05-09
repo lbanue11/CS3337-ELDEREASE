@@ -157,7 +157,14 @@
         "savedLocations": "收藏的地點",
         "noSavedLocations": "您尚未收藏任何地點。",
         "findLocations": "在地圖上尋找地點",
-        "viewOnMap": "規劃路線"
+        "viewOnMap": "規劃路線",
+        "addElderly": "新增長者",
+        "addElderlyHelp": "選擇一位長者連結至您的個人資料。",
+        "addElder": "新增長者",
+        "elderId": "長者使用者ID",
+        "elderEmail": "長者電子郵件",
+        "messages": "您的訊息",
+        "noMessages": "您沒有訊息。"
     },
     "profile": {
         "detailsTitle": "個人資料詳情",
@@ -174,5 +181,18 @@
         "statePlaceholder": "州/省",
         "zipcodeLabel": "郵遞區號",
         "zipcodePlaceholder": "郵遞/郵遞區號"
+    },
+    "caregiverDashboard": {
+        "yourEldersTitle": "您管理的長者",
+        "messageButton": "傳送訊息",
+        "linkElderButton": "連結長者",
+        "sendMessageToTitle": "傳送訊息給 {{name}}",
+        "unknownUser": "使用者",
+        "yourMessageLabel": "您的訊息",
+        "sendButton": "傳送",
+        "alerts": {
+            "addElderFailed": "新增長者失敗。",
+            "sendMessageFailed": "傳送訊息失敗。"
+        }
     }
 }
