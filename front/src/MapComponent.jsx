@@ -51,25 +51,25 @@ export default function MapComponent() {
 
   const toggleCategory = (value) => {
     setSelectedCategories(prev =>
-        prev.includes(value)
-            ? prev.filter(v => v !== value)
-            : [...prev, value]
+      prev.includes(value)
+        ? prev.filter(v => v !== value)
+        : [...prev, value]
     );
   };
 
   useEffect(() => {
     axios
-        .get("/api/profile")
-        .then(res => {
-          setProfile(res.data);
-        })
-        .catch(err => {
-          if (err.response?.status === 401) {
-            navigate("/login", { replace: true });
-          } else {
-            console.error("Failed to load profile:", err);
-          }
-        });
+      .get("/api/profile")
+      .then(res => {
+        setProfile(res.data);
+      })
+      .catch(err => {
+        if (err.response?.status === 401) {
+          navigate("/login", { replace: true });
+        } else {
+          console.error("Failed to load profile:", err);
+        }
+      });
   }, [navigate]);
 
   useEffect(() => {
@@ -78,8 +78,8 @@ export default function MapComponent() {
       return;
     }
     axios.get(`/api/google-reviews/${selectedPlace.placeId}`)
-        .then(res => setReviews(res.data))
-        .catch(err => console.error('Failed to load reviews', err));
+      .then(res => setReviews(res.data))
+      .catch(err => console.error('Failed to load reviews', err));
   }, [selectedPlace]);
 
   const handleSubmitReview = async () => {
@@ -123,20 +123,20 @@ export default function MapComponent() {
     if (!window.google?.maps?.places) return;
     const map = new window.google.maps.Map(document.createElement("div"));
     const service = new window.google.maps.places.PlacesService(map);
-    service.getDetails({ placeId, fields: ["name","formatted_address","formatted_phone_number","website","place_id","geometry"] },
-        (details, status) => {
-          if (status === window.google.maps.places.PlacesServiceStatus.OK) {
-            setSelectedPlace({
-              name: details.name,
-              address: details.formatted_address,
-              phone: details.formatted_phone_number,
-              website: details.website,
-              placeId: details.place_id,
-              lat: details.geometry.location.lat(),
-              lng: details.geometry.location.lng(),
-            });
-          }
+    service.getDetails({ placeId, fields: ["name", "formatted_address", "formatted_phone_number", "website", "place_id", "geometry"] },
+      (details, status) => {
+        if (status === window.google.maps.places.PlacesServiceStatus.OK) {
+          setSelectedPlace({
+            name: details.name,
+            address: details.formatted_address,
+            phone: details.formatted_phone_number,
+            website: details.website,
+            placeId: details.place_id,
+            lat: details.geometry.location.lat(),
+            lng: details.geometry.location.lng(),
+          });
         }
+      }
     );
   };
 
@@ -202,125 +202,125 @@ export default function MapComponent() {
   if (!isLoaded) return <div>Loading map...</div>;
 
   return (
-      <>
-        <header className="header">
-          <div className="header-left-group">
-            <Link to="/home" className="nav-logo"><img src={LogoSymbol} alt="Logo" /></Link>
-            <LanguageSwitcher />
-          </div>
-          <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>☰</button>
-          <nav className={`nav ${menuOpen ? "open" : ""}`}>
-            {profile && (
-                <Link
-                    to={profile.role === "ADMIN" ? "/admin" : "/userdashboard"}
-                    onClick={() => setMenuOpen(false)}
-                >
-                  {t("navbar.dashboard")}
-                </Link>
-            )}
-            <Link to="/map" onClick={() => setMenuOpen(false)} style={{ pointerEvents: 'none', opacity: 0.6 }}>{t('navbar.map')}</Link>
-            <a href="/home#helpful-resources" onClick={e => { e.preventDefault(); navigate('/home'); setMenuOpen(false); }}>{t('navbar.resources')}</a>
-            <button onClick={() => { setMenuOpen(false); handleLogout(); }}>{t('navbar.logout')}</button>
-          </nav>
-        </header>
+    <>
+      <header className="header">
+        <div className="header-left-group">
+          <Link to="/home" className="nav-logo"><img src={LogoSymbol} alt="Logo" /></Link>
+          <LanguageSwitcher />
+        </div>
+        <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>☰</button>
+        <nav className={`nav ${menuOpen ? "open" : ""}`}>
+          {profile && (
+            <Link
+              to={profile.role === "ADMIN" ? "/admin" : "/userdashboard"}
+              onClick={() => setMenuOpen(false)}
+            >
+              {t("navbar.dashboard")}
+            </Link>
+          )}
+          <Link to="/map" onClick={() => setMenuOpen(false)} style={{ pointerEvents: 'none', opacity: 0.6 }}>{t('navbar.map')}</Link>
+          <a href="/home#helpful-resources" onClick={e => { e.preventDefault(); navigate('/home'); setMenuOpen(false); }}>{t('navbar.resources')}</a>
+          <button onClick={() => { setMenuOpen(false); handleLogout(); }}>{t('navbar.logout')}</button>
+        </nav>
+      </header>
 
-        <div className="map-wrapper fade-in">
-          <div className="map-controls">
-            <h2>{t('mapPage.controls.title')}</h2>
-            <div className="form-group">
-              <input type="text" placeholder={t('mapPage.controls.zipPlaceholder')} value={zip} onChange={e => setZip(e.target.value)} />
-              <div className="checkbox-group">
-                {categoryOptions.map(opt => (
-                    <label key={opt.value}>
-                      <input type="checkbox" value={opt.value} checked={selectedCategories.includes(opt.value)} onChange={() => toggleCategory(opt.value)} />
-                      {opt.label}
-                    </label>
-                ))}
-              </div>
-              <button className="btn-zip" onClick={handleSearch}>{t('mapPage.controls.searchButton')}</button>
-              <button className="btn-location" onClick={handleUseMyLocation}>{t('mapPage.controls.useMyLocationButton')}</button>
-            </div>
-          </div>
-
-          <div className="map-container-wrapper">
-            <GoogleMap mapContainerClassName="map-container" center={center} zoom={11} options={mapOptions}>
-              {markers.map((place, i) => (
-                  <Marker key={place.placeId || i} position={{ lat: place.lat, lng: place.lng }} onClick={() => fetchPlaceDetails(place.placeId)} title={place.name} />
+      <div className="map-wrapper fade-in">
+        <div className="map-controls">
+          <h2>{t('mapPage.controls.title')}</h2>
+          <div className="form-group">
+            <input type="text" placeholder={t('mapPage.controls.zipPlaceholder')} value={zip} onChange={e => setZip(e.target.value)} />
+            <div className="checkbox-group">
+              {categoryOptions.map(opt => (
+                <label key={opt.value}>
+                  <input type="checkbox" value={opt.value} checked={selectedCategories.includes(opt.value)} onChange={() => toggleCategory(opt.value)} />
+                  {opt.label}
+                </label>
               ))}
-            </GoogleMap>
-
-            {selectedPlace && (
-              <div className="details-panel">
-                <button className="close-button" onClick={() => setSelectedPlace(null)}>×</button>
-                <h3>{selectedPlace.name}</h3>
-                {selectedPlace.address && <p>{selectedPlace.address}</p>}
-                {selectedPlace.phone   && <p>📞 {selectedPlace.phone}</p>}
-                {selectedPlace.website && (
-                  <p>
-                    <a href={selectedPlace.website} target="_blank" rel="noopener noreferrer">
-                      Visit Website
-                    </a>
-                  </p>
-                )}
-                <p>
-                  <a
-                    href={`https://www.google.com/maps/place/?q=place_id:${selectedPlace.placeId}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    View in Google Maps
-                  </a>
-                </p>
-
-                <p>
-                  <button className="btn-favorite" onClick={handleFavorite}>
-                    ❤️ {t('mapPage.details.addToFavorites', 'Add to Favorites')}
-                  </button>
-                </p>
-
-                <div className="review-section">
-                  <h4>{t('mapPage.details.leaveReviewTitle')}</h4>
-                  <textarea
-                    rows={3}
-                    placeholder={t('mapPage.details.reviewPlaceholder')}
-                    value={newReview}
-                    onChange={e => setNewReview(e.target.value)}
-                  />
-                  <select
-                    value={selectedRating}
-                    onChange={e => setSelectedRating(Number(e.target.value))}
-                  >
-                    {[1,2,3,4,5].map(r => (
-                      <option key={r} value={r}>
-                        {t('mapPage.details.ratingOptions.star',{count:r})}
-                      </option>
-                    ))}
-                  </select>
-                  <button onClick={handleSubmitReview}>
-                    {t('mapPage.details.submitReviewButton')}
-                  </button>
-                </div>
-
-                <div className="review-list">
-                  <h4>{t('mapPage.details.reviewsTitle')}</h4>
-                  {reviews.length === 0 ? (
-                    <p>{t('mapPage.details.noReviews')}</p>
-                  ) : (
-                    reviews.map((rev,i) => (
-                      <div key={rev.id||i} className="review-card">
-                        <div className="review-card-header">
-                          <span className="review-author">{rev.authorName}</span>
-                          <span className="review-rating">⭐ {rev.rating}</span>
-                        </div>
-                        <p className="review-text">{rev.comment}</p>
-                      </div>
-                    ))
-                  )}
-                </div>
-              </div>
-            )}
+            </div>
+            <button className="btn-zip" onClick={handleSearch}>{t('mapPage.controls.searchButton')}</button>
+            <button className="btn-location" onClick={handleUseMyLocation}>{t('mapPage.controls.useMyLocationButton')}</button>
           </div>
         </div>
-      </>
+
+        <div className="map-container-wrapper">
+          <GoogleMap mapContainerClassName="map-container" center={center} zoom={11} options={mapOptions}>
+            {markers.map((place, i) => (
+              <Marker key={place.placeId || i} position={{ lat: place.lat, lng: place.lng }} onClick={() => fetchPlaceDetails(place.placeId)} title={place.name} />
+            ))}
+          </GoogleMap>
+
+          {selectedPlace && (
+            <div className="details-panel">
+              <button className="close-button" onClick={() => setSelectedPlace(null)}>×</button>
+              <h3>{selectedPlace.name}</h3>
+              {selectedPlace.address && <p>{selectedPlace.address}</p>}
+              {selectedPlace.phone && <p>📞 {selectedPlace.phone}</p>}
+              {selectedPlace.website && (
+                <p>
+                  <a href={selectedPlace.website} target="_blank" rel="noopener noreferrer">
+                    {t('mapPage.details.visitWebsiteLink', 'Visit Website')}
+                  </a>
+                </p>
+              )}
+              <p>
+                <a
+                  href={`https://www.google.com/maps/place/?q=place_id:${selectedPlace.placeId}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {t('mapPage.details.viewInGoogleMapsLink', 'View in Google Maps')}
+                </a>
+              </p>
+
+              <p>
+                <button className="btn-favorite" onClick={handleFavorite}>
+                  {t('mapPage.details.favoriteButton', '❤️ Favorite')}
+                </button>
+              </p>
+
+              <div className="review-section">
+                <h4>{t('mapPage.details.leaveReviewTitle')}</h4>
+                <textarea
+                  rows={3}
+                  placeholder={t('mapPage.details.reviewPlaceholder')}
+                  value={newReview}
+                  onChange={e => setNewReview(e.target.value)}
+                />
+                <select
+                  value={selectedRating}
+                  onChange={e => setSelectedRating(Number(e.target.value))}
+                >
+                  {[1, 2, 3, 4, 5].map(r => (
+                    <option key={r} value={r}>
+                      {t('mapPage.details.ratingOptions.star', { count: r })}
+                    </option>
+                  ))}
+                </select>
+                <button onClick={handleSubmitReview}>
+                  {t('mapPage.details.submitReviewButton')}
+                </button>
+              </div>
+
+              <div className="review-list">
+                <h4>{t('mapPage.details.reviewsTitle')}</h4>
+                {reviews.length === 0 ? (
+                  <p>{t('mapPage.details.noReviews')}</p>
+                ) : (
+                  reviews.map((rev, i) => (
+                    <div key={rev.id || i} className="review-card">
+                      <div className="review-card-header">
+                        <span className="review-author">{rev.authorName}</span>
+                        <span className="review-rating">⭐ {rev.rating}</span>
+                      </div>
+                      <p className="review-text">{rev.comment}</p>
+                    </div>
+                  ))
+                )}
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </>
   );
 }

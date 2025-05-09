@@ -156,7 +156,8 @@
         "loading": "Cargando tu perfil…",
         "savedLocations": "Ubicaciones guardadas",
         "noSavedLocations": "Aún no has guardado ninguna ubicación.",
-        "findLocations": "Buscar ubicaciones en el mapa"
+        "findLocations": "Buscar ubicaciones en el mapa",
+        "viewOnMap": "Obtener direcciones"
     },
     "profile": {
         "detailsTitle": "Detalles del perfil",

@@ -156,7 +156,8 @@
         "loading": "正在載入您的個人資料…",
         "savedLocations": "收藏的地點",
         "noSavedLocations": "您尚未收藏任何地點。",
-        "findLocations": "在地圖上尋找地點"
+        "findLocations": "在地圖上尋找地點",
+        "viewOnMap": "規劃路線"
     },
     "profile": {
         "detailsTitle": "個人資料詳情",

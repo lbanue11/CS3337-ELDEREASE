@@ -121,7 +121,8 @@
                 "defaultSearchKeyword": "eldercare"
             },
             "searchButton": "Search",
-            "useMyLocationButton": "Use My Location"
+            "useMyLocationButton": "Use My Location",
+            "favoriteButton": "❤️ Favorite"
         },
         "details": {
             "phonePrefix": "📞 ",
@@ -156,7 +157,8 @@
         "loading": "Loading your profile…",
         "savedLocations": "Saved Locations",
         "noSavedLocations": "You haven't saved any locations yet.",
-        "findLocations": "Find Locations on Map"
+        "findLocations": "Find Locations on Map",
+        "viewOnMap": "Get Directions"
     },
     "profile": {
         "detailsTitle": "Profile Details",

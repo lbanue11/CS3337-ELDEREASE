@@ -156,7 +156,8 @@
     "loading": "프로필 로드 중…",
     "savedLocations": "저장된 위치",
     "noSavedLocations": "아직 저장한 위치가 없습니다.",
-    "findLocations": "지도에서 위치 찾기"
+    "findLocations": "지도에서 위치 찾기",
+    "viewOnMap": "길찾기"
   },
   "profile": {
     "detailsTitle": "프로필 상세 정보",

@@ -121,7 +121,8 @@
                 "defaultSearchKeyword": "长者护理"
             },
             "searchButton": "搜索",
-            "useMyLocationButton": "使用我的位置"
+            "useMyLocationButton": "使用我的位置",
+            "favoriteButton": "❤️ 收藏"
         },
         "details": {
             "phonePrefix": "📞 ",
@@ -156,7 +157,8 @@
         "loading": "正在加载您的个人资料…",
         "savedLocations": "收藏的地点",
         "noSavedLocations": "您还没有收藏任何地点。",
-        "findLocations": "在地图上查找地点"
+        "findLocations": "在地图上查找地点",
+        "viewOnMap": "获取路线"
     },
     "profile": {
         "detailsTitle": "个人资料详情",

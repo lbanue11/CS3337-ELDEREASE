@@ -157,7 +157,8 @@
     "loading": "Загрузка вашего профиля…",
     "savedLocations": "Сохраненные места",
     "noSavedLocations": "Вы еще не сохранили ни одного места.",
-    "findLocations": "Найти места на карте"
+    "findLocations": "Найти места на карте",
+    "viewOnMap": "Проложить маршрут"
   },
   "profile": {
     "detailsTitle": "Сведения о профиле",

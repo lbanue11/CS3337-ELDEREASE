@@ -156,7 +156,8 @@
     "loading": "Բեռնվում է ձեր պրոֆիլը…",
     "savedLocations": "Պահպանված վայրեր",
     "noSavedLocations": "Դուք դեռևս որևէ վայր չեք պահպանել:",
-    "findLocations": "Գտնել վայրեր քարտեզի վրա"
+    "findLocations": "Գտնել վայրեր քարտեզի վրա",
+    "viewOnMap": "Ստանալ ուղղություններ"
   },
   "profile": {
     "detailsTitle": "Պրոֆիլի մանրամասներ",

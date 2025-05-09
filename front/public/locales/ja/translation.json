@@ -156,7 +156,8 @@
     "loading": "プロフィールを読み込み中…",
     "savedLocations": "保存した場所",
     "noSavedLocations": "まだ場所を保存していません。",
-    "findLocations": "地図で場所を探す"
+    "findLocations": "地図で場所を探す",
+    "viewOnMap": "経路を見る"
   },
   "profile": {
     "detailsTitle": "プロフィールの詳細",

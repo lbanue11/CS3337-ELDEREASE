@@ -121,7 +121,8 @@
         "defaultSearchKeyword": "chăm sóc người cao tuổi"
       },
       "searchButton": "Tìm kiếm",
-      "useMyLocationButton": "Sử dụng Vị trí của tôi"
+      "useMyLocationButton": "Sử dụng Vị trí của tôi",
+      "favoriteButton": "❤️ Yêu thích"
     },
     "details": {
       "phonePrefix": "📞 ",
@@ -156,7 +157,8 @@
     "loading": "Đang tải hồ sơ của bạn…",
     "savedLocations": "Địa điểm đã lưu",
     "noSavedLocations": "Bạn chưa lưu địa điểm nào.",
-    "findLocations": "Tìm địa điểm trên bản đồ"
+    "findLocations": "Tìm địa điểm trên bản đồ",
+    "viewOnMap": "Nhận chỉ đường"
   },
   "profile": {
     "detailsTitle": "Chi tiết hồ sơ",

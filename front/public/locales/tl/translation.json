@@ -29,9 +29,9 @@
   },
   "common": {
     "logoAlt": "Logo",
-    "edit": "ኣመሓይሽ",
-    "cancel": "ስረዝ",
-    "save": "ለውጥታት ኣቐምጥ"
+    "edit": "I-edit",
+    "cancel": "Kanselahin",
+    "save": "I-save ang mga Pagbabago"
   },
   "hotlinesPage": {
     "header": {
@@ -153,25 +153,26 @@
     }
   },
   "dashboard": {
-    "loading": "ናይ ኣካውንትኩም ሓበሬታ ይጽዕን ኣሎ…",
-    "savedLocations": "ዝተቐመጡ ቦታታት",
-    "noSavedLocations": "ዝኾነ ቦታ ኣይቀመጥኩምን።",
-    "findLocations": "ኣብ ካርታ ቦታታት ድለዩ"
+    "loading": "Nilo-load ang iyong profile…",
+    "savedLocations": "Mga Nai-save na Lokasyon",
+    "noSavedLocations": "Wala ka pang nai-save na mga lokasyon.",
+    "findLocations": "Maghanap ng mga Lokasyon sa Mapa",
+    "viewOnMap": "Kumuha ng Direksyon"
   },
   "profile": {
-    "detailsTitle": "ናይ ኣካውንት ዝርዝር ሓበሬታ",
-    "fullNameLabel": "ሙሉእ ስም:",
-    "emailLabel": "ኢመይል:",
-    "phoneLabel": "ስልኪ:",
-    "phonePlaceholder": "(XXX) XXX-XXXX ወይ ቁጽርታት",
-    "addressLabel": "ኣድራሻ:",
-    "streetLabel": "ጎደና",
-    "streetPlaceholder": "ጎደና ኣድራሻ",
-    "cityLabel": "ከተማ",
-    "cityPlaceholder": "ከተማ",
-    "stateLabel": "ግዝኣት",
-    "statePlaceholder": "ግዝኣት/ክልሊ",
-    "zipcodeLabel": "ፖስታ ኮድ",
-    "zipcodePlaceholder": "ፖስታ ኮድ"
+    "detailsTitle": "Mga Detalye ng Profile",
+    "fullNameLabel": "Buong Pangalan:",
+    "emailLabel": "Email:",
+    "phoneLabel": "Telepono:",
+    "phonePlaceholder": "(XXX) XXX-XXXX o mga digit",
+    "addressLabel": "Tirahan:",
+    "streetLabel": "Kalye",
+    "streetPlaceholder": "Address ng Kalye",
+    "cityLabel": "Lungsod",
+    "cityPlaceholder": "Lungsod",
+    "stateLabel": "Estado",
+    "statePlaceholder": "Estado/Lalawigan",
+    "zipcodeLabel": "Zip Code",
+    "zipcodePlaceholder": "Kodigo Postal/Zip Code"
   }
 }

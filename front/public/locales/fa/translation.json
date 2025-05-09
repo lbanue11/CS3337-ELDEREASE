@@ -156,7 +156,8 @@
     "loading": "در حال بارگیری نمایه شما…",
     "savedLocations": "مکان‌های ذخیره شده",
     "noSavedLocations": "شما هنوز هیچ مکانی را ذخیره نکرده‌اید.",
-    "findLocations": "یافتن مکان‌ها روی نقشه"
+    "findLocations": "یافتن مکان‌ها روی نقشه",
+    "viewOnMap": "دریافت مسیرها"
   },
   "profile": {
     "detailsTitle": "جزئیات نمایه",

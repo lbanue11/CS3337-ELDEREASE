@@ -156,7 +156,8 @@
     "loading": "กำลังโหลดโปรไฟล์ของคุณ…",
     "savedLocations": "สถานที่ที่บันทึกไว้",
     "noSavedLocations": "คุณยังไม่ได้บันทึกสถานที่ใดๆ",
-    "findLocations": "ค้นหาสถานที่บนแผนที่"
+    "findLocations": "ค้นหาสถานที่บนแผนที่",
+    "viewOnMap": "ขอเส้นทาง"
   },
   "profile": {
     "detailsTitle": "รายละเอียดโปรไฟล์",
