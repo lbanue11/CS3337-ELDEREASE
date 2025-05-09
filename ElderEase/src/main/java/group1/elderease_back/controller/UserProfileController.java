@@ -85,18 +85,17 @@ public class UserProfileController {
                     .orElseThrow(() -> new RuntimeException("User not found with id: " + userId));
 
             // Update user entity fields with data from the DTO
-            // Only update fields intended to be editable via the dashboard
             user.setPhone(updatedData.getPhone());
             user.setStreet(updatedData.getStreet());
             user.setCity(updatedData.getCity());
             user.setState(updatedData.getState());
             user.setZipcode(updatedData.getZipcode());
-            user.setAge(updatedData.getAge()); // Assuming age is editable
+            user.setAge(updatedData.getAge());
 
             // Save the updated entity back to the database
             User savedUser = userRepository.save(user);
 
-            // Map the saved entity back to a DTO for the response
+
              UserProfileRequest responseProfile = new UserProfileRequest();
              responseProfile.setUserId(savedUser.getUserId());
              responseProfile.setFirstName(savedUser.getFirstName());
@@ -110,13 +109,13 @@ public class UserProfileController {
              responseProfile.setState(savedUser.getState());
              responseProfile.setZipcode(savedUser.getZipcode());
 
-             // Return 200 OK with the updated profile data
+
              return ResponseEntity.ok(responseProfile);
 
         } catch (RuntimeException e) {
-            // Handle exceptions during find or save operations
+
              System.err.println("Error updating profile for user ID " + userId + ": " + e.getMessage());
-             // Return 500 Internal Server Error
+
              return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error updating profile: " + e.getMessage());
         }
     }

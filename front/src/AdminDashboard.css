@@ -62,3 +62,20 @@
 .user-table table td .delete:hover {
     background-color: #d32f2f;
 }
+
+.user-table table td .save {
+    background-color: #0039ff;
+    color: #fff;
+}
+.user-table table td .save:hover {
+    background-color: #45a049;
+}
+
+/* Delete button styling */
+.user-table table td .cancel {
+    background-color: #ffa502;
+    color: #fff;
+}
+.user-table table td .cancel:hover {
+    background-color: #e8d3d3;
+}

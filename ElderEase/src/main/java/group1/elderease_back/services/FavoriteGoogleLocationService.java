@@ -25,6 +25,12 @@ public class FavoriteGoogleLocationService {
     }
 
     @Transactional
+    public void removeAllByUser(Integer userId) {
+        favoriteGoogleLocationRepository.deleteAllByUserUserId(userId);
+    }
+
+
+    @Transactional
     public FavoriteGoogleLocation addFavoriteGoogleLocation(int userId, GoogleFavoriteRequest googleFavoriteRequest) {
         // Prevent duplicate favorites
         if (favoriteGoogleLocationRepository.existsByUser_UserIdAndPlaceId(userId, googleFavoriteRequest.getPlaceId())) {

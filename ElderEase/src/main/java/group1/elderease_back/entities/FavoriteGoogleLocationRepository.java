@@ -10,4 +10,5 @@ public interface FavoriteGoogleLocationRepository extends JpaRepository<Favorite
     List<FavoriteGoogleLocation> findByUser_UserId(int userId);
     boolean existsByUser_UserIdAndPlaceId(int userId, String placeId);
 
+    void deleteAllByUserUserId(int userId);
 }

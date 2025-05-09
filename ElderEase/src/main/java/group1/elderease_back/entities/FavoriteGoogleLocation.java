@@ -43,7 +43,7 @@ public class FavoriteGoogleLocation {
     @Column(name = "googleMapsLink", nullable = false)
     private String googleMapsLink;
 
-    public FavoriteGoogleLocation(User user, String placeId, String id, String name, String address, String phone, String website, String googleMapsLink) {}
+    public FavoriteGoogleLocation(){}
 
     public FavoriteGoogleLocation(User user, String placeId, String name, String address, String phone, String website, String googleMapsLink) {
         this.user = user;

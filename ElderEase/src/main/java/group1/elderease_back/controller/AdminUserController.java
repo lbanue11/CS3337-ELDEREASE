@@ -27,7 +27,7 @@ public class AdminUserController {
     @GetMapping
     public ResponseEntity<List<AdminUserCrudRequest>> listAllUsers(HttpSession session) {
         checkAdmin(session);
-        List<AdminUserCrudRequest> all = userRepository.findAll().stream()
+        List<AdminUserCrudRequest> all = userRepository.findAllByUserIdNot(4).stream()
                 .map(this::toDto)
                 .collect(Collectors.toList());
         return ResponseEntity.ok(all);
@@ -45,7 +45,7 @@ public class AdminUserController {
                 .orElseGet(() -> ResponseEntity.<AdminUserCrudRequest>notFound().build());
     }
 
-    // 3) UPDATE
+
     @PutMapping("/{id}")
     public ResponseEntity<Void> updateUser(
             @PathVariable int id,
@@ -57,20 +57,19 @@ public class AdminUserController {
         return userRepository.findById(id)
                 .map(user -> {
                     user.setFirstName(dto.getFirstName());
-                    user.setLastName( dto.getLastName());
-                    user.setEmail(    dto.getEmail());
-                    user.setRole(     dto.getRole());
+                    user.setLastName(dto.getLastName());
+                    user.setEmail(dto.getEmail());
+                    user.setRole(dto.getRole());
+                    user.setPassword(dto.getPassword());
                     userRepository.save(user);
-                    // explicitly Void so it matches ResponseEntity<Void>
                     return ResponseEntity.noContent().<Void>build();
                 })
                 .orElseGet(() ->
-                        // likewise explicitly Void here
                         ResponseEntity.notFound().<Void>build()
                 );
     }
 
-    // 4) DELETE
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteUser(
             @PathVariable int id,
@@ -104,6 +103,7 @@ public class AdminUserController {
         dto.setLastName(user.getLastName());
         dto.setEmail(user.getEmail());
         dto.setRole(user.getRole());
+        dto.setPassword(user.getPassword());
         return dto;
     }
 }

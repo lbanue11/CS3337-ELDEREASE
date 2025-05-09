@@ -41,9 +41,25 @@ export default function MapComponent() {
   const [reviews, setReviews] = useState([]);
   const [newReview, setNewReview] = useState("");
   const [selectedRating, setSelectedRating] = useState(5);
+  const [profile, setProfile] = useState(null);
 
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    axios
+        .get("/api/profile")
+        .then(res => {
+          setProfile(res.data);
+        })
+        .catch(err => {
+          if (err.response?.status === 401) {
+            navigate("/login", { replace: true });
+          } else {
+            console.error("Failed to load profile:", err);
+          }
+        });
+  }, [navigate]);
 
   const handleLogout = () => {
     axios
@@ -251,9 +267,14 @@ export default function MapComponent() {
           ☰
         </button>
         <nav className={`nav ${menuOpen ? "open" : ""}`}>
-          <Link to="/userdashboard" onClick={() => setMenuOpen(false)}>
-            {t('navbar.dashboard')}
-          </Link>
+          {profile && (
+              <Link
+                  to={profile.role === "ADMIN" ? "/admin" : "/userdashboard"}
+                  onClick={() => setMenuOpen(false)}
+              >
+                {t("navbar.dashboard")}
+              </Link>
+          )}
           <Link to="/map" onClick={() => setMenuOpen(false)} style={{ pointerEvents: 'none', opacity: 0.6 }}>
             {t('navbar.map')}
           </Link>

@@ -11,11 +11,69 @@ export default function AdminDashboard() {
     const [profile, setProfile] = useState(null);
     const [users, setUsers] = useState([]);
     const [menuOpen, setMenuOpen] = useState(false);
+    const [editingUserId, setEditingUserId] = useState(null);
+    const [editedUser, setEditedUser] = useState({});
     const navigate = useNavigate();
+
+    // Start editing a user
+    const handleEditClick = (user) => {
+        setEditingUserId(user.userId);
+        setEditedUser({ ...user });
+    };
+
+    // Track input changes
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setEditedUser((prev) => ({ ...prev, [name]: value }));
+    };
+
+    // Cancel edit mode
+    const handleCancelClick = () => {
+        setEditingUserId(null);
+        setEditedUser({});
+    };
+
+    // Save edits to the server
+    const handleSaveClick = async () => {
+        try {
+            const { data } = await axios.put(
+                `/api/admin/users/${editingUserId}`,
+                editedUser
+            );
+            const updated = { ...data, userId: data.userId ?? data.id };
+            setUsers((list) =>
+                list.map((u) => (u.userId === editingUserId ? updated : u))
+            );
+            setEditingUserId(null);
+            setEditedUser({});
+        } catch (err) {
+            console.error("Failed to save user:", err);
+            alert("Couldn’t save changes—check console for details.");
+        }
+    };
+
+    // Delete a user and all their favorites
+    const handleDeleteClick = async (userId) => {
+        if (!window.confirm("Really delete this user and all their favorites?")) return;
+        try {
+            // 1) delete all favorites for that specific user
+            await axios.delete(`/api/google-favorites/user/${userId}`);
+
+            // 2) delete the user record
+            await axios.delete(`/api/admin/users/${userId}`);
+
+            // 3) update UI
+            setUsers((prev) => prev.filter((u) => u.userId !== userId));
+        } catch (err) {
+            console.error("Error deleting user and favorites:", err.response || err);
+            alert("Delete failed: " + (err.response?.data || err.message));
+        }
+    };
 
     // Fetch current profile and verify admin role
     useEffect(() => {
-        axios.get("/api/profile")
+        axios
+            .get("/api/profile")
             .then(({ data }) => {
                 if (data.role !== "ADMIN") {
                     navigate("/home");
@@ -23,7 +81,7 @@ export default function AdminDashboard() {
                     setProfile(data);
                 }
             })
-            .catch(err => {
+            .catch((err) => {
                 if (err.response?.status === 401) {
                     navigate("/login");
                 } else {
@@ -35,24 +93,17 @@ export default function AdminDashboard() {
     // Fetch all users once profile is confirmed
     useEffect(() => {
         if (!profile) return;
-        console.log("→ About to fetch users…");
-        axios.get("/api/admin/users")
+        axios
+            .get("/api/admin/users")
             .then(({ data }) => {
-                console.log("← /api/admin/users response:", data);
-                setUsers(data);
+                const list = data.map((u) => ({ ...u, userId: u.userId ?? u.id }));
+                setUsers(list);
             })
-            .catch(err => console.error("Failed to load users:", err));
+            .catch((err) => console.error("Failed to load users:", err));
     }, [profile]);
 
-    const editUser = (user) => {
-
-    }
-
-
-
     const handleLogout = () => {
-        axios.post("/api/auth/logout")
-            .finally(() => navigate("/login"));
+        axios.post("/api/auth/logout").finally(() => navigate("/login"));
     };
 
     if (!profile) {
@@ -63,13 +114,11 @@ export default function AdminDashboard() {
         <>
             <header className="header">
                 <div className="home-logo">
-                    <img className="home-logo" src={LogoSymbol} alt="Logo"/>
+                    <img className="home-logo" src={LogoSymbol} alt="Logo" />
                 </div>
-
                 <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
                     ☰
                 </button>
-
                 <nav className={`nav ${menuOpen ? "open" : ""}`}>
                     <Link to="/home" onClick={() => setMenuOpen(false)}>
                         Home
@@ -111,17 +160,90 @@ export default function AdminDashboard() {
                         </tr>
                         </thead>
                         <tbody>
-                        {users.map(user => (
+                        {users.map((user) => (
                             <tr key={user.userId}>
                                 <td>{user.userId}</td>
-                                <td>{user.firstName}</td>
-                                <td>{user.lastName}</td>
-                                <td>{user.email}</td>
-                                <td>{user.password}</td>
-                                <td>{user.role}</td>
                                 <td>
-                                    <button className="edit">Edit</button>
-                                    <button className="delete">Delete</button>
+                                    {editingUserId === user.userId ? (
+                                        <input
+                                            name="firstName"
+                                            value={editedUser.firstName}
+                                            onChange={handleInputChange}
+                                        />
+                                    ) : (
+                                        user.firstName
+                                    )}
+                                </td>
+                                <td>
+                                    {editingUserId === user.userId ? (
+                                        <input
+                                            name="lastName"
+                                            value={editedUser.lastName}
+                                            onChange={handleInputChange}
+                                        />
+                                    ) : (
+                                        user.lastName
+                                    )}
+                                </td>
+                                <td>
+                                    {editingUserId === user.userId ? (
+                                        <input
+                                            name="email"
+                                            value={editedUser.email}
+                                            onChange={handleInputChange}
+                                        />
+                                    ) : (
+                                        user.email
+                                    )}
+                                </td>
+                                <td>
+                                    {editingUserId === user.userId ? (
+                                        <input
+                                            name="password"
+                                            type="text"
+                                            value={editedUser.password || ""}
+                                            onChange={handleInputChange}
+                                        />
+                                    ) : (
+                                        user.password
+                                    )}
+                                </td>
+                                <td>
+                                    {editingUserId === user.userId ? (
+                                        <select
+                                            name="role"
+                                            value={editedUser.role}
+                                            onChange={handleInputChange}
+                                        >
+                                            <option value="USER">USER</option>
+                                            <option value="ADMIN">ADMIN</option>
+                                        </select>
+                                    ) : (
+                                        user.role
+                                    )}
+                                </td>
+                                <td>
+                                    {editingUserId === user.userId ? (
+                                        <>
+                                            <button className="save" onClick={handleSaveClick}>Save</button>
+                                            <button className="cancel" onClick={handleCancelClick}>Cancel</button>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <button
+                                                className="edit"
+                                                onClick={() => handleEditClick(user)}
+                                            >
+                                                Edit
+                                            </button>
+                                            <button
+                                                className="delete"
+                                                onClick={() => handleDeleteClick(user.userId)}
+                                            >
+                                                Delete
+                                            </button>
+                                        </>
+                                    )}
                                 </td>
                             </tr>
                         ))}

@@ -13,7 +13,17 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/google-favorites")
-@CrossOrigin(origins = "${frontend.url}", allowCredentials = "true")
+@CrossOrigin(
+        origins = "${frontend.url}",
+        allowCredentials = "true",
+        allowedHeaders = "*",
+        methods = {
+                RequestMethod.GET,
+                RequestMethod.POST,
+                RequestMethod.DELETE,
+                RequestMethod.OPTIONS
+        }
+)
 public class FavoriteGoogleLocationController {
 
     private final FavoriteGoogleLocationService favoriteGoogleLocationService;
@@ -66,10 +76,37 @@ public class FavoriteGoogleLocationController {
         }
         try {
             favoriteGoogleLocationService.removeGoogleFavorite(userId, favoriteGoogleLocationId);
-            return ResponseEntity.noContent().build();         // 204
+            return ResponseEntity.noContent().build();
         } catch (IllegalArgumentException e) {
-            return ResponseEntity.status(HttpStatus.FORBIDDEN)  // 403 if not found/owned
+            return ResponseEntity.status(HttpStatus.FORBIDDEN)
                     .build();
         }
     }
+
+    @DeleteMapping("/user")
+    public ResponseEntity<Void> removeAllFavorites(HttpSession session) {
+        Integer userId = (Integer) session.getAttribute("userId");
+        if (userId == null) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
+        favoriteGoogleLocationService.removeAllByUser(userId);
+        return ResponseEntity.noContent().build();
+    }
+
+    @DeleteMapping("/user/{userId}")
+    public ResponseEntity<Void> removeAllFavoritesFor(
+            @PathVariable Integer userId,
+            HttpSession session
+    ) {
+
+        Integer me = (Integer) session.getAttribute("userId");
+        if (me == null /*|| !isAdmin(me)*/ ) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
+
+        favoriteGoogleLocationService.removeAllByUser(userId);
+        return ResponseEntity.noContent().build();
+    }
+
+
 }
