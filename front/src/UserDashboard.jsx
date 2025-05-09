@@ -174,22 +174,102 @@ const UserDashboard = () => {
 
                 {/* --- Left Sidebar: Saved Locations --- */}
                 <aside className="sidebar-left">
-                    {/* ... Saved Locations Card content ... */}
-                     <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-                       <CardContent sx={{ flexGrow: 1 }}>
-                           <Typography variant="h6" component="h2" gutterBottom> {t('dashboard.savedLocations', 'Saved Locations')} </Typography>
-                            {loadingFavorites ? ( <Box sx={{ display: 'flex', justifyContent: 'center', p: 2 }}><CircularProgress size={24} /></Box> )
-                            : favorites.length > 0 ? ( <List dense> { favorites.slice(0, 5).map((fav, index) => ( <ListItem key={fav.favoriteId || fav.placeId || index} sx={{ pl: 0, pr: 0 }}> <ListItemIcon sx={{ minWidth: 'auto', mr: 1 }}><LocationOnIcon fontSize="small" /></ListItemIcon> <ListItemText primary={fav.name || 'Unnamed Location'} primaryTypographyProps={{ variant: 'body2', noWrap: true, title: fav.name || 'Unnamed Location' }}/> </ListItem> ))} </List> )
-                            : ( <Typography variant="body2" color="text.secondary"> {t('dashboard.noSavedLocations', "You haven't saved any locations yet.")} </Typography> )}
-                       </CardContent>
-                       {(favorites.length > 5 || (favorites.length === 0 && !loadingFavorites)) && (
-                           <CardActions sx={{ justifyContent: 'center', borderTop: '1px solid rgba(0, 0, 0, 0.12)' }}>
-                               {favorites.length > 5 && ( <Button size="small" component={Link} to="/saved-locations"> {t('common.seeAll', 'See All')} ({favorites.length}) </Button> )}
-                               {favorites.length === 0 && !loadingFavorites && ( <Button size="small" component={Link} to="/map"> {t('dashboard.findLocations', 'Find Locations on Map')} </Button> )}
-                           </CardActions>
-                       )}
-                   </Card>
+                    <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+                        <CardContent sx={{ flexGrow: 1 }}>
+                            <Typography variant="h6" component="h2" gutterBottom>
+                                {t('dashboard.savedLocations', 'Saved Locations')}
+                            </Typography>
+
+                            {loadingFavorites ? (
+                                <Box sx={{ display: 'flex', justifyContent: 'center', p: 2 }}>
+                                    <CircularProgress size={24} />
+                                </Box>
+                            ) : favorites.length > 0 ? (
+                                <List dense>
+                                    {favorites.slice(0, 5).map((fav, index) => {
+                                        // build your Maps URL however you like:
+                                        const mapsUrl = fav.placeId
+                                            ? `https://www.google.com/maps/place/?q=place_id:${fav.placeId}`
+                                            : fav.lat && fav.lng
+                                                ? `https://www.google.com/maps/search/?api=1&query=${fav.lat},${fav.lng}`
+                                                : null;
+
+                                        return (
+                                            <ListItem
+                                                key={fav.favoriteId || fav.placeId || index}
+                                                sx={{ flexDirection: 'column', alignItems: 'flex-start', pl: 0, pr: 0 }}
+                                            >
+                                                <Box sx={{ display: 'flex', alignItems: 'center', width: '100%' }}>
+                                                    <ListItemIcon sx={{ minWidth: 'auto', mr: 1 }}>
+                                                        <LocationOnIcon fontSize="small" />
+                                                    </ListItemIcon>
+                                                    <ListItemText
+                                                        primary={fav.name || 'Unnamed Location'}
+                                                        primaryTypographyProps={{
+                                                            variant: 'body2',
+                                                            noWrap: true,
+                                                            title: fav.name || 'Unnamed Location',
+                                                        }}
+                                                    />
+                                                </Box>
+
+                                                {fav.website && (
+                                                    <Typography
+                                                        variant="caption"
+                                                        component="a"
+                                                        href={fav.website}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        noWrap
+                                                        sx={{ mt: 0.5, textDecoration: 'none', color: 'primary.main' }}
+                                                        title={fav.website}
+                                                    >
+                                                        {fav.website.replace(/^https?:\/\//, '')}
+                                                    </Typography>
+                                                )}
+
+                                                {mapsUrl && (
+                                                    <Typography
+                                                        variant="caption"
+                                                        component="a"
+                                                        href={mapsUrl}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        noWrap
+                                                        sx={{ mt: 0.25, textDecoration: 'none', color: 'primary.main', fontStyle: 'italic' }}
+                                                        title="Open in Google Maps"
+                                                    >
+                                                        {t('dashboard.viewOnMap', 'Get Directions')}
+                                                    </Typography>
+                                                )}
+                                            </ListItem>
+                                        );
+                                    })}
+                                </List>
+                            ) : (
+                                <Typography variant="body2" color="text.secondary">
+                                    {t('dashboard.noSavedLocations', "You haven't saved any locations yet.")}
+                                </Typography>
+                            )}
+                        </CardContent>
+
+                        {(favorites.length > 5 || (favorites.length === 0 && !loadingFavorites)) && (
+                            <CardActions sx={{ justifyContent: 'center', borderTop: '1px solid rgba(0, 0, 0, 0.12)' }}>
+                                {favorites.length > 5 && (
+                                    <Button size="small" component={Link} to="/saved-locations">
+                                        {t('common.seeAll', 'See All')} ({favorites.length})
+                                    </Button>
+                                )}
+                                {favorites.length === 0 && (
+                                    <Button size="small" component={Link} to="/map">
+                                        {t('dashboard.findLocations', 'Find Locations on Map')}
+                                    </Button>
+                                )}
+                            </CardActions>
+                        )}
+                    </Card>
                 </aside>
+
 
                 {/* --- Main Content: Merged Profile Details (Left/Right Layout) --- */}
                 <section className="main-content">

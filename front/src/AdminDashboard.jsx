@@ -4,7 +4,6 @@ import axios from "axios";
 import LogoSymbol from "./assets/LogoSymbol.png";
 import "./AdminDashboard.css";
 
-// Enable sending cookies with every request
 axios.defaults.withCredentials = true;
 
 export default function AdminDashboard() {
@@ -15,25 +14,22 @@ export default function AdminDashboard() {
     const [editedUser, setEditedUser] = useState({});
     const navigate = useNavigate();
 
-    // Start editing a user
     const handleEditClick = (user) => {
         setEditingUserId(user.userId);
         setEditedUser({ ...user });
     };
 
-    // Track input changes
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setEditedUser((prev) => ({ ...prev, [name]: value }));
     };
 
-    // Cancel edit mode
     const handleCancelClick = () => {
         setEditingUserId(null);
         setEditedUser({});
     };
 
-    // Save edits to the server
+    // Save edits
     const handleSaveClick = async () => {
         try {
             const { data } = await axios.put(
@@ -56,13 +52,10 @@ export default function AdminDashboard() {
     const handleDeleteClick = async (userId) => {
         if (!window.confirm("Really delete this user and all their favorites?")) return;
         try {
-            // 1) delete all favorites for that specific user
             await axios.delete(`/api/google-favorites/user/${userId}`);
 
-            // 2) delete the user record
             await axios.delete(`/api/admin/users/${userId}`);
 
-            // 3) update UI
             setUsers((prev) => prev.filter((u) => u.userId !== userId));
         } catch (err) {
             console.error("Error deleting user and favorites:", err.response || err);

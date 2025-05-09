@@ -272,6 +272,12 @@ export default function MapComponent() {
                   </a>
                 </p>
 
+                <p>
+                  <button className="btn-favorite" onClick={handleFavorite}>
+                    ❤️ {t('mapPage.details.addToFavorites', 'Add to Favorites')}
+                  </button>
+                </p>
+
                 <div className="review-section">
                   <h4>{t('mapPage.details.leaveReviewTitle')}</h4>
                   <textarea
