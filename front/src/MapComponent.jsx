@@ -211,13 +211,17 @@ export default function MapComponent() {
         <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>☰</button>
         <nav className={`nav ${menuOpen ? "open" : ""}`}>
           {profile && (
-            <Link
-              to={profile.role === "ADMIN" ? "/admin" : "/userdashboard"}
-              onClick={() => setMenuOpen(false)}
-            >
-              {t("navbar.dashboard")}
-            </Link>
-          )}
+                        <Link
+                            to={
+                              profile.role === "ADMIN" ? "/admin"
+                                  : profile.role === "CAREGIVER" ? "/caregiverdashboard"
+                                      : "/userdashboard"
+                            }
+                            onClick={() => setMenuOpen(false)}
+                        >
+                          {t('navbar.dashboard')}
+                        </Link>
+                    )}
           <Link to="/map" onClick={() => setMenuOpen(false)} style={{ pointerEvents: 'none', opacity: 0.6 }}>{t('navbar.map')}</Link>
           <a href="/home#helpful-resources" onClick={e => { e.preventDefault(); navigate('/home'); setMenuOpen(false); }}>{t('navbar.resources')}</a>
           <button onClick={() => { setMenuOpen(false); handleLogout(); }}>{t('navbar.logout')}</button>
