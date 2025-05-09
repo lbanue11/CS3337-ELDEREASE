@@ -57,7 +57,7 @@ const Home = () => {
                   to={profile.role === "ADMIN" ? "/admin" : "/userdashboard"}
                   onClick={() => setMenuOpen(false)}
               >
-                Dashboard
+                {t('navbar.dashboard')}
               </Link>
           )}
           <Link to="/map" onClick={() => setMenuOpen(false)}>
