@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ElderEaseApplication<ElderEase_back>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "group1.elderease_back.ElderEaseApplication",
+            "projectName": "ElderEase_back",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

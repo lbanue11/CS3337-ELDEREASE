@@ -1,0 +1,198 @@
+{
+    "navbar": {
+        "dashboard": "個人中心",
+        "map": "地圖",
+        "resources": "資源",
+        "logout": "登出"
+    },
+    "home": {
+        "welcome": "歡迎來到我們的平台",
+        "tagline": "協助長者輕鬆聯繫、導航與探索。",
+        "helpfulResources": "實用資源",
+        "resources": {
+            "housing": {
+                "title": "🏠 住房協助",
+                "description": "尋找經濟實惠的長者住宅及緊急庇護所。",
+                "link": "查看詳情"
+            },
+            "transportation": {
+                "title": "🚗 出行支援",
+                "description": "了解長者乘車服務與行動輔助計劃。",
+                "link": "瞭解更多"
+            },
+            "hotlines": {
+                "title": "☎️ 熱線與安全",
+                "description": "聯繫長者防虐待熱線或尋求心理健康支援。",
+                "link": "查看熱線"
+            }
+        }
+    },
+    "common": {
+        "logoAlt": "標誌",
+        "edit": "編輯",
+        "cancel": "取消",
+        "save": "儲存變更"
+    },
+    "hotlinesPage": {
+        "header": {
+            "logoAlt": "ElderEase 標誌"
+        },
+        "titleIconAlt": "熱線與安全圖示",
+        "pageTitle": "熱線與安全",
+        "intro": "為長者提供可信賴的熱線與安全資源——援助近在咫尺。",
+        "card": {
+            "phonePrefix": "📞 ",
+            "moreInfoLink": "更多資訊 →"
+        },
+        "resources": [
+            {
+                "name": "洛杉磯縣成人保護服務 (APS)",
+                "location": "加利福尼亞州洛杉磯",
+                "specialization": "為可能遭受虐待、疏忽或剝削的年長者和受撫養成年人提供全天候支援。APS 調查舉報並提供保護服務，以確保弱勢成年人的安全與福祉。"
+            },
+            {
+                "name": "洛杉磯市老齡部 – 資訊與協助",
+                "location": "加利福尼亞州洛杉磯",
+                "specialization": "為年長者提供有關各種服務（包括交通、營養、照顧者支援等）的資訊和轉介。該熱線將年長者及其照顧者與促進獨立生活的資源聯繫起來。"
+            },
+            {
+                "name": "長期護理監察員計劃 – WISE & Healthy Aging",
+                "location": "加利福尼亞州洛杉磯",
+                "specialization": "為長期護理機構的住民提供維權，解決與護理品質、住民權利以及虐待或疏忽相關的問題。該計劃致力於解決投訴並改善護理機構中年長者的生活品質。"
+            }
+        ]
+    },
+    "housingPage": {
+        "titleIconAlt": "房屋圖示",
+        "pageTitle": "住房協助",
+        "intro": "在這裡您可以找到經濟實惠的長者住宅選項及緊急庇護所。",
+        "resources": [
+            {
+                "name": "洛杉磯縣年長者住房資源",
+                "location": "加利福尼亞州洛杉磯",
+                "specialization": "洛杉磯縣住房資源中心網站協助提供尋找年長者住房及資源的資訊與工具。請持續關注本站以取得最新資訊。下方提供了其他重要網站、機構以及住房尋找工具的連結。"
+            },
+            {
+                "name": "洛杉磯市住房管理局 (HACLA)",
+                "location": "加利福尼亞州洛杉磯",
+                "specialization": "HACLA 為低收入、無家可歸、身心障礙者、兒童及年長者提供一系列計劃。如需申請公共住房或取得第8節候補名單的更新資訊，您可以聯繫其主辦公室或造訪其網站。"
+            },
+            {
+                "name": "老化可負擔生活組織 (ALA)",
+                "location": "加利福尼亞州洛杉磯",
+                "specialization": "ALA 提供數項專為年長者設計的計劃：共享住宅：配對年長者共享住宅，將閒置房間改造為可負擔的居住空間。永久性支持住宅：為長期無家可歸的年長者提供配有現場社工的住宅。"
+            },
+            {
+                "name": "洛杉磯縣老化與身心障礙者部",
+                "location": "加利福尼亞州洛杉磯",
+                "specialization": "該部門提供專為65歲以上年長者設計的經濟實惠住房選項清單，包括第8節住房選擇代金券計劃以及為需要協助支付水電瓦斯費的人士提供的公用事業援助。"
+            }
+        ]
+    },
+    "transportationPage": {
+        "titleIconAlt": "交通圖示",
+        "pageTitle": "出行支援",
+        "intro": "探索為長者和行動不便人士提供安全、經濟實惠的乘車服務的可信賴計劃。",
+        "resources": [
+            {
+                "name": "洛杉磯縣交通與行動服務",
+                "location": "加利福尼亞州洛杉磯",
+                "specialization": "為了積極支持一個更關愛長者的洛杉磯縣，這些交通與行動服務致力於服務年長者和受撫養成年人。"
+            },
+            {
+                "name": "洛杉磯市老齡部交通服務",
+                "location": "加利福尼亞州洛杉磯",
+                "specialization": "洛杉磯市為年長者提供低成本、無障礙的交通服務，包括門到門接送、輔助客運服務以及CityRide計劃，以協助處理差事、預約等事宜。"
+            }
+        ]
+    },
+    "mapPage": {
+        "loadError": "地圖載入錯誤",
+        "loading": "正在載入地圖...",
+        "controls": {
+            "title": "尋找附近的長者照護服務",
+            "zipPlaceholder": "輸入郵遞區號",
+            "categories": {
+                "nursingHome": "療養院",
+                "homeCare": "居家照護",
+                "assistedLiving": "輔助生活",
+                "hospice": "安寧療護",
+                "transportation": "交通出行",
+                "defaultSearchKeyword": "長者照護"
+            },
+            "searchButton": "搜尋",
+            "useMyLocationButton": "使用我的位置"
+        },
+        "details": {
+            "phonePrefix": "📞 ",
+            "visitWebsiteLink": "造訪網站",
+            "favoriteButton": "❤️ 收藏",
+            "viewInGoogleMapsLink": "在 Google 地圖中檢視",
+            "leaveReviewTitle": "留下評論",
+            "reviewPlaceholder": "寫下您的評論...",
+            "ratingOptions": {
+                "star": "{{count}} 星",
+                "star_plural": "{{count}} 星"
+            },
+            "ratingLabel": "評分",
+            "submitReviewButton": "提交評論",
+            "reviewsTitle": "評論",
+            "noReviews": "尚無評論。",
+            "reviewUserFallback": "使用者",
+            "closeAlt": "關閉詳情"
+        },
+        "alerts": {
+            "reviewSubmitFailed": "評論提交失敗。",
+            "favoriteAdded": "已加入收藏！❤️",
+            "pleaseLogIn": "請先登入。",
+            "favoriteFailed": "加入收藏失敗。",
+            "zipNotFound": "未能找到該郵遞區號對應的位置。",
+            "searchFailed": "發生錯誤，請重試。",
+            "geolocationNotSupported": "不支援地理定位。",
+            "locationError": "無法取得您的位置。"
+        }
+    },
+    "dashboard": {
+        "loading": "正在載入您的個人資料…",
+        "savedLocations": "收藏的地點",
+        "noSavedLocations": "您尚未收藏任何地點。",
+        "findLocations": "在地圖上尋找地點",
+        "viewOnMap": "規劃路線",
+        "addElderly": "新增長者",
+        "addElderlyHelp": "選擇一位長者連結至您的個人資料。",
+        "addElder": "新增長者",
+        "elderId": "長者使用者ID",
+        "elderEmail": "長者電子郵件",
+        "messages": "您的訊息",
+        "noMessages": "您沒有訊息。"
+    },
+    "profile": {
+        "detailsTitle": "個人資料詳情",
+        "fullNameLabel": "姓名:",
+        "emailLabel": "郵箱:",
+        "phoneLabel": "電話:",
+        "phonePlaceholder": "(XXX) XXX-XXXX 或純數字",
+        "addressLabel": "地址:",
+        "streetLabel": "街道",
+        "streetPlaceholder": "街道地址",
+        "cityLabel": "城市",
+        "cityPlaceholder": "城市",
+        "stateLabel": "州/省",
+        "statePlaceholder": "州/省",
+        "zipcodeLabel": "郵遞區號",
+        "zipcodePlaceholder": "郵遞/郵遞區號"
+    },
+    "caregiverDashboard": {
+        "yourEldersTitle": "您管理的長者",
+        "messageButton": "傳送訊息",
+        "linkElderButton": "連結長者",
+        "sendMessageToTitle": "傳送訊息給 {{name}}",
+        "unknownUser": "使用者",
+        "yourMessageLabel": "您的訊息",
+        "sendButton": "傳送",
+        "alerts": {
+            "addElderFailed": "新增長者失敗。",
+            "sendMessageFailed": "傳送訊息失敗。"
+        }
+    }
+}

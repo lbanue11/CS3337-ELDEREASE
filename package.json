@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@react-google-maps/api": "^2.20.6",
+    "axios": "^1.8.4",
+    "i18next": "^25.1.2",
+    "react-i18next": "^15.5.1",
+    "react-router-dom": "^7.4.0",
+    "xml2js": "^0.6.2"
+  }
+}

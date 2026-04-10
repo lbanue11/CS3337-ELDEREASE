@@ -1,0 +1,199 @@
+{
+    "navbar": {
+        "dashboard": "个人中心",
+        "map": "地图",
+        "resources": "资源",
+        "logout": "登出"
+    },
+    "home": {
+        "welcome": "欢迎来到我们的平台",
+        "tagline": "帮助长者轻松连接、导航与探索。",
+        "helpfulResources": "实用资源",
+        "resources": {
+            "housing": {
+                "title": "🏠 住房援助",
+                "description": "查找经济适用长者住房及紧急庇护所。",
+                "link": "查看详情"
+            },
+            "transportation": {
+                "title": "🚗 出行支持",
+                "description": "了解长者乘车服务与出行辅助项目。",
+                "link": "了解更多"
+            },
+            "hotlines": {
+                "title": "☎️ 热线与安全",
+                "description": "联系长者防虐待热线或获取心理健康支持。",
+                "link": "查看热线"
+            }
+        }
+    },
+    "common": {
+        "logoAlt": "标志",
+        "edit": "编辑",
+        "cancel": "取消",
+        "save": "保存更改"
+    },
+    "hotlinesPage": {
+        "header": {
+            "logoAlt": "ElderEase 标志"
+        },
+        "titleIconAlt": "热线与安全图标",
+        "pageTitle": "热线与安全",
+        "intro": "为长者提供可信赖的热线与安全资源——援助近在咫尺。",
+        "card": {
+            "phonePrefix": "📞 ",
+            "moreInfoLink": "更多信息 →"
+        },
+        "resources": [
+            {
+                "name": "洛杉矶县成人保护服务 (APS)",
+                "location": "加利福尼亚州洛杉矶",
+                "specialization": "为可能遭受虐待、忽视或剥削的老年人和受抚养成年人提供全天候支持。APS 调查举报并提供保护服务，以确保弱势成年人的安全和福祉。"
+            },
+            {
+                "name": "洛杉矶市老龄部 – 信息与援助",
+                "location": "加利福尼亚州洛杉矶",
+                "specialization": "为老年人提供有关各种服务（包括交通、营养、照顾者支持等）的信息和转介。该热线将老年人及其照顾者与促进独立生活的资源联系起来。"
+            },
+            {
+                "name": "长期护理监察员计划 – WISE & Healthy Aging",
+                "location": "加利福尼亚州洛杉矶",
+                "specialization": "为长期护理机构的居民提供维权，解决与护理质量、居民权利以及虐待或忽视相关的问题。该计划致力于解决投诉并改善护理机构中老年人的生活质量。"
+            }
+        ]
+    },
+    "housingPage": {
+        "titleIconAlt": "房屋图标",
+        "pageTitle": "住房援助",
+        "intro": "在这里您可以找到经济适用的长者住房选项和紧急庇护所。",
+        "resources": [
+            {
+                "name": "洛杉矶县老年人住房资源",
+                "location": "加利福尼亚州洛杉矶",
+                "specialization": "洛杉矶县住房资源中心网站帮助提供查找老年人住房和资源的信息与工具。请持续关注本站以获取最新信息。下方提供了其他重要网站、机构以及住房查找工具的链接。"
+            },
+            {
+                "name": "洛杉矶市住房管理局 (HACLA)",
+                "location": "加利福尼亚州洛杉矶",
+                "specialization": "HACLA 为低收入、无家可归、残疾人士、儿童及老年人提供一系列计划。如需申请公共住房或获取第8节候补名单的更新信息，您可以联系其主办公室或访问其网站。"
+            },
+            {
+                "name": "老龄化经济适用房组织 (ALA)",
+                "location": "加利福尼亚州洛杉矶",
+                "specialization": "ALA 提供多项专为老年人设计的计划：共享住房：匹配老年人共享住房，将闲置房间改造为经济实惠的居住空间。永久性支持住房：为长期无家可归的老年人提供配有现场社工的住房。"
+            },
+            {
+                "name": "洛杉矶县老龄化与残疾人部",
+                "location": "加利福尼亚州洛杉矶",
+                "specialization": "该部门提供专为65岁以上老年人设计的经济适用住房选项列表，包括第8节住房选择代金券计划以及为需要帮助支付水电费的人士提供的水电费援助。"
+            }
+        ]
+    },
+    "transportationPage": {
+        "titleIconAlt": "交通图标",
+        "pageTitle": "出行支持",
+        "intro": "探索为长者和行动不便人士提供安全、经济的乘车服务的可信赖项目。",
+        "resources": [
+            {
+                "name": "洛杉矶县交通与移动服务",
+                "location": "加利福尼亚州洛杉矶",
+                "specialization": "为了积极支持建设一个更关爱长者的洛杉矶县，这些交通与移动服务致力于服务老年人和受抚养成年人。"
+            },
+            {
+                "name": "洛杉矶市老龄部交通服务",
+                "location": "加利福尼亚州洛杉矶",
+                "specialization": "洛杉矶市为老年人提供低成本、无障碍的交通服务，包括门到门接送、辅助客运服务以及CityRide计划，以帮助处理差事、预约等事宜。"
+            }
+        ]
+    },
+    "mapPage": {
+        "loadError": "地图加载错误",
+        "loading": "正在加载地图...",
+        "controls": {
+            "title": "查找附近的长者护理服务",
+            "zipPlaceholder": "输入邮政编码",
+            "categories": {
+                "nursingHome": "疗养院",
+                "homeCare": "居家护理",
+                "assistedLiving": "辅助生活",
+                "hospice": "临终关怀",
+                "transportation": "交通出行",
+                "defaultSearchKeyword": "长者护理"
+            },
+            "searchButton": "搜索",
+            "useMyLocationButton": "使用我的位置",
+            "favoriteButton": "❤️ 收藏"
+        },
+        "details": {
+            "phonePrefix": "📞 ",
+            "visitWebsiteLink": "访问网站",
+            "favoriteButton": "❤️ 收藏",
+            "viewInGoogleMapsLink": "在谷歌地图中查看",
+            "leaveReviewTitle": "留下评论",
+            "reviewPlaceholder": "写下你的评论...",
+            "ratingOptions": {
+                "star": "{{count}} 星",
+                "star_plural": "{{count}} 星"
+            },
+            "ratingLabel": "评分",
+            "submitReviewButton": "提交评论",
+            "reviewsTitle": "评论",
+            "noReviews": "暂无评论。",
+            "reviewUserFallback": "用户",
+            "closeAlt": "关闭详情"
+        },
+        "alerts": {
+            "reviewSubmitFailed": "评论提交失败。",
+            "favoriteAdded": "已添加到收藏！❤️",
+            "pleaseLogIn": "请先登录。",
+            "favoriteFailed": "添加到收藏失败。",
+            "zipNotFound": "未能找到该邮政编码对应的位置。",
+            "searchFailed": "出现错误，请重试。",
+            "geolocationNotSupported": "不支持地理定位。",
+            "locationError": "无法获取您的位置。"
+        }
+    },
+    "dashboard": {
+        "loading": "正在加载您的个人资料…",
+        "savedLocations": "收藏的地点",
+        "noSavedLocations": "您还没有收藏任何地点。",
+        "findLocations": "在地图上查找地点",
+        "viewOnMap": "获取路线",
+        "addElderly": "添加长者",
+        "addElderlyHelp": "选择一位长者关联到您的个人资料。",
+        "addElder": "添加长者",
+        "elderId": "长者用户ID",
+        "elderEmail": "长者邮箱",
+        "messages": "您的消息",
+        "noMessages": "您没有消息。"
+    },
+    "profile": {
+        "detailsTitle": "个人资料详情",
+        "fullNameLabel": "姓名:",
+        "emailLabel": "邮箱:",
+        "phoneLabel": "电话:",
+        "phonePlaceholder": "(XXX) XXX-XXXX 或纯数字",
+        "addressLabel": "地址:",
+        "streetLabel": "街道",
+        "streetPlaceholder": "街道地址",
+        "cityLabel": "城市",
+        "cityPlaceholder": "城市",
+        "stateLabel": "州/省",
+        "statePlaceholder": "州/省",
+        "zipcodeLabel": "邮政编码",
+        "zipcodePlaceholder": "邮政/邮政编码"
+    },
+    "caregiverDashboard": {
+        "yourEldersTitle": "您管理的长者",
+        "messageButton": "发送消息",
+        "linkElderButton": "关联长者",
+        "sendMessageToTitle": "发送消息给 {{name}}",
+        "unknownUser": "用户",
+        "yourMessageLabel": "您的消息",
+        "sendButton": "发送",
+        "alerts": {
+            "addElderFailed": "添加长者失败。",
+            "sendMessageFailed": "发送消息失败。"
+        }
+    }
+}
